@@ -1,9 +1,0 @@
-{
-  "firebase": "udacity-ud811",
-  "public": ".",
-  "ignore": [
-    "firebase.json",
-    "**/.*",
-    "**/node_modules/**"
-  ]
-}

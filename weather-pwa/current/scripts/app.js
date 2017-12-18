@@ -1,4 +1,3 @@
-
 (function() {
   'use strict';
 
@@ -197,6 +196,13 @@
               app.saveSelectedCities();
           }
       });
-  });  
+  });
   
+  if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+      .register('/safwans.github.io/weather-pwa/current/service-worker.js')
+      .then(function() {
+          console.log('Service Worker Registered')
+      });
+  }
 })();

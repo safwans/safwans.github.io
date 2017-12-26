@@ -16,11 +16,82 @@ limitations under the License.
 
 (function() {
   'use strict';
+  
+  var filesToCache = [
+    '.',
+    'style/main.css',
+    'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700',
+    'images/still_life-1600_large_2x.jpg',
+    'images/still_life-800_large_1x.jpg',
+    'images/still_life_small.jpg',
+    'images/still_life_medium.jpg',
+    'index.html',
+    'pages/offline.html',
+    'pages/404.html'
+  ];
+  
+  var staticCacheName = 'pages-cahce-v2';
 
   // TODO 2 - cache the application shell
+  self.addEventListener('install', function(event) {
+    console.log('Attempting to install service worker and cahce static assets');
+    event.waitUntil(
+      caches.open(staticCacheName)
+      .then(function(cache) {
+        return cache.addAll(filesToCache);  
+      })
+    );
+    self.skipWaiting();
+  });
 
   // TODO 3 - intercept network requests
+  self.addEventListener('fetch', function(event) {
+    console.log('Fetch event for ', event.request.url);
+    event.respondWith(
+      caches.match(event.request).then(function(response) {
+      if (response) {
+        console.log('Found ', event.request.url, ' in cache');
+        return response
+      }
+      // TODO 4 - Add fetched files to the cache
+      console.log('Network request for ', event.request.url);
+      return fetch(event.request).then(function(response) { 
+        // TODO 5 - Respond with custom 404
+        if (response.status === 404) {
+          return caches.match('pages/404.html');
+        }
+        return caches.open(staticCacheName).then(function(cache) {
+          if (event.request.url.indexOf('test') < 0) {
+            cache.put(event.request.url, response.clone());
+          }
+          return response;
+        });
+      });
+    }).catch(function(error) {
+      // TODO 6 - respond with custom offline page
+      console.log('Error, ', error);
+      return caches.match('pages/offline.html')
+      
+      })
+    );
+  });
 
   // TODO 7 - delete unused caches
+  self.addEventListener('activate', function(event) {
+    console.log('Activating new service worker ...');
+    var cacheWhitelist = [staticCacheName];
+    
+    event.waitUntil(
+      caches.keys().then(function(cacheNames){
+        return Promise.all(
+          cacheNames.map(function(cacheName) {
+            if (cacheWhitelist.indexOf(cacheName) === -1) {
+              return caches.delete(cacheName);
+            }
+          })
+        );
+      })    
+    );
+  });
 
 })();

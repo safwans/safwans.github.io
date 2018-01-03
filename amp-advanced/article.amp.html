@@ -35,6 +35,9 @@
         padding: 0.5em;
         margin: 0.5em;
       }
+     amp-fit-text {
+       white-space: normal;
+}
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script type="application/ld+json">
@@ -71,6 +74,11 @@
      "description": "My first experience in an AMPlified world"
     }
     </script>
+    
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
   </head>
   <body>
     <header>
@@ -82,6 +90,48 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
 
       <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-youtube
+  data-videoid="mGENRKrdoGY"
+  layout="responsive"
+  width="480"
+  height="270">
+  <div fallback>
+    <p>The video could not be loaded.</p>
+  </div>
+</amp-youtube>
+
+<amp-twitter
+  width="486"
+  height="657"
+  layout="responsive"
+  data-tweetid="638793490521001985">
+</amp-twitter>
+<amp-fit-text width="400" height="475" layout="responsive" max-font-size="42">
+  #YOLO
+</amp-fit-text>    
+<amp-fit-text width="400" height="175" layout="responsive" max-font-size="42">
+   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon's that is dreaming, And the lamp-light o'er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+</amp-fit-text>
     </article>
+<amp-carousel layout="fixed-height" height="168" type="slides" autoplay delay="1000" loop >
+  <amp-img src="mountains-1.jpg" width="300" height="168"></amp-img>
+  <amp-img src="mountains-2.jpg" width="300" height="168"></amp-img>
+  <amp-img src="mountains-3.jpg" width="300" height="168"></amp-img>
+</amp-carousel>
+
+<amp-carousel layout="fixed-height" height="250" type="carousel" >
+    <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
+
+    <amp-ad width="300" height="250"
+      type="doubleclick"
+      data-slot="/35096353/amptesting/image/static">
+      <div fallback>This advert is still loading.</div>
+    </amp-ad>
+
+    <amp-fit-text width="300" height="250" layout="fixed">
+        Big, bold article quote goes here.
+    </amp-fit-text>
+</amp-carousel>
+    
   </body>
 </html>

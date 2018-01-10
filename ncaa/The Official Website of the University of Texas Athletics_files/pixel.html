@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- saved from url=(0376)http://statcollector.sidearmsports.com/services/pixel.html?page_template=home-page&sport_name=0&sport_name_custom=0&site=utexas&content_id=null&sect=frontpage&sid=9dce3b58-0918-4223-9cb9-e4a73aa0c119&uid=94a21612-ca5e-47ab-9608-730adc00621c&count=texassports_com.active%7Call.active&events=&traits=&r=texassports.com&server_name=738114-APP44&path_and_query=%2F&_=1515599147188 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <script>
+
+        function now() { return new Date().getTime(); }
+        
+        function serializeTogether() {
+            var result = [];
+            for (var i = 0; i < arguments.length; i++) {
+                var obj = arguments[i];
+                for (var key in obj) {
+                    if (obj.hasOwnProperty(key)) {
+                        var value = obj[key];
+                        if (value && Object.prototype.toString.call(value) === "[object Object]") {
+                            value = encodeURIComponent(serializeTogether(value));
+                        } else if (value && Object.prototype.toString.call(value) === "[object Array]") {
+                            var stringValues = [];
+                            for (var j = 0; j < value.length; j++) {
+                                stringValues.push(serializeTogether(value[j]));
+                            }
+                            value = encodeURIComponent(stringValues.join("|"));
+                        }
+                        result.push(key + "=" + value);
+                    }
+                }
+            }
+            return result.join("&");
+        }
+        
+        function parseQuery(query) {
+            query = query.substring(1);
+            var parts = query.split("&");
+            var queryObj = {};
+            for (var i = 0; i < parts.length; i++) {
+                var part = parts[i];
+                var k = part.substring(0, part.indexOf("="));
+                var v = part.substring(part.indexOf("=") + 1);
+                if (k.length > 0 && v.length > 0) {
+                    queryObj[k] = v;
+                }
+            }
+            return queryObj;
+        }
+        
+        function generateUUID() {
+            var d = now();
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = (d + Math.random() * 16) % 16 | 0;
+                d = Math.floor(d / 16);
+                return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+            return uuid;
+        }
+
+        function get_id(storageType, fallback) {
+            var storage = window[storageType + "Storage"];
+            
+            if (!storage) return generateUUID();
+
+            var key = "ss.id";
+            
+            var isNew = false;
+            var id = storage.getItem(key);
+            
+            if (!id) {
+                isNew = true;
+                id = fallback || generateUUID();
+                storage.setItem(key, id);
+            }
+
+            return { id: id, isNew: isNew };
+        }
+
+        function toDateStamp(timestamp) {
+            return Math.floor(timestamp / (24 * 60 * 60 * 1000)) * (24 * 60 * 60 * 1000);
+        }
+
+        function toMonth(timestamp) {
+            var date = new Date(timestamp);
+            return date.getFullYear() + "-" + (date.getMonth() + 1);
+        }
+
+        function visit(context) {
+            var lv = context.lv || 0;
+            context.lv = now();
+            var pageTemplate = query.page_template + ":" + query.sport_name;
+            context.pv = (context.pagesViewed || 0) + 1; // pages viewed
+            context.pt = context.pt || {}; // page type
+            context.pt[pageTemplate] = (context.pt[pageTemplate] || 0) + 1;
+            return {
+                lastVisit: lv,
+                lastWasToday: toDateStamp(lv) === toDateStamp(now()),
+                wasThisMonth: toMonth(lv) === toMonth(now())
+            };
+        }
+
+        function withStorage(storageType, fn) {
+            var storageName = storageType + "Storage";
+            var key = "ss.t";
+            if (!window[storageName]) return;
+            var object = JSON.parse(window[storageName][key] || "{}");
+            fn(object);
+            window[storageName][key] = JSON.stringify(object);
+        }
+
+        var query = parseQuery(location.search || "?");
+        var counts = query.count ? query.count.split("|") : [];
+        var traits = query.traits || {};
+        var is_pageview = counts.indexOf("all.pageview") > -1;
+
+        var userId = get_id("local", query.uid);
+        var sessionId = get_id("session", query.sid);
+
+        // bug!
+        // mobile safari causes session storage in 3rd party iframe
+        // to be merged with local storage
+        if (sessionId.id == userId.id) {
+            userId = {
+                id: query.uid,
+                isNew: false
+            };
+            sessionId = {
+                id: query.sid,
+                isNew: false
+            };
+        }
+            
+        if (window.localStorage) {
+            withStorage("local", function(info) {
+            if (is_pageview) {
+                    var clientVersion = info.v || 0;
+
+                if (clientVersion < 5 && info.visited) {
+                delete info.visited;
+        }
+                    if (clientVersion < 6) {
+                    delete info.lv;
+                }
+                    if (clientVersion < 9 || userId.isNew) {
+                        traits["User-Agent"] = ""; // user-agent will be read from header
+                    }
+        
+                    var network_lastvisit = visit(info, query);
+                    if (!network_lastvisit.lastWasToday) {
+                    counts.push("all.user_daily_active");
+                }
+                    if (!network_lastvisit.wasThisMonth) {
+                    counts.push("all.user_monthly_active");
+                }
+                
+            var visited = info.visited = info.visited || {};
+            var referrer = query.r;
+            var siteInfo = visited[referrer] = visited[referrer] || {};
+                    visit(siteInfo, query);
+
+                    info.v = 9;
+            }
+            });
+        }
+        
+        if (window.sessionStorage) {
+            withStorage("session", function (info) {
+            if (is_pageview) {
+                    var network_lastvisit = visit(info, query);
+                    if (!network_lastvisit.lastWasToday) {
+                        counts.push("all.session_daily_active");
+            }
+        }
+            });
+        }
+
+        delete query.count;
+        delete query.sid;
+        delete query.uid;
+            delete query.event;
+            delete query.traits;
+
+        var img = new Image();
+        
+            img.src = "//statcollector.sidearmsports.com/services/pixel.ashx?" + serializeTogether(query, {
+            user_id: userId.id,
+            session_id: sessionId.id,
+            traits: traits,
+            count: counts.join("|"),
+            _: now()
+        });
+
+    </script>
+</head>
+<body>
+    <div>
+    
+    </div>
+
+
+</body></html>

@@ -1,7 +1,0 @@
-/*
-
-This external JavaScript file is intentionally empty.
-
-Its purpose is merely to demonstrate the AMP validation error related to the use of external JavaScript files.
-
-*/

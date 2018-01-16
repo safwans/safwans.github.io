@@ -28,8 +28,7 @@ limitations under the License.
   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
-  <script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 
   <style amp-custom>
     /*** uncss> filename: https://code.getmdl.io/1.3.0/material.indigo-pink.min.css ***/
@@ -145,10 +144,55 @@ limitations under the License.
 <amp-state id="selected">
   <script type="application/json">
     {
-      "slide": 0
+      "slide": 0,
+      "sku": "1001"
     }
   </script>
 </amp-state>
+
+<!-- Available shirts. Maps unique string identifier to color and image URL string. -->
+<amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
+  <script type="application/json">
+    {
+      "1001": {
+        "color": "black",
+        "image": "./shirts/black.jpg",
+        "sizes": {
+          "XS": 8.99,
+          "S": 9.99
+        }
+      },
+      "1002": {
+        "color": "blue",
+        "image": "./shirts/blue.jpg"
+      },
+      "1010": {
+        "color": "brown",
+        "image": "./shirts/brown.jpg"
+      },
+      "1014": {
+        "color": "dark green",
+        "image": "./shirts/dark-green.jpg"
+      },
+      "1015": {
+        "color": "gray",
+        "image": "./shirts/gray.jpg"
+      },
+      "1016": {
+        "color": "light gray",
+        "image": "./shirts/light-gray.jpg"
+      },
+      "1021": {
+        "color": "navy",
+        "image": "./shirts/navy.jpg"
+      },
+      "1030": {
+        "color": "wine",
+        "image": "./shirts/wine.jpg"
+      }
+    }
+  </script>
+  </amp-state>
 
   <header id="header" class="mdl-color--black mdl-color-text--white">
     <amp-img class="menu" src="./img/ic_menu_white_24dp_1x.png" width=24 height=24></amp-img>
@@ -164,9 +208,9 @@ limitations under the License.
     <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
        on="slideChange:AMP.setState({selected: {slide: event.index}})">
       <!-- TODO: "Changing images in amp-carousel" -->
-      <amp-img width=200 height=250 src="./shirts/black.jpg"></amp-img>
-      <amp-img width=300 height=375 src="./shirts/black.jpg"></amp-img>
-      <amp-img width=400 height=500 src="./shirts/black.jpg"></amp-img>
+      <amp-img width=200 height=250 src="./shirts/black.jpg" [src]="shirts[selected.sku].image"></amp-img>
+      <amp-img width=300 height=375 src="./shirts/black.jpg" [src]="shirts[selected.sku].image"></amp-img>
+      <amp-img width=400 height=500 src="./shirts/black.jpg" [src]="shirts[selected.sku].image"></amp-img>
     </amp-carousel>
 
     <!-- TODO: "Add a slide indicator" -->
@@ -184,7 +228,7 @@ limitations under the License.
           Tip: <amp-selector> functions like an <input> element when nested in a <form>.
           @see https://www.ampproject.org/docs/reference/components/amp-form#inputs-and-fields
         -->
-        <amp-selector name="color">
+        <amp-selector name="color" on="select:AMP.setState({selected: {sku: event.targetOption}})">
           <table>
             <tr>
               <td><amp-img width=40 height=40 option="1001" src="./shirts/swatch/black.jpg" selected></amp-img></td>
@@ -205,7 +249,7 @@ limitations under the License.
       <div class="options price">
         <h6>PRICE :
           <!-- TODO: "Variable shirt prices" -->
-          $9.99
+          <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
         </h6>
       </div>
 
@@ -213,28 +257,29 @@ limitations under the License.
         <h6>SIZE :</h6>
 
         <!-- TODO: "Variable shirt prices" -->
-        <amp-selector name="size">
+        <amp-selector name="size"
+            on="select:AMP.setState({selectedSize: event.targetOption})">
           <table>
-            <tr>
-              <!-- TODO: "Fetching available sizes for a shirt" -->
-              <td>
+              <tr>
+              <!-- If 'XS' size is available for selected SKU, return empty string.
+                   Otherwise, return 'unavailable'. -->
+              <td [class]="shirts[selected.sku].sizes['XS'] ? '' : 'unavailable'">
                 <div option="XS">XS</div>
               </td>
-              <td>
+              <td [class]="shirts[selected.sku].sizes['S'] ? '' : 'unavailable'">
                 <div option="S">S</div>
               </td>
-              <!-- TODO: "Fetching available sizes for a shirt" -->
-              <td>
+              <td class="unavailable" [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
                 <div option="M">M</div>
               </td>
-              <td>
+              <td class="unavailable" [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
                 <div option="L">L</div>
               </td>
-              <td>
+              <td class="unavailable" [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
                 <div option="XL">XL</div>
               </td>
             </tr>
-          </table>
+        </table>
         </amp-selector>
       </div>
 
@@ -249,8 +294,9 @@ limitations under the License.
 
       <div class="options purchase">
         <!-- TODO: "Conditionally enabled button" -->
-        <input type="submit" value="ADD TO CART"
-            class="mdl-button mdl-button--raised mdl-button--accent">
+        <input type="submit" value="ADD TO CART" disabled
+            class="mdl-button mdl-button--raised mdl-button--accent"
+            [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
       </div>
 
       <div submit-success>

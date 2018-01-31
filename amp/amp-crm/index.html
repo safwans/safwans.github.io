@@ -50,11 +50,33 @@
 
     You can find the code for the server endpoint used in this demo at [/backend/amp-form.go](https://github.com/ampproject/amp-by-example/blob/master/backend/amp-form.go).
   -->
-  <form method="GET" class="p2" action="/components/amp-form/submit-form" target="_top">
-    <div class="ampstart-input inline-block relative mb3">
-      <input type="search" placeholder="Search..." name="googlesearch">
+  <form method="post"
+        class="p2"
+        action-xhr="/components/amp-form/submit-form-input-text-xhr"
+        target="_top">
+    <div class="ampstart-input inline-block relative m0 p0 mb3">
+      <input type="text"
+          class="block border-none p0 m0"
+          name="name"
+          placeholder="Name..."
+          required>
+      <input type="email"
+        class="block border-none p0 m0"
+        name="email"
+        placeholder="Email..."
+        required>
     </div>
-    <input type="submit" value="OK" class="ampstart-btn caps">
+    <input type="submit" value="Subscribe" class="ampstart-btn caps">
+    <div submit-success>
+      <template type="amp-mustache">
+        Success! Thanks {{name}} for trying the <code>amp-form</code> demo! Try to insert the word "error" as a name input in the form to see how <code>amp-form</code> handles errors.
+      </template>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+        Error! Thanks {{name}} for trying the <code>amp-form</code> demo with an error response.
+      </template>
+    </div>
   </form>
 </body>
 </html>

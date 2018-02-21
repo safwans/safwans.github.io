@@ -17,4 +17,4 @@ development, but won't work when published live.
 
 Proxies to check out:
 * https://crossorigin.me/
-* https://jsonp.afeld.me/
+* https://jsonp.afeld.me/ 

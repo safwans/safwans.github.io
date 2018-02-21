@@ -1,0 +1,497 @@
+
+
+<!doctype html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+    
+    
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-live-list" src="https://cdn.ampproject.org/v0/amp-live-list-0.1.js"></script>
+    <link rel="canonical" href="https://ampbyexample.com/samples_templates/live_blog/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+      
+      
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "LiveBlogPosting",
+          "url": "https://ampbyexample.com/samples_templates/live_blog/",
+          "articleBody": "This is the initial text in the blog post",
+          "datePublished": "2016-09-08T23:04:28.24337",
+          "about": {
+            "@type": "Event",
+            "description": "This is my great live blog sample",
+            "startDate": "2016-07-23T13:00:00-07:00",
+            "endDate": "2016-07-23T15:00:00-07:00",
+            "name": "An AMP Live Blog",
+            "url": "https://ampbyexample.com/samples_templates/live_blog/",
+            "location": {
+              "@type": "EventVenue",
+              "name": "The Venue Name",
+              "address" : {
+                "@type": "PostalAddress",
+                "streetAddress": "701 Mission St",
+                "addressLocality": "San Francisco",
+                "addressRegion": "CA",
+                "postalCode": "94103",
+                "addressCountry": "US"
+              }
+            }
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://ampbyexample.com/img/favicon.png",
+              "width": "512",
+              "height": "512"
+            }
+          },
+          "author": {
+            "@type": "Person",
+            "sameAs": "https://github.com/kul3r4",
+            "name": "Chiara Chiappini"
+          },
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://ampbyexample.com/img/abe_preview.png",
+            "height": "1532",
+            "width": "2046"
+          },
+          "coverageStartTime": "2016-07-23T11:30:00-07:00",
+          "coverageEndTime": "2016-07-23T16:00:00-07:00",
+          "headline": "An AMP Live Blog",
+          "description": "A Live Blog implementation with AMP",
+          "liveBlogUpdate": [
+          {
+            &#34;@type&#34;: &#34;BlogPosting&#34;,
+            &#34;headline&#34;: &#34;Green landscape&#34;,
+            &#34;url&#34;: &#34;https://ampbyexample.com/samples_templates/live_blog/#post1&#34;,
+            &#34;datePublished&#34;: &#34;2018-01-16T10:06:28.968674&#43;00:00&#34;,
+            &#34;author&#34;: {
+              &#34;@type&#34;: &#34;Person&#34;,
+              &#34;sameAs&#34;: &#34;https://github.com/kul3r4&#34;,
+              &#34;name&#34;: &#34;Chiara Chiappini&#34;
+            },
+            &#34;articleBody&#34;: {
+              &#34;@type&#34;: &#34;Text&#34;
+            },
+            &#34;publisher&#34;: {
+              &#34;@type&#34;: &#34;Organization&#34;,
+              &#34;name&#34;: &#34;AMP By Example&#34;,
+              &#34;logo&#34;: {
+                &#34;@type&#34;: &#34;ImageObject&#34;,
+                &#34;url&#34;: &#34;https://ampbyexample.com/img/favicon.png&#34;,
+                &#34;width&#34;: &#34;512&#34;,
+                &#34;height&#34;: &#34;512&#34;
+              }
+            },
+            &#34;image&#34;: {
+              &#34;@type&#34;: &#34;ImageObject&#34;,
+              &#34;url&#34;: &#34;https://ampbyexample.com/img/landscape_green_1280x853.jpg&#34;,
+              &#34;width&#34;: &#34;853&#34;,
+              &#34;height&#34;: &#34;1280&#34;
+            }
+          },
+          {
+            &#34;@type&#34;: &#34;BlogPosting&#34;,
+            &#34;headline&#34;: &#34;Mountains&#34;,
+            &#34;url&#34;: &#34;https://ampbyexample.com/samples_templates/live_blog/#post2&#34;,
+            &#34;datePublished&#34;: &#34;2018-01-16T10:06:28.968708&#43;00:00&#34;,
+            &#34;author&#34;: {
+              &#34;@type&#34;: &#34;Person&#34;,
+              &#34;sameAs&#34;: &#34;https://github.com/kul3r4&#34;,
+              &#34;name&#34;: &#34;Chiara Chiappini&#34;
+            },
+            &#34;articleBody&#34;: {
+              &#34;@type&#34;: &#34;Text&#34;
+            },
+            &#34;publisher&#34;: {
+              &#34;@type&#34;: &#34;Organization&#34;,
+              &#34;name&#34;: &#34;AMP By Example&#34;,
+              &#34;logo&#34;: {
+                &#34;@type&#34;: &#34;ImageObject&#34;,
+                &#34;url&#34;: &#34;https://ampbyexample.com/img/favicon.png&#34;,
+                &#34;width&#34;: &#34;512&#34;,
+                &#34;height&#34;: &#34;512&#34;
+              }
+            },
+            &#34;image&#34;: {
+              &#34;@type&#34;: &#34;ImageObject&#34;,
+              &#34;url&#34;: &#34;https://ampbyexample.com/img/landscape_mountains_1280x657.jpg&#34;,
+              &#34;width&#34;: &#34;853&#34;,
+              &#34;height&#34;: &#34;1280&#34;
+            }
+          },
+          {
+            &#34;@type&#34;: &#34;BlogPosting&#34;,
+            &#34;headline&#34;: &#34;Road leading to a lake&#34;,
+            &#34;url&#34;: &#34;https://ampbyexample.com/samples_templates/live_blog/#post3&#34;,
+            &#34;datePublished&#34;: &#34;2018-01-16T10:06:28.96871&#43;00:00&#34;,
+            &#34;author&#34;: {
+              &#34;@type&#34;: &#34;Person&#34;,
+              &#34;sameAs&#34;: &#34;https://github.com/kul3r4&#34;,
+              &#34;name&#34;: &#34;Chiara Chiappini&#34;
+            },
+            &#34;articleBody&#34;: {
+              &#34;@type&#34;: &#34;Text&#34;
+            },
+            &#34;publisher&#34;: {
+              &#34;@type&#34;: &#34;Organization&#34;,
+              &#34;name&#34;: &#34;AMP By Example&#34;,
+              &#34;logo&#34;: {
+                &#34;@type&#34;: &#34;ImageObject&#34;,
+                &#34;url&#34;: &#34;https://ampbyexample.com/img/favicon.png&#34;,
+                &#34;width&#34;: &#34;512&#34;,
+                &#34;height&#34;: &#34;512&#34;
+              }
+            },
+            &#34;image&#34;: {
+              &#34;@type&#34;: &#34;ImageObject&#34;,
+              &#34;url&#34;: &#34;https://ampbyexample.com/img/landscape_lake_1280x857.jpg&#34;,
+              &#34;width&#34;: &#34;853&#34;,
+              &#34;height&#34;: &#34;1280&#34;
+            }
+          },
+          {
+            &#34;@type&#34;: &#34;BlogPosting&#34;,
+            &#34;headline&#34;: &#34;Forested hills&#34;,
+            &#34;url&#34;: &#34;https://ampbyexample.com/samples_templates/live_blog/#post4&#34;,
+            &#34;datePublished&#34;: &#34;2018-01-16T10:06:28.968712&#43;00:00&#34;,
+            &#34;author&#34;: {
+              &#34;@type&#34;: &#34;Person&#34;,
+              &#34;sameAs&#34;: &#34;https://github.com/kul3r4&#34;,
+              &#34;name&#34;: &#34;Chiara Chiappini&#34;
+            },
+            &#34;articleBody&#34;: {
+              &#34;@type&#34;: &#34;Text&#34;
+            },
+            &#34;publisher&#34;: {
+              &#34;@type&#34;: &#34;Organization&#34;,
+              &#34;name&#34;: &#34;AMP By Example&#34;,
+              &#34;logo&#34;: {
+                &#34;@type&#34;: &#34;ImageObject&#34;,
+                &#34;url&#34;: &#34;https://ampbyexample.com/img/favicon.png&#34;,
+                &#34;width&#34;: &#34;512&#34;,
+                &#34;height&#34;: &#34;512&#34;
+              }
+            },
+            &#34;image&#34;: {
+              &#34;@type&#34;: &#34;ImageObject&#34;,
+              &#34;url&#34;: &#34;https://ampbyexample.com/img/landscape_trees_1280x960.jpg&#34;,
+              &#34;width&#34;: &#34;853&#34;,
+              &#34;height&#34;: &#34;1280&#34;
+            }
+          },
+          {
+            &#34;@type&#34;: &#34;BlogPosting&#34;,
+            &#34;headline&#34;: &#34;Scattered houses&#34;,
+            &#34;url&#34;: &#34;https://ampbyexample.com/samples_templates/live_blog/#post5&#34;,
+            &#34;datePublished&#34;: &#34;2018-01-16T10:06:28.968713&#43;00:00&#34;,
+            &#34;author&#34;: {
+              &#34;@type&#34;: &#34;Person&#34;,
+              &#34;sameAs&#34;: &#34;https://github.com/kul3r4&#34;,
+              &#34;name&#34;: &#34;Chiara Chiappini&#34;
+            },
+            &#34;articleBody&#34;: {
+              &#34;@type&#34;: &#34;Text&#34;
+            },
+            &#34;publisher&#34;: {
+              &#34;@type&#34;: &#34;Organization&#34;,
+              &#34;name&#34;: &#34;AMP By Example&#34;,
+              &#34;logo&#34;: {
+                &#34;@type&#34;: &#34;ImageObject&#34;,
+                &#34;url&#34;: &#34;https://ampbyexample.com/img/favicon.png&#34;,
+                &#34;width&#34;: &#34;512&#34;,
+                &#34;height&#34;: &#34;512&#34;
+              }
+            },
+            &#34;image&#34;: {
+              &#34;@type&#34;: &#34;ImageObject&#34;,
+              &#34;url&#34;: &#34;https://ampbyexample.com/img/landscape_village_1280x853.jpg&#34;,
+              &#34;width&#34;: &#34;853&#34;,
+              &#34;height&#34;: &#34;1280&#34;
+            }
+          },
+          {
+            &#34;@type&#34;: &#34;BlogPosting&#34;,
+            &#34;headline&#34;: &#34;Canyon&#34;,
+            &#34;url&#34;: &#34;https://ampbyexample.com/samples_templates/live_blog/#post6&#34;,
+            &#34;datePublished&#34;: &#34;2018-01-16T10:06:28.968714&#43;00:00&#34;,
+            &#34;author&#34;: {
+              &#34;@type&#34;: &#34;Person&#34;,
+              &#34;sameAs&#34;: &#34;https://github.com/kul3r4&#34;,
+              &#34;name&#34;: &#34;Chiara Chiappini&#34;
+            },
+            &#34;articleBody&#34;: {
+              &#34;@type&#34;: &#34;Text&#34;
+            },
+            &#34;publisher&#34;: {
+              &#34;@type&#34;: &#34;Organization&#34;,
+              &#34;name&#34;: &#34;AMP By Example&#34;,
+              &#34;logo&#34;: {
+                &#34;@type&#34;: &#34;ImageObject&#34;,
+                &#34;url&#34;: &#34;https://ampbyexample.com/img/favicon.png&#34;,
+                &#34;width&#34;: &#34;512&#34;,
+                &#34;height&#34;: &#34;512&#34;
+              }
+            },
+            &#34;image&#34;: {
+              &#34;@type&#34;: &#34;ImageObject&#34;,
+              &#34;url&#34;: &#34;https://ampbyexample.com/img/landscape_canyon_1280x1700.jpg&#34;,
+              &#34;width&#34;: &#34;853&#34;,
+              &#34;height&#34;: &#34;1280&#34;
+            }
+          },
+          {
+            &#34;@type&#34;: &#34;BlogPosting&#34;,
+            &#34;headline&#34;: &#34;Desert&#34;,
+            &#34;url&#34;: &#34;https://ampbyexample.com/samples_templates/live_blog/#post7&#34;,
+            &#34;datePublished&#34;: &#34;2018-01-16T10:06:28.968716&#43;00:00&#34;,
+            &#34;author&#34;: {
+              &#34;@type&#34;: &#34;Person&#34;,
+              &#34;sameAs&#34;: &#34;https://github.com/kul3r4&#34;,
+              &#34;name&#34;: &#34;Chiara Chiappini&#34;
+            },
+            &#34;articleBody&#34;: {
+              &#34;@type&#34;: &#34;Text&#34;
+            },
+            &#34;publisher&#34;: {
+              &#34;@type&#34;: &#34;Organization&#34;,
+              &#34;name&#34;: &#34;AMP By Example&#34;,
+              &#34;logo&#34;: {
+                &#34;@type&#34;: &#34;ImageObject&#34;,
+                &#34;url&#34;: &#34;https://ampbyexample.com/img/favicon.png&#34;,
+                &#34;width&#34;: &#34;512&#34;,
+                &#34;height&#34;: &#34;512&#34;
+              }
+            },
+            &#34;image&#34;: {
+              &#34;@type&#34;: &#34;ImageObject&#34;,
+              &#34;url&#34;: &#34;https://ampbyexample.com/img/landscape_desert_1280x853.jpg&#34;,
+              &#34;width&#34;: &#34;853&#34;,
+              &#34;height&#34;: &#34;1280&#34;
+            }
+          },
+          {
+            &#34;@type&#34;: &#34;BlogPosting&#34;,
+            &#34;headline&#34;: &#34;Houses&#34;,
+            &#34;url&#34;: &#34;https://ampbyexample.com/samples_templates/live_blog/#post8&#34;,
+            &#34;datePublished&#34;: &#34;2018-01-16T10:06:28.968717&#43;00:00&#34;,
+            &#34;author&#34;: {
+              &#34;@type&#34;: &#34;Person&#34;,
+              &#34;sameAs&#34;: &#34;https://github.com/kul3r4&#34;,
+              &#34;name&#34;: &#34;Chiara Chiappini&#34;
+            },
+            &#34;articleBody&#34;: {
+              &#34;@type&#34;: &#34;Text&#34;
+            },
+            &#34;publisher&#34;: {
+              &#34;@type&#34;: &#34;Organization&#34;,
+              &#34;name&#34;: &#34;AMP By Example&#34;,
+              &#34;logo&#34;: {
+                &#34;@type&#34;: &#34;ImageObject&#34;,
+                &#34;url&#34;: &#34;https://ampbyexample.com/img/favicon.png&#34;,
+                &#34;width&#34;: &#34;512&#34;,
+                &#34;height&#34;: &#34;512&#34;
+              }
+            },
+            &#34;image&#34;: {
+              &#34;@type&#34;: &#34;ImageObject&#34;,
+              &#34;url&#34;: &#34;https://ampbyexample.com/img/landscape_houses_1280x803.jpg&#34;,
+              &#34;width&#34;: &#34;853&#34;,
+              &#34;height&#34;: &#34;1280&#34;
+            }
+          },
+          {
+            &#34;@type&#34;: &#34;BlogPosting&#34;,
+            &#34;headline&#34;: &#34;Blue sea&#34;,
+            &#34;url&#34;: &#34;https://ampbyexample.com/samples_templates/live_blog/#post9&#34;,
+            &#34;datePublished&#34;: &#34;2018-01-16T10:06:28.96872&#43;00:00&#34;,
+            &#34;author&#34;: {
+              &#34;@type&#34;: &#34;Person&#34;,
+              &#34;sameAs&#34;: &#34;https://github.com/kul3r4&#34;,
+              &#34;name&#34;: &#34;Chiara Chiappini&#34;
+            },
+            &#34;articleBody&#34;: {
+              &#34;@type&#34;: &#34;Text&#34;
+            },
+            &#34;publisher&#34;: {
+              &#34;@type&#34;: &#34;Organization&#34;,
+              &#34;name&#34;: &#34;AMP By Example&#34;,
+              &#34;logo&#34;: {
+                &#34;@type&#34;: &#34;ImageObject&#34;,
+                &#34;url&#34;: &#34;https://ampbyexample.com/img/favicon.png&#34;,
+                &#34;width&#34;: &#34;512&#34;,
+                &#34;height&#34;: &#34;512&#34;
+              }
+            },
+            &#34;image&#34;: {
+              &#34;@type&#34;: &#34;ImageObject&#34;,
+              &#34;url&#34;: &#34;https://ampbyexample.com/img/landscape_sea_1280x848.jpg&#34;,
+              &#34;width&#34;: &#34;853&#34;,
+              &#34;height&#34;: &#34;1280&#34;
+            }
+          },
+          {
+            &#34;@type&#34;: &#34;BlogPosting&#34;,
+            &#34;headline&#34;: &#34;Sailing ship&#34;,
+            &#34;url&#34;: &#34;https://ampbyexample.com/samples_templates/live_blog/#post10&#34;,
+            &#34;datePublished&#34;: &#34;2018-01-16T10:06:28.968722&#43;00:00&#34;,
+            &#34;author&#34;: {
+              &#34;@type&#34;: &#34;Person&#34;,
+              &#34;sameAs&#34;: &#34;https://github.com/kul3r4&#34;,
+              &#34;name&#34;: &#34;Chiara Chiappini&#34;
+            },
+            &#34;articleBody&#34;: {
+              &#34;@type&#34;: &#34;Text&#34;
+            },
+            &#34;publisher&#34;: {
+              &#34;@type&#34;: &#34;Organization&#34;,
+              &#34;name&#34;: &#34;AMP By Example&#34;,
+              &#34;logo&#34;: {
+                &#34;@type&#34;: &#34;ImageObject&#34;,
+                &#34;url&#34;: &#34;https://ampbyexample.com/img/favicon.png&#34;,
+                &#34;width&#34;: &#34;512&#34;,
+                &#34;height&#34;: &#34;512&#34;
+              }
+            },
+            &#34;image&#34;: {
+              &#34;@type&#34;: &#34;ImageObject&#34;,
+              &#34;url&#34;: &#34;https://ampbyexample.com/img/landscape_ship_1280x853.jpg&#34;,
+              &#34;width&#34;: &#34;853&#34;,
+              &#34;height&#34;: &#34;1280&#34;
+            }
+          }
+        ]
+        }
+      </script>
+      <style amp-custom>
+        .carousel .slide > amp-img > img {
+          object-fit: contain;
+        }
+        amp-social-share {
+          margin-right: 8px;
+        }
+        .heading {
+          padding: 1rem;
+        }
+        .heading > #summary {
+          font-weight: 500;
+        }
+        .heading > small {
+          color: #656565;
+        }
+        .date {
+          color: #a8a3ae;
+          font-size: 12px;
+        }
+        .blog {
+          padding: 0;
+          min-width: 70%;
+          background: #fff;
+        }
+        .blog p {
+          margin: 0 16px;
+        }
+        .blog .text {
+          color: black;
+          padding-top: 0;
+        }
+        .blog .title {
+          color: white;
+          position: relative;
+          top: -48px;
+          margin: 0 16px;
+          height: 0;
+          padding-bottom: 16px;
+        }
+        .blog .social-share {
+          line-height:36px;
+          display: flex;
+          padding-bottom: 16px;
+          padding-top: 16px;
+        }
+        #live-list-update-button {
+          position: fixed;
+          top: 10px;
+          right: 16px;
+        }
+        @media (max-width: 600px) {
+          #live-list-update-button {
+            top: 60px;
+          }
+        }
+    .pagination {
+      display: inline-block;
+      padding: 0;
+    }
+    amp-live-list [pagination] nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pagination li {
+      display: inline;
+      padding: 10px;
+      list-style-type: none;
+    }
+      </style>
+
+  </head>
+  <body>
+    <section class="heading">
+      <h1>An AMP Live Blog</h1>
+      <p><small class="date">Fri July 22 2016</small></p>
+      <p><small>by Chiara Chiappini</small></p>
+      <p id="summary">This is a sample article demonstrating how to write a live blog in AMP. It demonstrates the usage of amp-live-list component which allows to create live blogs.</p>
+    </section>
+    
+    
+    <amp-live-list 
+    layout="container"
+    data-poll-interval="15000"
+    data-max-items-per-page="5"
+    id="amp-live-list-insert-blog">
+
+    <button id ="live-list-update-button" update on="tap:amp-live-list-insert-blog.update" class="ampstart-btn caps">You have updates</button>
+    <div items>
+      
+          <div id="post1" data-sort-time="20180116221606">
+            <div class="ampstart-card m1 blog">
+              <amp-img src="/img/landscape_green_1280x853.jpg"
+                  layout="responsive" width="1280" height="853">
+              </amp-img>
+              <h4 class="title">Green landscape</h4>
+              <p class="date">22:16:06</p>
+              <p class="text">A green landscape with trees.</p>
+              <p class="social-share">
+                <amp-social-share type="twitter" width="45" height="33" data-param-url="AMPDOC_URL#post1"></amp-social-share>
+                <amp-social-share type="facebook" width="45" height="33" data-attribution="254325784911610" data-param-url="AMPDOC_URL#post1"></amp-social-share>
+                <amp-social-share type="gplus" width="45" height="33" data-param-url="AMPDOC_URL#post1"></amp-social-share>
+                <amp-social-share type="email" width="45" height="33" data-param-url="AMPDOC_URL#post1"></amp-social-share>
+                <amp-social-share type="pinterest" width="45" height="33" data-param-url="AMPDOC_URL#post1"></amp-social-share>
+              </p>
+            </div>
+          </div>
+        
+    </div>
+
+    <div pagination>
+      <nav aria-label="amp live list pagination">
+      <ul class="pagination">
+        
+        <li>1</li>
+        
+      </ul>
+      </nav>
+    </div>
+
+  </amp-live-list>
+
+  </body>
+</html>

@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /docs/
+Disallow: /wordpress/wp-admin/
+Disallow: /wordpress/wp-includes/
+Disallow: /wordpress/docs/
+
+User-agent: Googlebot
+Allow: *.js
+Allow: *.css
+Allow: /wp-includes/css/
+Allow: /wp-includes/js/
+Allow: /wordpress/wp-includes/css/
+Allow: /wordpress/wp-includes/js/

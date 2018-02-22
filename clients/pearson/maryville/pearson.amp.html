@@ -1,0 +1,235 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+<link rel="shortcut icon" href="amp_favicon.png">
+<title>Pearson Maryville - AMP</title>
+<!-- ss -->
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<meta charset="utf-8" />
+<link rel="canonical" href="article.html">
+<meta name="viewport"
+    content="width=device-width, minimum-scale=1, initial-scale=1">
+
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+
+<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<style amp-custom>
+body {
+    width: 100%; margin: 0; padding: 0; 
+}
+header {
+    width:100%;
+}
+#logo {
+    width:70%;
+    display: inline-block;
+}
+#heading {
+    width:20%;
+    display: inline-block;
+    font-size: 12px;
+}
+h2 {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+h3 {
+  color: #ca0828;
+  font-weight: 900;
+  line-height: 1.2;
+  text-align: center;
+}
+
+div.button {
+
+  background-color: black;
+  width: 210px;
+  height: 30px;
+  display: block;
+text-align: center;
+horizontal-align: center;
+padding: 10px 10px;
+margin: auto auto;
+}
+
+
+.button a {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 15 15;
+  
+  
+}
+
+footer {
+  background-color: grey;
+}
+#foot {
+  display:inline;
+}
+
+#content {
+  background-color: #ccc;
+}
+
+.copy {
+  background-color: #c8102e;
+  text-align: center;
+  
+}
+.copy::after{
+      content: '';
+    display: block;
+    clear: both;
+  
+}
+
+.ampTabContainer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .tabButton[selected] {
+        outline: none;
+        background: #a50a1c;
+    }
+    
+    .tabButton {
+        list-style: none;
+        flex-grow: 1;
+        text-align: center;
+        cursor: pointer;
+        height: 50px;
+        font-size: 40px;
+        background-color: #710000;
+        color: white;
+    }
+    
+    .tabContent {
+        display: none;
+        width: 100%;
+        order: 1; /* must be greater than the order of the tab buttons to flex to the next line */
+        border: 1px solid #ccc;
+    }
+    
+    .tabButton[selected]+.tabContent {
+        display: block;
+    }
+
+    /* For example below (not required) */
+    .itemCustom {
+        border: 1px solid #000;
+        height: 280px;
+        width: 380px;
+        margin: 10px;
+        text-align: center;
+        padding-top: 140px;
+    }
+    amp-selector {
+      padding: 1rem;
+      margin: 1rem;
+    }
+    
+    #front {
+      background-color: #c8102e;
+    }
+    #programdetails{
+      font-size: 30px;
+      color: white;
+      text-align: center;
+    }
+</style>
+</head>
+<body>
+  <div id="logo">
+    <amp-img
+      src="https://s3-us-east-2.amazonaws.com/maryville/wp-content/uploads/2017/12/04215012/Maryville-University-Logo-Horizontal-500.png"
+      role="image" width="217" height="65"
+      alt="Maryville University Online Logo"> 
+    </amp-img>
+  </div>
+  <div id="heading">
+    <h1>Maryville Online</h1>
+  </div>
+
+  <div id="front">
+    <p id="programdetails">Get Program Details</p>
+    <amp-selector role="tablist" layout="container"
+      class="ampTabContainer">
+    <div role="tab" class="tabButton" selected option="a">1</div>
+    <div role="tabpanel" class="tabContent">Tab one content...</div>
+    <div role="tab" class="tabButton" option="b">2</div>
+    <div role="tabpanel" class="tabContent">Tab two content...</div>
+    <div role="tab" class="tabButton" option="c">3</div>
+    <div role="tabpanel" class="tabContent">Tab three content...</div>
+    </amp-selector>
+  </div>
+
+
+  <amp-img
+    src="https://s3-us-east-2.amazonaws.com/maryville/wp-content/uploads/2017/11/14114249/Home-Lets-Be-Brave-Together.jpg"
+    role="image" width="412" height="200"> </amp-img>
+
+  <h2>Maryville Online&nbsp;Programs</h2>
+  <h3>The Future Belongs to the&nbsp;Brave</h3>
+  <p>It takes courage to go back to school when you have so many
+    things going on in your life. But you’re not alone. In fact, we’re
+    laser-focused on your success. You’ll get a personalized,
+    student-first experience unlike any other. This is your moment — and
+    we’re with you all the way. Let’s get started today, because
+    tomorrow belongs to the&nbsp;brave.</p>
+  <div id="content">
+    <p>
+      <strong><span>Why Choose
+          Maryville?</span></strong>
+    </p>
+    <ul>
+      <li><strong>History:</strong>&nbsp;Founded in 1872, Maryville
+        is one of the oldest private institutions in the&nbsp;region.</li>
+      <li><strong>Faculty:</strong>&nbsp;90% of full-time Maryville
+        faculty members hold Ph.D. or terminal&nbsp;degrees.</li>
+      <li><strong>Personal Attention:</strong>&nbsp;Maryville has a
+        student-to-faculty ratio of 13:1 and an average class size
+        of&nbsp;20.</li>
+      <li><strong>Financial Assistance:</strong> Seek to qualify
+        for financial&nbsp;aid.</li>
+    </ul>
+
+    <p>
+      <strong><span> Rankings and Recognition</span></strong>
+    </p>
+    <ul class="right">
+      <li><strong>Accredited</strong> by the Higher
+        Learning&nbsp;Commission</li>
+      <li>Listed among <strong>“America’s Top Colleges”</strong>
+        —&nbsp;<em>Forbes, 2017</em></li>
+      <li><strong>Ranked among the best values</strong> in private
+        colleges —&nbsp;<em>Kiplinger’s Personal Finance,</em>&nbsp;2017</li>
+      <li>No. 3 <strong>fastest-growing</strong> university&nbsp;<em>(Chronicle
+          of Higher Education)</em></li>
+    </ul>
+  </div>
+  <div class="copy" role="article">
+    Learn more about our online degree programs.
+    <div class="button">
+      <a href="#">Download Brochure</a>
+    </div>
+  </div>
+
+  <footer>
+    Copyright © 2018 Maryville University. All rights reserved.
+    <div id="foot">
+      <nav role="navigation">
+        <a href="#">About</a> <a href="#">Privacy</a> <a href="#">Complaint
+          Resolution</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

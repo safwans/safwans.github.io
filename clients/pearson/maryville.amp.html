@@ -137,12 +137,21 @@ footer {
     
     #front {
       background-color: #c8102e;
+      text-align: center;
     }
     #programdetails{
       font-size: 30px;
       color: white;
       text-align: center;
     }
+    #nextbutton {
+      background-color: blue;
+      color: white;
+      width: 100px;
+      height: 30px;
+      text-align: center;
+    }
+    
 </style>
 </head>
 <body>
@@ -163,12 +172,14 @@ footer {
       class="ampTabContainer">
     <div role="tab" class="tabButton" selected option="a">1</div>
     <div role="tabpanel" class="tabContent">Tab one content...</div>
-    <div role="tab" class="tabButton" option="b">2</div>
+    <div role="tab" class="tabButton" option="b" >2</div>
     <div role="tabpanel" class="tabContent">Tab two content...</div>
     <div role="tab" class="tabButton" option="c">3</div>
     <div role="tabpanel" class="tabContent">Tab three content...</div>
     </amp-selector>
+    <button id="nextbutton"> Next </button>
   </div>
+  
 
 
   <amp-img

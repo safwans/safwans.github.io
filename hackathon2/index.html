@@ -1,0 +1,243 @@
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+    <title>Hello, AMP - Capella Edu</title>
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+      </style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+      
+      <style amp-custom>
+      /* any custom styles go here. */
+         .header-hackathon {
+            background-color: #000;    
+            height: 60px;
+        }
+        .image-1-hackathon {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .promonumber {
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            float: right;
+            padding-top: 20px;
+            padding-right: 10px;
+        }
+        .image-2-hackathon {
+            background-position: 50% 0%; 
+            background-repeat: no-repeat; 
+            height: 300px;
+        }
+        .form-hackathon {
+            font-size: 16px; 
+            line-height: 22px;
+        }
+        .selectbox {
+            position: relative;
+            background: rgba(255,255,255,0.5);
+            padding: 16px;
+            border: 1px solid #000;
+            margin-bottom: 10px;
+        }
+          .form-input {
+            position: relative;
+            background: rgba(255,255,255,0.5);
+            padding: 16px;
+            border: 1px solid #000;
+            margin-bottom: 10px;
+          }
+          .form-button {
+              font-size: 16px;
+              line-height: 23px;
+              background-color: #005a8c;
+              color: #fff;
+          }
+        .footer-hackathon {
+            background-color: #000;
+            height:44px;
+            align-items: center;
+        }
+        .footer-hackathon a {
+            font-size: 14px;
+            color: #999;
+            line-height: 23px;
+            margin-top: 15px;
+            margin-right: 10px;
+            text-decoration: none;
+        }  
+        .normal-text-image-hackathon {
+            text-align: center;
+           font-size: 16px;
+            color: #000;
+            line-height: 23px;   
+        }  
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to the Google Mobile Hackathon - Capella Education</h1>
+      <!-- Header with Logo and static call -->
+      <div class="header-hackathon">
+          <amp-img class="image-1-hackathon" src="amp_capella_logo_480_300.png" alt="Capella Header" height="40" width="230"></amp-img>
+          <a class="promonumber" href="tel:+1.855.400.1348" title="1.855.400.1348" target="_blank">Call</a>
+      </div>
+      
+      <!-- Hero Image -->
+      <div class="hero-hackathon">
+        <amp-img class="image-2-hackathon" src="amp_hero_480_300.jpg" alt="Capella Header" height="300"></amp-img>
+      </div>
+      <!-- Actual Forms with static dropdowns -->
+      <div class="form-hackathon">
+        <form method="POST"
+        action-xhr="https://lp.capella-mt.com/landingpageproxy/index.aspx"
+        target="_top">
+        <fieldset>
+          
+        <select class="selectbox" id="degree_code" title="Select your degree of interest here" name="degree_code" data-title="- Degree -">
+                <option value="">- Degree -</option>
+                <option value="728">Bachelor's</option>
+                <option value="730">Certificate</option>
+                <option value="731">Doctoral</option>
+                <option value="729">Master's</option>
+            </select>
+            <br>
+            <select class="selectbox" id="study_area_code" title="Select your study area of interest here" name="study_area_code" data-title="- Area of study -" data-parentid="728">
+                <option value="" data-spec="" data-specid="">- Area of study -</option>
+                <option value="5887">Analytics</option>
+                <option value="732">Business</option>
+                <option value="2933">Criminal Justice</option>
+                <option value="739">Health Administration</option>
+                <option value="747">Human Resource Management</option>
+                <option value="751">Information Technology </option>
+                <option value="757">Nursing </option>
+                <option value="760">Psychology </option>
+                <option value="5936">Public Health</option>
+            </select>
+            <br>
+            <select class="selectbox" id="study_area_spec" title="Select your specialization of interest here" name="study_area_spec" data-title="- Specialization -" data-parentid="732" data-degree="728">
+                <option value="">- Specialization -</option>
+                <option value="673" data-flex="3350">BS - Accounting</option>
+                <option value="3282" data-flex="null">BS - Accounting CPA Pathway</option>
+                <option value="351" data-flex="3275">BS - Business Administration</option>
+                <option value="3068" data-flex="null">BS - Business Intelligence</option>
+                <option value="360" data-flex="null">BS - Finance</option>
+                <option value="1420" data-flex="3278">BS - Health Care Management</option>
+                <option value="357" data-flex="3279">BS - Human Resource Management</option>
+                <option value="359" data-flex="3280">BS - Management and Leadership</option>
+                <option value="358" data-flex="null">BS - Marketing</option>
+                <option value="364" data-flex="3277">BS - Project Management</option>
+                <option value="1038" data-flex="3276">BS - Undecided</option>
+            </select>
+           <br> 
+            
+        <div class="form-input">
+<input type="text" placeholder="First Name" title="Enter your first name here" value=""
+name="first_name" id="firstName" class="form-control  jvInput" maxlength="30"/>
+
+</div>
+<div class="form-input">
+<input type="text" placeholder="Last Name" title="Enter your last name here" value="" name="last_name"
+id="lastName" class="form-control  jvInput" maxlength="30"/>
+</div>
+            
+        <div class="form-input">
+
+<input type="text" value="" placeholder="Email" title="Enter your Email Address here" name="Email"
+id="Email" class="form-control jvInput" maxlength="50"/>
+</div>
+
+
+
+<div class="form-input">
+<input type="text" placeholder="Phone Number" title="Enter your phone number here" value="" name="phone"
+id="phone" class="form-control phone jvInput" maxlength="20" />
+</div>
+
+            <div class="form-input">
+<input type="text" placeholder="ZIP/Postal Code" title="Enter your Zip code here" value="" name="zip"
+id="zip" class="form-control  jvInput" maxlength="9"/>
+
+</div>
+          
+            
+             <p class="normal-text-image-hackathon">By providing your information, you consent to Capella University sending you occasional communications and special promotions.</p>
+          <input class="form-button" type="submit"
+            value="Request Information">
+           
+        </fieldset>
+            
+        <!-- hidden fields -->
+            <input type="hidden" id="pub_id" name="pub_id" value="" />
+            <input type="hidden" id="subaffilid" name="subaffilid" value="" />
+
+            <input type="hidden" name="d_lsid" value="1577"
+class="desktop" /> 
+
+            <input type="hidden" name="m_lsid" value="1602" class="mobile" /> 
+
+            <input type="hidden" name="d_pin" value="80518819" class="desktop" /> 
+
+            <input type="hidden" name="m_pin" value="58523277" class="mobile" />
+
+            <input type="hidden" name="d_revkey" value="226073" class="desktop" /> 
+
+            <input type="hidden" name="m_revkey" value="226098"
+class="mobile" />
+
+            <input id="leadid_token" name="universal_leadid" type="hidden" value=""/>
+            
+        <!-- Validation success or failure 
+            <div submit-success>
+              <template type="amp-mustache">
+                Success! Thanks {{first_name}} for trying the <code>amp-form</code> demo! Try to insert the word "error" as a name input in the form to see how <code>amp-form</code> handles errors.
+              </template>
+            </div>
+            <div submit-error>
+              <template type="amp-mustache">
+                Error! Thanks {{first_name}} for trying the <code>amp-form</code> demo with an error response.
+              </template>
+            </div>
+        -->    
+            
+      </form>
+      </div>
+      
+    <!-- Normal text, image stuff -->
+      <div class="normal-text-image-hackathon">
+          <p >100% ONLINE LEARNING</p>
+          <amp-img src="cq5dam.thumbnail.480.300.png" alt="Capella Header" height="100" width="100" class="image-3-hackathon"></amp-img>
+          <br>
+          <span >Capella University offers greater freedom, more control, and the ultimate flexibility by providing a 100% online curriculum and 24-hour access to courses. Designed for busy, working professionals like you, at Capella, class is anywhere, and at any time.</span>
+          <br>
+      </div>
+      
+      <!-- Footer -->
+      <div>
+        <div class="footer-hackathon">
+                <a href="/contact-us">Contact Us</a>
+                <a href="/legal">Legal</a>
+                <a href="/terms-of-use">Terms of Use</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/adchoices">Ad Choices</a>
+                                                                               
+        </div>
+      </div>
+      
+      
+  </body>
+</html>

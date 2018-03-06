@@ -135,7 +135,7 @@ footer {
       margin: 1rem;
     }
     
-    #front {
+    #main-form {
       background-color: #c8102e;
       text-align: center;
       width: 100%;
@@ -145,7 +145,7 @@ footer {
       color: white;
       text-align: center;
     }
-    #nextbutton {
+    #next_button {
       background-color: black;
       color: white;
       width: 90%;
@@ -155,6 +155,9 @@ footer {
       margin: 10px 10px;
       padding: 15px 15px;
     }
+    .not_current{
+      transform: translateX(-100%);
+    } 
     
 </style>
 </head>
@@ -171,20 +174,43 @@ footer {
   </div>
   <a href="maryville.html" target="_blank"> Local Canonical </a> | <a href="https://online.maryville.edu/lpia" target="_blank"> Original</a>
 
-  <div id="front">
-    <p id="programdetails">Get Program Details</p>
-    <amp-selector role="tablist" layout="container"
-      class="ampTabContainer" disabled>
-    <div role="tab" class="tabButton" selected option="a">1</div>
-    <div role="tabpanel" class="tabContent">Tab one content...</div>
-    <div role="tab" class="tabButton" option="b" >2</div>
-    <div role="tabpanel" class="tabContent">Tab two content...</div>
-    <div role="tab" class="tabButton" option="c">3</div>
-    <div role="tabpanel" class="tabContent">Tab three content...</div>
-    </amp-selector>
-    <button id="nextbutton"> Continue </button>
-  </div>
-  
+  <form method="GET" action="https://example.com/submit"
+    action-xhr="https://example.com/submit"
+    custom-validation-reporting="as-you-go" target="_blank">
+
+    <amp-state id="state_slide">
+      <script type="application/json">
+      {"slide_number": 1}
+      </script>
+    </amp-state>
+    <div id="main-form">
+      <p id="programdetails">Get Program Details</p>
+      <amp-selector role="tablist" layout="container"
+        class="ampTabContainer" disabled>
+      <div role="tab" class="tabButton" selected option="a">1</div>
+      <div role="tabpanel" class="tabContent">Tab one content...</div>
+      
+      <div role="tab" class="tabButton" option="b">2</div>
+      <div role="tabpanel" class="tabContent">Tab two content...</div>
+      
+      <div role="tab" class="tabButton" option="c">3</div>
+      <div role="tabpanel" class="tabContent">Tab three content...</div>
+      
+      </amp-selector>
+      <button
+        class="next_button"
+        on="tap:AMP.setState({current_page: current_page ? current_page + 1 : 2, isNext: true})">
+        Continue</button>
+    </div>
+    <div>
+
+      <input type="submit" value="Submit" class="submit_btn_hidden"
+        [class]="current_page == 4 ? 'submit_btn' : 'submit_btn_hidden'"
+        [disabled]="!q5 || q5 == ''" disabled />
+    </div>
+    <p [text]="state_slide.slide_number"> slide number </p>
+
+  </form>
 
 
   <amp-img

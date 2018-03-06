@@ -10,74 +10,12 @@
   <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
 <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
   
 <style amp-custom>
 
-.page { width: 100%;}
-
-@media (min-width: 600px) {
-  .page {
-    width: 60%;
-  }
-}
-.navbar {
-  background-color: rgb(153, 0, 0);
-  color: rgb(255, 255, 255);
-  min-height: 3rem;
-}
-
-.form-content {
-  margin: 10px 10px;
-  height: 450px;
-}
-
-.page .slide {
-  border-top: 1px solid rgb(204, 204, 204);
-  border-bottom: 1px solid rgb(204, 204, 204);
-  font-weight: 600;
-  width: 100%;
-  will-change: transform;
-  padding: 10px 0px;
-}
-
-.dropdown{
-  background-color: rgb(249, 249, 249);
-  border: 1px solid rgb(153, 153, 153);
-  color: rgb(40, 40, 40);
-  display: block;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin: 10px 0px;
-  width: 100%;
-  height: 30px;
-}
-
-.text {
-  background-color: rgb(249, 249, 249);
-  display: block;
-  font-size: 0.875rem;
-  margin: 10px 0px;
-  width: 100%;
-  height: 30px;
-}
-
-p {
-  font-weight: 600;
-}
-
-progress {
-  width: 100%;
-}
-
-.button-content {
-  margin: 10px 10px;
-  text-align: center;
-}
-
 .button {
   background: maroon;
-  width: 100%;
+  width: 90%;
   color: white;
   height: 40px;
 }
@@ -86,31 +24,95 @@ button:disabled,
 button[disabled]{
   background-color: #cccccc;
   color: #666666;
-  width: 100%;
+  width: 90%;
   height: 40px;
+}
+
+.navbar {
+  background-color: rgb(153, 0, 0);
+  color: rgb(255, 255, 255);
+  min-height: 3rem;
+}
+
+.form-content {
+  margin: 10px;
+  height: 450px;
+}
+.button-content {
+  margin: 10px;
+  
+  text-align: center;
+
+}
+
+.slide {
+  border-top: 1px solid rgb(204, 204, 204);
+  padding: 10px;
+  font-weight: 600;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  position: absolute;
+  width: 100%;
+  will-change: transform;
+}
+
+.slide::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.dropdown #dropdown {
+  background-color: rgb(249, 249, 249);
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 0px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px inset;
+  color: rgb(40, 40, 40);
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 10px;
+  margin: 10px 0px;
+  width: 100%;
+  height: 30px;
+}
+
+.control {
+  background-color: rgb(249, 249, 249);
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 0px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px inset;
+  color: rgb(40, 40, 40);
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 10px;
+  margin: 10px 0px;
+  width: 100%;
+  height: 15px;
 }
 
 .hiddencomponent {
   display: none;
 }
-
 }
 </style>
 <script async src="https://cdn.ampproject.org/v0.js"></script>
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+  <noscript>
+    <style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
+  </noscript>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 </head>
-
 <body>
-<div class="page">
-  <div class="navbar">
-    <header>
+  <div class="top_nav_bar">
+    <header class="navbar navbar--logo-mobile">
     </header>
   </div>
 
-<form method="post"
-    action-xhr="https://ampbyexample.com/components/amp-form/submit-form-input-text-xhr"
+<form method="get"
+    action="https://cnn.com"
     target="_top"
-        custom-validation-reporting="as-you-go">
+    custom-validation-reporting="as-you-go">
   <amp-state id="state_slide"> 
   <script
     type="application/json">
@@ -127,18 +129,18 @@ button[disabled]{
 
   <div class="form-content">
     <div class="form-header">
-      <h1 id="title" class="h3">Demo Form</h1>
+      <h1 id="title" class="h3">GET MORE INFORMATION</h1>
     </div>
-    
-    <p class="step" [text]="'Step ' + state_slide.slide_number + ' of 3'"> Step 1 of 3 </p>
+    <p>This will only take a minute!</p>
+    <p class="step" [text]="state_slide.slide_number"> Step 1 of 3 </p>
     
     <!-- Slide 1 -->
     <div class="slide"
     [class]="(state_slide.slide_number == 1) ? 'slide' 
                 : 'hiddencomponent'">
       Are you a teacher?
-      <div>
-        <select class="dropdown" name="q1" id="dropdown" required on="change:AMP.setState({state_slide: {q1: event.value}})">
+      <div class="dropdown">
+        <select name="q1" id="dropdown" required on="change:AMP.setState({state_slide: {q1: event.value}})">
           <option value="">Select</option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
@@ -151,24 +153,24 @@ button[disabled]{
     [class]="(state_slide.slide_number == 2) ? 'slide' 
                 : 'hiddencomponent'">
       Which program are you interested in?
-      <div>
-        <select name="q2" class="dropdown" required on="change:AMP.setState({state_slide: {q2: event.value}})">
+      <div class="dropdown">
+        <select name="q2" id="dropdown" required on="change:AMP.setState({state_slide: {q2: event.value}})">
           <option value="">Select</option>
           <option value="MS">Masters of Arts</option>
           <option value="MST">Masters of Arts in Teaching</option>
         </select>
       </div>
       What is your highest level of education completed?
-      <div>
-        <select name="q3" class="dropdown" required on="change:AMP.setState({state_slide: {q3: event.value}})">
+      <div class="dropdown">
+        <select name="q3" id="dropdown" required on="change:AMP.setState({state_slide: {q3: event.value}})">
           <option value="">Select</option>
           <option value="highschool">High School</option>
           <option value="associate">Associates</option>
         </select>
       </div>
       What was undergraduate GPA?
-      <div>
-        <select name="q4" class="dropdown" required on="change:AMP.setState({state_slide: {q4: event.value}})">
+      <div class="dropdown">
+        <select name="q4" id="dropdown" required on="change:AMP.setState({state_slide: {q4: event.value}})">
           <option value="">Select</option>
           <option value="4">4.00 and above</option>
           <option value="3">3.00 and below</option>
@@ -180,23 +182,16 @@ button[disabled]{
     <div class="hiddencomponent"
     [class]="(state_slide.slide_number == 3) ? 'slide' 
                 : 'hiddencomponent'">
-      <label for="first_name" class="label">First Name</label> 
-      <input
-        id="first_name" name="first_name" class="text" type="text"
+      <label for="first_name" class="label">First Name</label> <input
+        id="first_name" name="first_name" class="control" type="text"
+        required> <label for="last_name" class="label">Last
+        Name</label> <input id="last_name" name="last_name" class="control"
+        type="text" required> <label for="email" class="label">Email</label>
+        <input id="email" name="email" class="control" type="email"
         required> 
-      <span visible-when-invalid="valueMissing"
-        validation-for="first_name"></span>  
-      <label for="last_name" class="label">Last
-        Name</label> <input id="last_name" name="last_name" class="text"
-        type="text" required> 
-        <label for="email" class="label">Email</label>
-        <input id="email" name="email" class="text" type="email"
-        required>
-        <span visible-when-invalid="typeMismatch"
-          validation-for="email"></span> 
         Country of Residence 
-        <div>
-        <select name="country_code" title="Country" class="dropdown" required>
+        <div class="dropdown">
+        <select name="country_code" title="Country" id="dropdown" required>
         <option value="" title="">— Select —</option>
         <option value="1">United States (+1)</option>
         <option value="93">Afghanistan (+93)</option>
@@ -209,7 +204,7 @@ button[disabled]{
     </div> 
     <div class="button-content">
       <button
-        class="button" 
+        class="button2" 
         [class]="(state_slide.slide_number < 3) ? 'button' 
                 : 'hiddencomponent'"
         type="button"
@@ -218,19 +213,8 @@ button[disabled]{
                     (state_slide.slide_number == 2)? (state_slide.q2 == null || state_slide.q3 == null ||  state_slide.q4 == null) :1" 
         on="tap:AMP.setState({state_slide: {slide_number: state_slide.slide_number + 1}})"]>Next
         Step</button>
-        
-        <input name="submitform" class="hiddencomponent" [class]="(state_slide.slide_number == 3) ? 'button' 
-                : 'hiddencomponent'" type="submit">
-    </div>
-    <div submit-success>
-      <template type="amp-mustache">
-        Success! Thanks {{name}} for trying the <code>amp-form</code> demo! Try to insert the word "error" as a name input in the form to see how <code>amp-form</code> handles errors.
-      </template>
-    </div>
-    <div submit-error>
-      <template type="amp-mustache">
-        Error! Thanks {{name}} for trying the <code>amp-form</code> demo with an error response.
-      </template>
+        <input [class]="(state_slide.slide_number == 3) ? 'button' 
+                : 'hiddencomponent'" class="hiddencomponent" type="submit">
     </div>
   </div>
   </form>
@@ -249,6 +233,6 @@ button[disabled]{
       }
     }
   </script> </amp-analytics>
-</div>
+
 </body>
 </html>

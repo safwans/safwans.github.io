@@ -1,0 +1,79 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+<link rel="shortcut icon" href="amp_favicon.png">
+<title>Starter AMP</title>
+
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<meta charset="utf-8" />
+<link rel="canonical" href="maryville.html">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+
+<style amp-custom>
+body {
+    width: 100%; margin: 0px; padding: 10px;
+}
+.button {
+  border: 1px; width: 80px; height: 30px; background-color: blue; color: white;
+  
+}
+</style>
+</head>
+
+<body>
+<h1> Starter AMP</h1>
+<div>
+<form method="post"
+  action-xhr="https://ampproject.org/components/amp-form/submit-form-xhrr"
+  target="_top"
+  custom-validation-reporting="show-all-on-submit">
+  <div>
+    <input type="radio"
+      id="cat"
+      class="relative"
+      name="favourite animal"
+      value="cat">
+    <label for="cat">Cat</label>
+  </div>
+  <div>
+    <input type="radio"
+      id="dog"
+      class="relative"
+      name="favourite animal"
+      value="dog">
+    <label for="dog">Dog</label>
+  </div>
+  <div>
+    <input type="radio"
+      id="other"
+      class="relative"
+      name="favourite animal"
+      value="other">
+    <label for="other">Other</label>
+  </div>
+  <input type="submit"
+    value="OK"
+    class="button">
+  <div submit-success>
+    <template type="amp-mustache">
+      Success! Thanks for trying the
+      <code>amp-form</code> demo!
+    </template>
+  </div>
+  <div submit-error>
+    <template type="amp-mustache">
+      Error!
+    </template>
+  </div>
+</form>
+</div>
+</body>
+</html>

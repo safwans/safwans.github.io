@@ -40,5 +40,10 @@ die();
         <code>amp-form</code> demo! The name submited was {{name}}
     </template>
 </div>
+<div submit-error>
+      <template type="amp-mustache">
+        Error! Thanks {{name}} for trying the <code>amp-form</code> demo with an error response.
+      </template>
+    </div>
 </body>
 </html>

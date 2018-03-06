@@ -1,0 +1,84 @@
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- ## Setup -->
+  <!-- Import the carousel component in the header. -->
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <link rel="canonical" href="https://ampbyexample.com/components/amp-carousel/" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+  html, body {
+    font-family: Helvetica, Arial, Sans-Serif;
+  }
+
+
+  .slide{
+     position:absolute;
+     right:0;
+     width:100%;
+     height:100%;
+     overflow:hidden;
+     z-index:102;
+  }
+  .next_slide__container {
+     will-change: transform;
+     transition: transform 0.2s;
+     transform: translateX(100%);
+  }
+  .prev_slide__container {
+     will-change: transform;
+     transition: transform 0.2s;
+     transform: translateX(-100%);
+  }
+  .slide--visible{
+    transform: none;
+  }
+
+  .next_btn, .prev_btn{
+    background-color: #4CAF50;
+    color:#FFF;
+    font-size: 1.2em;
+  }
+  .content {
+    width: 100%;
+    height: 250px;
+    position: relative;
+  }
+  </style>
+</head>
+<body>
+
+
+    <div class="content">
+      <!-- Slide 1-->
+      <div
+        class="slide prev_slide__container slide--visible"
+        [class]="!isNext ? 'slide prev_slide__container slide--visible' :
+           'slide prev_slide__container'">
+        <h2>Question1: Multiple</h2>
+      </div>
+
+      <!-- Slide 2-->
+      <div class="slide next_slide__container"
+        [class]="isNext ? 'slide next_slide__container slide--visible':'slide next_slide__container'">
+        <h2>Question2: Individual#1</h2>
+      </div>
+    </div>
+
+    <div>
+      <button class="next_btn"
+        [class]="current_page == 4 ? 'next_btn_hidden' : 'next_btn'"
+        on="tap:AMP.setState({current_page: current_page ? current_page + 1 : 2, isNext: true})">NEXT</button>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+<link rel="shortcut icon" href="amp_favicon.png">
+<title>Pearson Maryville - AMP</title>
+<!-- ss -->
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<meta charset="utf-8" />
+<link rel="canonical" href="maryville.html">
+<meta name="viewport"
+    content="width=device-width, minimum-scale=1, initial-scale=1">
+
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+
+<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<style amp-custom>
+body {
+    width: 100%; margin: 0; padding: 0; 
+}
+
+.continue_button {
+    background-color: black;
+    color: white;
+    width: 90%;
+    height: 60px;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 10px;
+    padding: 15px 15px;
+}
+
+  .slide{
+     right:0;
+     width:100%;
+     height:100%;
+     border: 1px;
+     background-color: blue;
+     position:absolute;
+     overflow:hidden;
+     z-index:102;
+          
+   }
+   
+   .not_current {
+      transform: translateX(-100%);
+      will-change: transform;
+      transition: transform 0.2s;
+   }
+   .current {
+    transform: none;
+   }
+   #main-form {
+    height:20px;
+   }
+   .content {
+    position: relative;
+    height: 50px;
+    width: 100%;
+   }
+ 
+</style>
+</head>
+<body>
+<div class='content'>
+  <form method="GET" action="https://example.com/submit"
+    action-xhr="https://example.com/submit"
+    custom-validation-reporting="as-you-go" target="_blank">
+
+    <amp-state id="state_slide">
+      <script type="application/json">
+      {"slide_number": 1}
+      </script>
+    </amp-state>
+    
+    <div id="main-form">
+      <!-- Slide 1 -->
+      <div class="slide" [class]="(state_slide.slide_number == 1) ? 'slide current' : 'slide not_current'">
+        Slide 1
+      </div>
+
+      <!-- Slide 2 -->
+      <div id="slide2" class="not_current" [class]="(state_slide.slide_number == 2) ? 'slide current' : ' slide not_current'">
+        Slide 2
+      </div>
+
+      <!-- Slide 3 -->
+      <div id="slide3" class="not_current" [class]="(state_slide.slide_number == 3) ? 'slide current' : 'slide not_current'">
+        Slide 3
+      </div>
+      
+      <button
+        class="continue_button"
+        on="tap:AMP.setState({state_slide: {slide_number: state_slide.slide_number + 1}})">
+        Continue</button>
+    </div>
+    <p [text]="state_slide.slide_number"> slide number </p>
+
+  </form>
+  </div>
+</body>
+</html>

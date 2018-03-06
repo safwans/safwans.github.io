@@ -3,7 +3,6 @@
 <head>
 <link rel="shortcut icon" href="amp_favicon.png">
 <title>Pearson Maryville - AMP</title>
-<!-- ss -->
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <meta charset="utf-8" />
 <link rel="canonical" href="maryville.html">
@@ -18,7 +17,7 @@
 <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 <style amp-custom>
 body {
-    width: 100%; margin: 0; padding: 0; 
+    width: 100%; margin: 0; padding: 0;
 }
 header {
     width:100%;
@@ -135,17 +134,20 @@ footer {
       margin: 1rem;
     }
     
-    #front {
+    #main-form {
       background-color: #c8102e;
-      text-align: center;
+      text-align: left;
       width: 100%;
+          text-align: left;
+    font-size: 22px;
+      
     }
     #programdetails{
       font-size: 30px;
       color: white;
       text-align: center;
     }
-    #nextbutton {
+    #next_button {
       background-color: black;
       color: white;
       width: 90%;
@@ -155,6 +157,48 @@ footer {
       margin: 10px 10px;
       padding: 15px 15px;
     }
+  .slide{
+     right:0;
+     width:100%;
+     height: 100%;
+     border: 1px;
+     position: absolute;
+     overflow:hidden;
+     z-index:102;
+     visibility: hidden;
+   }
+   
+   .next_slide {
+      transform: translateX(100%);
+      will-change: transform;
+      transition: transform 0.2s;
+   }
+   
+   .prev_slide {
+      transform: translateX(-100%);
+      will-change: transform;
+      transition: transform 0.4s;
+   }
+   .slide_visible {
+    transform: none;
+    visibility: visible;
+    transition: .4s;
+   }
+   
+   .content {
+    position: relative;
+    height: 100px;
+    width: 100%;
+   }
+   label {
+    display: block;
+   }
+   .degrees {
+    border: 1px;
+    border-color: yellow;
+    width: 70%;
+    height: 40px;
+   }
     
 </style>
 </head>
@@ -171,20 +215,67 @@ footer {
   </div>
   <a href="maryville.html" target="_blank"> Local Canonical </a> | <a href="https://online.maryville.edu/lpia" target="_blank"> Original</a>
 
-  <div id="front">
-    <p id="programdetails">Get Program Details</p>
-    <amp-selector role="tablist" layout="container"
-      class="ampTabContainer" disabled>
-    <div role="tab" class="tabButton" selected option="a">1</div>
-    <div role="tabpanel" class="tabContent">Tab one content...</div>
-    <div role="tab" class="tabButton" option="b" >2</div>
-    <div role="tabpanel" class="tabContent">Tab two content...</div>
-    <div role="tab" class="tabButton" option="c">3</div>
-    <div role="tabpanel" class="tabContent">Tab three content...</div>
-    </amp-selector>
-    <button id="nextbutton"> Continue </button>
-  </div>
-  
+  <form method="GET" action="https://example.com/submit"
+    action-xhr="https://example.com/submit"
+    custom-validation-reporting="as-you-go" target="_blank" id='myform'>
+
+    <amp-state id="state_slide">
+      <script type="application/json">
+      {"slide_number": 1}
+      </script>
+    </amp-state>
+    <div id="main-form">
+      <p id="programdetails">Get Program Details</p>
+<div class="content">
+      <div class="slide prev_slide slide_visible"
+        [class]="(state_slide.slide_number == 1) ? 'slide prev_slide slide_visible' 
+                : 'slide prev_slide'">
+                What degree are you pursuing?
+        <fieldset class='fields' required>
+          <label> <input id="answerA" name="answer1" value="Value 1"
+            type="radio" on="change:myform.submit"> Bachelor's
+          </label> <label> <input name="answer1" value="Value 2"
+            type="radio" on="change:myform.submit"> Master's
+          </label>
+          <span visible-when-invalid="valueMissing"
+          validation-for="answerA"></span>
+        </fieldset>
+        </div>
+              <!-- Slide 2 -->
+      <div class="slide next_slide"
+        [class]="(state_slide.slide_number == 2) ? 'slide previous_slide slide_visible' 
+                : 'slide previous_slide'">
+      Which degree are you interested in?  
+      
+      <select class="degrees" name="degrees" id="degrees">
+      <option value="select">Select</option>
+      <option value="accounting">BS in Accounting</option>
+      <option value="marketing">BS in Marketing</option>
+    </select>
+      </div>
+      
+                    <!-- Slide 3 -->
+      <div class="slide next_slide"
+        [class]="(state_slide.slide_number == 3) ? 'slide previous_slide slide_visible' 
+                : ' slide next_slide'">
+          Who is this brochure for?
+          <input class="degrees" type="text" name="name"
+            placeholder="Name..." required> 
+          <input class="degrees" type="email"
+            name="email"
+            placeholder="Email..." required>
+        </div>
+      
+        </div>
+
+      <button id="next_button" type='button'
+        on="tap:AMP.setState({state_slide: {slide_number: state_slide.slide_number + 1}})" 
+        [text]="Continue state_slide.slide_number">
+        Continue to step 2 of 3 </button>
+    </div>
+    
+    <p [text]="state_slide.slide_number"> slide number </p>
+  </form>
 
 
   <amp-img
@@ -230,6 +321,7 @@ footer {
           of Higher Education)</em></li>
     </ul>
   </div>
+  
   <div class="copy" role="article">
     Learn more about our online degree programs.
     <div class="button">

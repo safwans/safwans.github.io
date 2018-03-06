@@ -1,0 +1,382 @@
+<!doctype html>
+<!-- https://gist.github.com/uskay/2c9946054df45a352e50553f3fd817e8#file-smsdemo-js-L209 -->
+<html⚡>
+<head>
+<meta charset="utf-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<!-- ## Setup -->
+<!-- Import the carousel component in the header. -->
+<script async custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script async custom-element="amp-selector"
+  src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+<script async custom-element="amp-list"
+  src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+<script async custom-template="amp-mustache"
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+<script async custom-element="amp-form"
+  src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+<link rel="canonical"
+  href="https://ampbyexample.com/components/amp-carousel/" />
+<meta name="viewport"
+  content="width=device-width,minimum-scale=1,initial-scale=1">
+
+<style amp-custom>
+html, body {
+  font-family: Helvetica, Arial, Sans-Serif;
+}
+
+amp-selector:not ([disabled] ) [option][selected]:not ([disabled] ) {
+  outline-color: red;
+  outline-width: 2px;
+}
+/* disables build-in browser highlights */
+amp-selector *:focus {
+  outline: none;
+}
+
+amp-selector[disabled], amp-selector [disabled] {
+  opacity: 0.5;
+}
+
+.divider {
+  border-right: 2px solid #333;
+  height: 40px;
+}
+
+.optBox {
+  margin: 10px;
+  text-align: center;
+  background-color: #DDD;
+}
+
+.button {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.button .back, .button .next {
+  width: 48%;
+  float: left;
+  text-align: center;
+  margin-top: 20px;
+  background-color: #0981ED;
+  color: #FFF;
+  border: 1px solid #FFF;
+}
+
+.button .disabled {
+  width: 48%;
+  float: left;
+  text-align: center;
+  margin-top: 20px;
+  background-color: #222;
+  color: #FFF;
+  border: 1px solid #FFF;
+}
+
+amp-carousel.next .amp-carousel-button-next {
+  opacity: 1.0;
+}
+
+amp-carousel.disabled .amp-carousel-button-next {
+  opacity: 0;
+}
+
+.itemDisabled {
+  
+}
+
+.slide {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 102;
+}
+
+.next_slide__container {
+  will-change: transform;
+  transition: transform 0.2s;
+  transform: translateX(100%);
+}
+
+.prev_slide__container {
+  will-change: transform;
+  transition: transform 0.2s;
+  transform: translateX(-100%);
+}
+
+.slide--visible {
+  transform: none;
+}
+
+.header {
+  width: 100%;
+  height: 30px;
+  background-color: #555;
+  color: #FFF;
+  text-align: center;
+  line-height: 2.0;
+}
+
+.next_btn, .prev_btn {
+  background-color: #4CAF50;
+  color: #FFF;
+  font-size: 1.2em;
+}
+
+.next_btn[disabled], .prev_btn[disabled] {
+  background-color: #999;
+  color: #FFF;
+  font-size: 1.2em;
+}
+
+.next_btn_hidden {
+  display: none;
+}
+
+input[type=submit] {
+  background-color: red;
+  color: #FFF;
+  font-size: 1.2em;
+  float: left;
+}
+
+input[type=submit][disabled] {
+  background-color: #999;
+  color: #FFF;
+  font-size: 1.2em;
+}
+
+.submit_btn {
+  display: block;
+}
+
+.submit_btn_hidden {
+  display: none;
+}
+
+.content {
+  width: 100%;
+  height: 250px;
+  position: relative;
+}
+
+#slide1 {
+  background-color: #63C9F7;
+}
+
+#slide2 {
+  background-color: #F4CCCC;
+}
+
+#slide3 {
+  background-color: #FBBC05
+}
+
+#slide4 {
+  background-color: #D9EAD3
+}
+
+#searchBox {
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+
+.prefecture, .city {
+  font-size: 1.2em;
+  width: 80%;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: #FFF2CC;
+}
+
+.addr {
+  font-size: 1.2em;
+  width: 79%;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: #FFF2CC;
+}
+
+.addr[disabled] {
+  background-color: #999
+}
+
+.city[disabled] {
+  background-color: #999
+}
+
+#name {
+  font-size: 1.2em;
+  width: 80%;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.errorMessage {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+  <div class="header">HEADER</div>
+
+  <form method="GET" action="https://example.com/submit"
+    action-xhr="https://example.com/submit"
+    custom-validation-reporting="as-you-go" target="_blank">
+
+    <div class="content">
+
+
+      <!-- Slide 1-->
+      <div id="slide1"
+        class="slide prev_slide__container slide--visible"
+        [class]="!isNext && (!current_page || current_page == 1) ? 'slide prev_slide__container slide--visible' :
+             current_page > 1  ? 'slide prev_slide__container' : 'slide next_slide__container'">
+        <h2>Question1: Multiple</h2>
+        <div>
+          <amp-selector layout="container" name="q1"
+            on="select:AMP.setState({q1: q1 == null ? event.targetOption : q1.indexOf(event.targetOption) != -1 ? q1.split(event.targetOption).join('') : q1 + event.targetOption})"
+            multiple>
+          <div class="optBox" option="q1-1">Option 1</div>
+          <div class="optBox" option="q1-2">Option 2</div>
+          <div class="optBox" option="q1-3">Option 3</div>
+          <div class="optBox" option="q1-4">Option 4</div>
+          <div class="optBox" option="q1-5">Option 5</div>
+          <div class="optBox" option="q1-6">Option 6</div>
+          </amp-selector>
+        </div>
+      </div>
+
+      <!-- Slide 2-->
+      <div id="slide2" class="slide next_slide__container"
+        [class]="isNext && current_page == 2 ? 'slide next_slide__container slide--visible' :
+             !isNext && current_page == 2 ? 'slide prev_slide__container slide--visible' :
+             current_page > 2  ? 'slide prev_slide__container' : 'slide next_slide__container'">
+        <h2>Question2: Individual#1</h2>
+        <div>
+          <amp-selector layout="container" name="q2"
+            on="select:AMP.setState({q2: true})">
+          <div class="optBox" option="q2-1">Option 1</div>
+          <div class="optBox" option="q2-2">Option 2</div>
+          </amp-selector>
+        </div>
+        <h2>Question3: Individual#2</h2>
+        <div>
+          <amp-selector layout="container" name="q3"
+            on="select:AMP.setState({q3: true})">
+          <div class="optBox" option="q3-1">Option 1</div>
+          <div class="optBox" option="q3-2">Option 2</div>
+          </amp-selector>
+        </div>
+      </div>
+
+      <!-- Slide 3-->
+      <div id="slide3" class="slide next_slide__container"
+        [class]="isNext && current_page == 3 ? 'slide next_slide__container slide--visible' :
+             !isNext && current_page == 3 ? 'slide prev_slide__container slide--visible' :
+             current_page > 3  ? 'slide prev_slide__container' : 'slide next_slide__container'">
+        <h2>Question4: Postal Code Search</h2>
+        <div>
+          <input id="searchBox" name="query" type="text" maxlength="7"
+            on="input-debounced:AMP.setState({query: event.value, isPostal: true})" />
+        </div>
+        <div>
+          <amp-list id="postalCodeList" layout="fixed-height"
+            height="120"
+            src="https://localhost:8443/postalcodesearch?q=default&isPostal=null"
+            [src]="'https://localhost:8443/postalcodesearch?q=' + (query && query.charAt(6) != '' ? query : 'default') + '&isPostal=' + isPostal">
+          <template type="amp-mustache"> <select
+            name="prefecture" class="prefecture"
+            on="change:AMP.setState({addr: '', prefecture: event.value, query: '9999999', isPostal: false})">
+            {{#prefectures}} {{#isSelected}}
+            <option value='{{name}}' selected>{{name}}</option>
+            {{/isSelected}} {{^isSelected}}
+            <option value='{{name}}'>{{name}}</option> {{/isSelected}}
+            {{/prefectures}}
+          </select> {{#ifPostal}} <select name="city" class="city"
+            on="change:AMP.setState({addr: '', city: event.value})">
+            {{#cities}} {{#isSelected}}
+            <option value='{{name}}' selected>{{name}}</option>
+            {{/isSelected}} {{^isSelected}}
+            <option value='{{name}}'>{{name}}</option> {{/isSelected}}
+            {{/cities}}
+          </select> <input name="addr" class="addr" type="text"
+            on="input-debounced:AMP.setState({addr: event.value})"
+            [value]="addr" /> {{/ifPostal}} {{#ifPrefecture}} <select
+            name="city" class="city"
+            on="change:AMP.setState({addr: '', city: event.value})">
+            {{#cities}} {{#isSelected}}
+            <option value='{{name}}' selected>{{name}}</option>
+            {{/isSelected}} {{^isSelected}}
+            <option value='{{name}}'>{{name}}</option> {{/isSelected}}
+            {{/cities}}
+          </select> <input name="addr" class="addr" type="text"
+            on="input-debounced:AMP.setState({addr: event.value})"
+            [value]="addr" disabled [disabled]="!city" />
+          {{/ifPrefecture}} {{#ifDefault}} <select name="city"
+            class="city"
+            on="change:AMP.setState({addr: '', city: event.value})"
+            disabled="!prefecture"> {{#cities}} {{#isSelected}}
+            <option value='{{name}}' selected>{{name}}</option>
+            {{/isSelected}} {{^isSelected}}
+            <option value='{{name}}'>{{name}}</option> {{/isSelected}}
+            {{/cities}}
+          </select> <input name="addr" class="addr" type="text" disabled />
+          {{/ifDefault}} </template> </amp-list>
+        </div>
+      </div>
+
+      <!-- Slide 4-->
+      <div id="slide4" class="slide next_slide__container"
+        [class]="isNext && current_page == 4 ? 'slide next_slide__container slide--visible' :
+             !isNext && current_page == 4 ? 'slide prev_slide__container slide--visible' :
+             current_page > 4  ? 'slide prev_slide__container' : 'slide next_slide__container'">
+        <h2>Question5: Input Validation</h2>
+        <div>
+          <div>
+            <input id="name" name="name" type="text" pattern="^[ぁ-ん]+$"
+              required placeholder="Japanese Hiragana Only"
+              on="input-debounced:AMP.setState({q5: event.value})" />
+          </div>
+          <div class="errorMessage"
+            visible-when-invalid="patternMismatch" validation-for="name">
+            Custom Validation Message HERE!</div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div>
+      <button class="prev_btn"
+        [disabled]="!current_page || current_page == 1"
+        on="tap:AMP.setState({current_page: current_page ? current_page - 1 : 2, isNext: false})"
+        disabled>PREV</button>
+      <button
+        [disabled]="(!current_page || current_page == 1) && !q1 ||
+                current_page == 2 && !(q2 && q3) ||
+                current_page == 3 && !addr"
+        class="next_btn"
+        [class]="current_page == 4 ? 'next_btn_hidden' : 'next_btn'"
+        on="tap:AMP.setState({current_page: current_page ? current_page + 1 : 2, isNext: true})"
+        disabled>NEXT</button>
+      <input type="submit" value="Submit" class="submit_btn_hidden"
+        [class]="current_page == 4 ? 'submit_btn' : 'submit_btn_hidden'"
+        [disabled]="!q5 || q5 == ''" disabled />
+    </div>
+
+  </form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+<link rel="shortcut icon" href="amp_favicon.png">
+<title>Starter AMP</title>
+
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<meta charset="utf-8" />
+<link rel="canonical" href="maryville.html">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+
+<style amp-custom>
+body {
+  width: 100%;
+  margin: 0px;
+  font-family: helvetica;
+}
+
+.button {
+  border: 1px;
+  width: 80%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  padding: 0px 10px;
+}
+
+.logo {
+  padding: 10px;
+  width: 60%;
+  display: inline-block;
+}
+
+.heading {
+  width: 30%;
+  display: inline-block;
+}
+
+.content1 {
+  width: 100%;
+  background-color: #c8102e;
+  height: 550px;
+  color: white;
+  padding: 0px 10px;
+  position: relative;
+}
+.content3, .content4, .content5 {
+padding: 0px 20px;
+
+}
+.content3 {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 0px;
+  width: 100%;
+}
+
+
+.slide {
+  padding: 0px 10px;
+  font-size: 25px;
+}
+
+.content1::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.content1 h1, .content1 p {
+  text-align: center;
+  margin: 0px;
+}
+select, .textfield {  
+    border: 1px;
+    border-color: yellow;
+    width: 80%;
+    height: 40px;
+}
+</style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <amp-img
+        src="https://s3-us-east-2.amazonaws.com/maryville/wp-content/uploads/2017/12/04215012/Maryville-University-Logo-Horizontal-500.png"
+        role="image" width="217" height="65"
+        alt="Maryville University Online Logo"> </amp-img>
+    </div>
+    <div class="heading">
+      <h1>Maryville Online</h1>
+    </div>
+  </header>
+
+  <div class="content1">
+    <h1>Get Program Details</h1>
+    <p>This will only take a moment</p>
+
+    <form method="post"
+      action="process_form.php"
+      target="_top" custom-validation-reporting="show-all-on-submit">
+      <div class="slide">
+        <div>What degree are you pursuing?</div>
+        <div>
+          <input type="radio" id="bs" name="program" value="bs" checked>
+          <label for="bs">Bachelor's</label>
+        </div>
+        <div>
+          <input type="radio" id="ms" name="program" value="ms">
+          <label for="ms">Master's</label>
+        </div>
+        <div>
+          <input type="radio" id="dr" name="program" value="dr">
+          <label for="dr">Doctorate</label>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div>Which degree program are you most interested in?</div>
+        <div>
+          <select name="degree" id="degree" required>
+            <option value="">Select</option>
+            <option value="accounting">BS in Accounting</option>
+            <option value="marketing">BS in Marketing</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div>Who is this brochure for?</div>
+        <div>
+          <input class="textfield" type="text" name="name" placeholder="Full Name"
+            required> <br /> <input class="textfield" type="email" name="email"
+            placeholder="Email" required> <br /> <input class="textfield"
+            type="text" name="phone" placeholder="Phone" required>
+          <br /> <input class="textfield" type="text" name="zip" placeholder="Zip"
+            required> <br />
+        </div>
+
+      </div>
+      <div class="slide">
+        <input type="submit" value="OK" class="button">
+      </div>
+      <div submit-success>
+        <template type="amp-mustache"> Success! Thanks for
+        trying the <code>amp-form</code> demo! </template>
+      </div>
+      <div submit-error>
+        <template type="amp-mustache"> Error! </template>
+      </div>
+    </form>
+  </div>
+
+  <div class="content2">
+    <amp-img
+      src="https://s3-us-east-2.amazonaws.com/maryville/wp-content/uploads/2017/11/14114249/Home-Lets-Be-Brave-Together.jpg"
+      role="image" width="412" height="200"> </amp-img>
+  </div>
+
+  <div class="content3">
+    <h2>Maryville Online&nbsp;Programs</h2>
+  </div>
+  <div class="content3b">
+    <h3>The Future Belongs to the&nbsp;Brave</h3>
+    <p>It takes courage to go back to school when you have so many
+      things going on in your life. But you’re not alone. In fact, we’re
+      laser-focused on your success. You’ll get a personalized,
+      student-first experience unlike any other. This is your moment —
+      and we’re with you all the way. Let’s get started today, because
+      tomorrow belongs to the&nbsp;brave.</p>
+  </div>
+
+  <div class="content4">
+    <p>
+      <strong><span>Why Choose Maryville?</span></strong>
+    </p>
+    <ul>
+      <li><strong>History:</strong>&nbsp;Founded in 1872, Maryville
+        is one of the oldest private institutions in the&nbsp;region.</li>
+      <li><strong>Faculty:</strong>&nbsp;90% of full-time Maryville
+        faculty members hold Ph.D. or terminal&nbsp;degrees.</li>
+      <li><strong>Personal Attention:</strong>&nbsp;Maryville has a
+        student-to-faculty ratio of 13:1 and an average class size
+        of&nbsp;20.</li>
+      <li><strong>Financial Assistance:</strong> Seek to qualify
+        for financial&nbsp;aid.</li>
+    </ul>
+
+    <p>
+      <strong><span> Rankings and Recognition</span></strong>
+    </p>
+    <ul>
+      <li><strong>Accredited</strong> by the Higher
+        Learning&nbsp;Commission</li>
+      <li>Listed among <strong>“America’s Top Colleges”</strong>
+        —&nbsp;<em>Forbes, 2017</em></li>
+      <li><strong>Ranked among the best values</strong> in private
+        colleges —&nbsp;<em>Kiplinger’s Personal Finance,</em>&nbsp;2017</li>
+      <li>No. 3 <strong>fastest-growing</strong> university&nbsp;<em>(Chronicle
+          of Higher Education)</em></li>
+    </ul>
+  </div>
+  <div class="content5">
+    Learn more about our online degree programs.
+    <div>
+      <a href="#">Download Brochure</a>
+    </div>
+  </div>
+  <footer>
+    Copyright © 2018 Maryville University. All rights reserved.
+    <div>
+      <nav role="navigation">
+        <a href="#">About</a> <a href="#">Privacy</a> <a href="#">Complaint
+          Resolution</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

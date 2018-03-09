@@ -176,7 +176,7 @@ button[disabled]{
       disabled
       [disabled]="(state_slide.slide_number == 1)? (state_slide.q1 == null):
                   (state_slide.slide_number == 2)? (state_slide.q2 == null || state_slide.q3 == null ||  state_slide.q4 == null) :1" 
-      on="tap:AMP.setState({state_slide: {slide_number: state_slide.slide_number + 1}})"]>Next
+      on="tap:AMP.setState({state_slide: {slide_number: state_slide.slide_number + 1}})">Next
       Step</button>
     
     <input name="submit" class="hiddencomponent" [class]="(state_slide.slide_number == 3) ? 'button' 

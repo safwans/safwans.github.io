@@ -1,0 +1,278 @@
+<!doctype html><html data-published-on="Fri Dec 01 2017 20:01:50 GMT+0000 (UTC)"  lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="ROBOTS" content="NOINDEX, NOFOLLOW"><title  data-replace-with="program.name">MSW@USC</title><link rel="manifest" href="https://requestinfo.msw.usc.edu/manifest.json"><meta name="mobile-web-app-capable" content="yes"><link rel="shortcut icon" href="https://ddqt2avvbpaxu.cloudfront.net/cdn/v1/usc-msw/marketing/favicon.ico" data-replace-instance="https://ddqt2avvbpaxu.cloudfront.net/cdn/v1/usc-msw/marketing/" data-replace-with="program.assetLocation" data-replace-attr="href"><script  data-replace-with="program.extras.newRelicScript">window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);
+;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"9d53facbde",applicationID:"57626644",sa:1}
+</script><link rel="stylesheet" type="text/css" id="harmonyTheme" href="https://ddqt2avvbpaxu.cloudfront.net/cdn/v1/usc-msw/marketing/whitelabel.min.css" data-replace-instance="https://ddqt2avvbpaxu.cloudfront.net/cdn/v1/usc-msw/marketing/" data-replace-with="program.assetLocation" data-replace-attr="href"><script  data-replace-with="program.optimizelyID" data-replace-attr="src" data-replace-instance="143142091" src="https://cdn.optimizely.com/js/143142091.js"></script><!-- BODEGA VERSION: 1.3.13 -->
+    
+    <!-- <span  data-replace-with="program.leadFormVersion" data-replace-instance="4.0.17">APILF version: 4.0.17</span> --><link rel="stylesheet" type="text/css" data-replace-attr="href" data-replace-with="program.leadFormVersion" data-replace-instance="4.0.17" href="https://corp-mktg.s3.amazonaws.com/lead-forms/prod/usc-msw/4.0.17/css/lead-forms.css"><script  data-replace-with="program.segmentKey" data-replace-instance="LDmiofXFSuOzQ0OTGreFLZZ6ZdUOhYKZ">
+      window.u = window.u || {};
+      window.u.analytics_wrapper = window.u.analytics_wrapper || {};
+      window.u.analytics_wrapper.bootstrap = true;
+      window.u.segment_io_token = 'LDmiofXFSuOzQ0OTGreFLZZ6ZdUOhYKZ';
+      window.u.visitorjs_key = 'uhMLQvBSJB';
+      var paramDict = {
+        "l" : "landing_page",
+        "c" : "creative_id",
+        "ef_id" : "ef_id",
+        "permguid" : "permguid",
+        "campaign" : "campaign",
+        "sendid" : "send_id",
+        "splash_creative" : "splash_creative",
+        "s" : "lead_source",
+        "fb_p" : "fb_p"
+      };
+      Object.keys=Object.keys||function(o,k,r){r=[];for(k in o)r.hasOwnProperty.call(o,k)&&r.push(k);return r}
+      var trackedParams = Object.keys(paramDict);
+
+      properties = {}
+      properties["domain"] = 'usc-msw'; 
+      for (var i = 0; i < trackedParams.length; i++) {
+        var propertyKey = trackedParams[i];
+        var propertyVal = getURLParameter(propertyKey);
+        if (propertyVal != undefined) {
+          var key = paramDict[propertyKey];
+          properties[key] = translateValue(propertyVal);
+        }
+      }
+      window.u.analytics_wrapper.initial_page_properties = properties
+
+      // Facebook Pixel for SC-MSN
+      if ( properties.fb_p ){
+        window.analytics.track("SCNursingLead", properties);
+      }
+
+      function getURLParameter(param) {
+        var params = window.location.search.substr(1).split('&');
+        for (var i = 0; i < params.length; i++) {
+          var paramName = params[i].split('=');
+          if (paramName[0] == param) {
+            return paramName[1];
+          }
+        }
+      }
+
+      function translateValue(propertyVal) {
+        var propertyDict = {
+          "gps" : "SCNurseGoodLead",
+          "bps" : "SCNurseBadLead"
+        }
+
+        if ( !propertyDict[propertyVal] ) {
+          return propertyVal;
+        }
+        return propertyDict[propertyVal];
+      }
+    </script>
+<script  data-replace-attr="src" data-replace-with="program.leadFormVersion" data-replace-instance="4.0.17" src="https://corp-mktg.s3.amazonaws.com/lead-forms/prod/usc-msw/4.0.17/lead-forms.min.js"></script>
+</head><body><script>(function parse() {
+
+  function paramsAsObject(paramString) {
+    if (!paramString || !paramString.length) return {}
+    var parts = paramString.split('&');
+    var retval = {};
+    var qparts;
+    var len = parts.length;
+    for (var i = 0; i < len; i++) {
+      qparts = parts[i].split('=');
+      retval[qparts[0]] = qparts[1] || '';
+    }
+    return retval;
+  }
+
+  function objectAsParams(obj) {
+    var keys = Object.keys(obj);
+    var params = [];
+    var retval;
+    var len = keys.length;
+    for (var i = 0; i < len; i++) {
+      params.push([keys[i], obj[keys[i]]].join('='));
+    }
+    retval = params.join('&');
+    if (retval.length) return ('?' + retval);
+    return '';
+  }
+
+  function mergeLeft(left, right) {
+    var keys = Object.keys(right);
+    var len = keys.length;
+    for (var i = 0; i < len; i++) {
+      left[keys[i]] = right[keys[i]];
+    }
+    return left;
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var i, link, linkQueryString, linkAnchorParams, queryStringParams, hash, newParams, href;
+    var queryString = paramsAsObject(window.location.search.slice(1));
+    var links = document.getElementsByTagName('a');
+    var len = links.length;
+    var thisPageLocation = new RegExp('^' + window.location);
+    var isOnSameDomain = new RegExp('^http[s]?://' + window.location.hostname + '..*', 'i');
+
+    for (i = 0; i < len; i++) {
+      link = links.item(i);
+      if (
+        (isOnSameDomain).test(link.href) &&
+        (!thisPageLocation.test(link.href))
+      ) {
+        linkQueryString = link.href.split('?').slice(1);
+        if (linkQueryString.length) {
+          hash = linkQueryString[linkQueryString.length - 1].split('#');
+          linkQueryString[linkQueryString.length - 1] = hash[0];
+          linkQueryString = paramsAsObject(linkQueryString[0]);
+          linkQueryString = mergeLeft(linkQueryString, queryString);
+        } else {
+          linkQueryString = queryString;
+          hash = '';
+        }
+        if (hash.length > 1) {
+          hash = '#' + hash.slice(1).join('#');
+        } else {
+          hash = null;
+        }
+
+        href = link.href.split('?')[0] + (objectAsParams(linkQueryString));
+        if (hash) {
+          href += hash;
+        }
+        link.href = href;
+      }
+    }
+  });
+
+}());</script><script>(function() {
+  document.addEventListener("DOMContentLoaded", function() {
+    var footerElements = document.getElementsByTagName('Footer');
+    if (footerElements.length) {
+      var footer = footerElements[0];
+      var leadFormList = document.getElementsByClassName('lead-form-wrapper')
+      var leadForm = leadFormList.length ? leadFormList[0].parentElement : null;
+      var cachedFooterMargin = 0;
+      var cachedMarginFromWindow = 0;
+      var cachedMarginFromLeadForm = 0;
+      var cachedLFBottom = 0;
+      var cachedWindowHeight = 0;
+      var cachedWindowWidth = 0;
+      function moveMaybe() {
+        var windowWasResized = window.innerHeight !== cachedWindowHeight || window.innerWidth !== cachedWindowWidth;
+        var leadFormChangedSize = leadForm && leadForm.getBoundingClientRect().bottom !== cachedLFBottom;
+        if (!windowWasResized && !leadFormChangedSize) {
+          return;
+        }
+        if (windowWasResized) {
+          cachedWindowHeight = window.innerHeight;
+          cachedWindowWidth = window.innerWidth;
+          if (footer.getBoundingClientRect().bottom !== cachedWindowHeight) {
+            var extraWhitespaceSize = cachedWindowHeight - footer.getBoundingClientRect().bottom;
+            cachedMarginFromWindow = cachedFooterMargin + extraWhitespaceSize;
+          }
+        }
+        if (leadFormChangedSize) {
+          cachedLFBottom = leadForm.getBoundingClientRect().bottom;
+          var footerTop = footer.getBoundingClientRect().top;
+          var currentFooterOverlap = cachedLFBottom - footerTop;
+          cachedMarginFromLeadForm = cachedFooterMargin + currentFooterOverlap;
+        }
+        
+        cachedFooterMargin = Math.max(0, cachedMarginFromWindow, cachedMarginFromLeadForm);
+        footer.style.marginTop = cachedFooterMargin + 'px';
+      }
+      moveMaybe();
+      setInterval(moveMaybe, 10);
+    }
+  });
+})()</script><div class="_3JsJCDMtO1irEJVYWwgnxn" style="width:100%;margin:auto;"><div class=" 
+            _31TXxNEUOOORUV6hLF0b9F 
+             
+             
+            null   GridContainerBackground"><div class="container " style="min-height:15px;"><div class="grid"><div class="cell span-2--tablet span-12 offset-0  
+            VthT224J9ACIQBUeIKRR9 
+             
+             
+            null " style="min-height:15px;"><div class=" 
+            _1zF6u1Y0j9-dB1NCCTQmKO 
+             
+             
+            null " style="margin-top:15px;margin-right:0px;margin-left:0px;margin-bottom:10px;display:inline-block;"><img alt="USC University of Southern California logo" src="https://corp-mktg.s3.amazonaws.com/bodega/production/usc-msw/assets/images/usc-logo-600px-use%20on%20white%20bg.png-1506971083368"/></div></div></div></div></div><div class=" 
+            _31TXxNEUOOORUV6hLF0b9F 
+             
+             
+            null   GridContainerBackground"><div style="min-height:15px;background-image:url(&#x27;https://corp-mktg.s3.amazonaws.com/bodega/production/usc-msw/assets/images/USC-MSW MKTGWEB-10939_Bodega Migration_index21.jpg-1506347125760&#x27;);background-repeat:no-repeat;background-size:cover;background-position:center;width:100%;"><div class="container "><div class="grid"><div class="cell span-4--tablet span-12 offset-0  
+            VthT224J9ACIQBUeIKRR9 
+             
+             
+            null " style="min-height:15px;"><div class=" 
+            _1zF6u1Y0j9-dB1NCCTQmKO 
+             
+             
+            null " style="margin-top:40px;margin-right:0px;margin-left:0px;margin-bottom:0px;display:inline-block;"><img alt="" src="https://corp-mktg.s3.amazonaws.com/bodega/production/usc-msw/assets/images/SDP-USC-SW-rev-gold.png-1503431912335"/></div><div class=" 
+            _31TXxNEUOOORUV6hLF0b9F 
+             
+             
+            null   GridContainerBackground"><div class="grid " style="min-height:15px;"><div class="cell span-11--tablet span-12 offset-0  
+            VthT224J9ACIQBUeIKRR9 
+             
+             
+            null " style="min-height:15px;"><div class="longform text-widget  
+            _1zF6u1Y0j9-dB1NCCTQmKO 
+             
+             
+            null " style="margin:20px 0px 50px 0px;text-align:left;"><h1><span class="h1"><span style="color: white;">Change Lives With A Top-Ranked Online Master of Social Work Program</span></span></h1></div></div></div></div></div><div class="cell span-4--tablet span-12 offset-4--tablet offset-0  
+            VthT224J9ACIQBUeIKRR9 
+             
+             
+            null " style="min-height:15px;"><div class="undefined  
+            _1zF6u1Y0j9-dB1NCCTQmKO 
+             
+             
+            null " style="position:absolute;right:5px;left:5px;margin:30px 0px 0px 0px;z-index:100;"><div class="lead-form-wrapper apilf-harmony" id="lead-form-div"></div></div></div></div></div></div></div><div class=" 
+            _31TXxNEUOOORUV6hLF0b9F 
+             
+             
+            null   GridContainerBackground"><div class="container " style="min-height:15px;"><div class="grid"><div class="cell span-1--tablet span-12 offset-0  
+            VthT224J9ACIQBUeIKRR9 
+             
+             
+            null " style="min-height:15px;"><div class=" 
+            _1zF6u1Y0j9-dB1NCCTQmKO 
+             
+             
+            null " style="margin-top:0px;margin-right:0px;margin-left:0px;margin-bottom:0px;display:inline-block;"><img alt="" src="index.html"/></div><div class=" 
+            _1zF6u1Y0j9-dB1NCCTQmKO 
+             
+             
+            null " style="margin-top:30px;margin-right:0px;margin-left:0px;margin-bottom:20px;display:inline-block;"><img alt="US News &amp; World Report logo" src="https://corp-mktg.s3.amazonaws.com/bodega/production/usc-msw/assets/images/us_news.png-1503432355173"/></div></div><div class="cell span-6--tablet span-12 offset-0  
+            VthT224J9ACIQBUeIKRR9 
+             
+             
+            null " style="min-height:15px;"><div class="longform text-widget  
+            _1zF6u1Y0j9-dB1NCCTQmKO 
+             
+             
+            null " style="margin:35px 0px 0px 0px;text-align:left;"><p><span class="u--text-theme-dark">CSWE-accredited program from the USC Suzanne Dworak-Peck School of Social Work, ranked #12 by U.S. News &amp; World Report</span></p></div></div><div class="cell span-7--tablet span-12 offset-0  
+            VthT224J9ACIQBUeIKRR9 
+             
+             
+            null " style="min-height:15px;"></div></div></div></div><div class=" 
+            _31TXxNEUOOORUV6hLF0b9F 
+             
+             
+            null   GridContainerBackground"><div class="container " style="min-height:15px;"><div class="grid"><div class="cell span-7--tablet span-12 offset-0  
+            VthT224J9ACIQBUeIKRR9 
+             
+             
+            null " style="min-height:15px;"><div class="longform text-widget  
+            _1zF6u1Y0j9-dB1NCCTQmKO 
+             
+             
+            null " style="margin:0px 0px 20px 0px;text-align:left;"><ul><li>Curriculum mirrors the <strong>academic rigor</strong> of the on-campus program</li><li>Online learning paired with <strong>hands-on field experience</strong> in your local community</li><li>University of Southern California enrollment <strong>without relocating</strong></li><li>Distinguished <strong>faculty</strong> who are <strong>leaders</strong> in social work</li><li>Advanced standing program available to earn an MSW degree in <strong>under 1 year</strong></li></ul>
+<p>Questions? Call us at 1-877-700-4679.</p></div></div></div></div></div><div class=" 
+            _1zF6u1Y0j9-dB1NCCTQmKO 
+             
+             
+            null  u--background-theme-dark"><footer class="container" style="color:#fff;"><div class="grid"><div class="cell span-12" style="padding-top:16px;"><p><strong><span  data-replace-with="program.universityName">University of Southern California</span></strong></p><p><span><strong><span  data-replace-with="program.name">MSW@USC</span></strong> </span><span  data-replace-with="program.phoneWord"></span> <span  data-replace-with="program.phone">1-877-700-4679</span>  |  © 2018 <span  data-replace-with="program.copyright">The University of Southern California for its USC Suzanne Dworak-Peck School of Social Work</span></p><p><a target="_blank" style="color:#fff;" href="https://msw.usc.edu/legal/privacy-policy/" data-replace-attr="href" data-replace-with="program.privacyUrl">Privacy Policy</a> | <a target="_blank" style="color:#fff;" href="https://msw.usc.edu/legal/terms-of-use/" data-replace-attr="href" data-replace-with="program.termsUrl">Terms of Service</a></p></div></div></footer></div></div><script>
+    if (window.innerWidth < 770) {
+      document.getElementById('lead-form-div').parentNode.setAttribute('style', 'margin: 0; postion: relative;');
+    }
+    new window.LeadForm.InlineWidget('#lead-form-div', {"title":"Learn More","intro_text":"Yes! I'm interested in the MSW@USC and want more information. ","intro_sub_text":"This will only take a minute!","program":"usc-msw","apiUrl":"https://prospects.api.2u.com/prospects","thankYouUrl":"thank-you-d.html","lead_source":"missingsource","splash_creative":"child_responsive"});
+  </script>
+    
+    </body></html>

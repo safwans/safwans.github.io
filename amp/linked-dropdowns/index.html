@@ -52,6 +52,8 @@
     background-color: rgb(153, 0, 0);
     color: rgb(255, 255, 255);
     min-height: 3rem;
+    font-size: 12px;
+    text-align: center;
   }
   
   .page {
@@ -74,10 +76,11 @@
   `cities` state value. This updates second `<amp-list>`'s `[src]` binding,
   and it renders its template using the data in the `cities` array.
   -->
-<nav></nav>
+<nav> Rey Demos </nav>
 <div class="page">
 <h2> Dynamic Dropdown - Three Levels </h2>
-<amp-list height="40" layout="fixed-height" src="https://ampbyexample.com/json/linked_dropdowns.json">
+
+<amp-list height="40" layout="fixed-height" src="data.json">
     <template type="amp-mustache">
       <label for="country">Country:</label>
       <select id="country" on="
@@ -88,22 +91,30 @@
       >
         <option value="">Choose a country</option>
         {{#countries}}
-          <option value="{{name}}">{{name}}</option>
+        <option value="{{name}}">{{name}}</option> 
         {{/countries}}
       </select>
     </template>
 </amp-list>
-<amp-list height="40" layout="fixed-height" [src]="cities || 'https://ampbyexample.com/json/linked_dropdowns.json'" src="https://ampbyexample.com/json/linked_dropdowns.json">
+<amp-list height="40" layout="fixed-height" [src]="cities || 'data.json'" src="data.json">
     <template type="amp-mustache">
       <label for="city">City:</label>
       <select [disabled]="!cities" disabled id="city">
-        {{^cities}}<option value=""></option>{{/cities}}
-        {{#cities.0}}<option value="">Choose a city</option>{{/cities.0}}
-        {{#cities}}<option value="{{.}}">{{.}}</option>{{/cities}}
+      {{^cities}}
+        <option value=""></option>
+      {{/cities}} 
+      {{#cities.0}}
+        <option value="">Choose a city</option>
+      {{/cities.0}} 
+      
+      {{#cities}}
+        <option value="{{.}}">{{.}}</option>
+      {{/cities}}
+      
       </select>
     </template>
 </amp-list>
-<amp-state id="dropdown" src="https://ampbyexample.com/json/linked_dropdowns.json"></amp-state>
+<amp-state id="dropdown" src="data.json"></amp-state>
 </div>
 
 </body>

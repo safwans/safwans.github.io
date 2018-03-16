@@ -1,0 +1,15 @@
+{
+  "items": [{
+    "countries": [{
+        "name": "Australia",
+        "cities": [{
+          "name": "Brisbane",
+          "neighbourhoods": [
+              "Raby Bay",
+              "Rosalie",
+              "Wongun"
+           ]
+         }]
+    }]
+    }]
+}

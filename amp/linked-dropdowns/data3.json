@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "countries": [
+        {
+          "name": "Australia",
+          "cities": [
+            {
+              "name": "Sydney",
+              "neighborhoods": [
+                  "A",
+                  "B",
+                  "C"
+              ]
+            },
+            {
+              "name": "Brisbane",
+              "neighborhoods": [
+                  "E",
+                  "F",
+                  "G"
+              ]
+            }
+            
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -100,10 +100,11 @@
 <amp-list height="40" layout="fixed-height" [src]="cities || 'data3.json'" src="data3.json">
     <template type="amp-mustache">
       <label for="city">City</label>
-      <select [disabled]="!cities" disabled id="city" on="
+      <select [disabled]="!cities" disabled id="city"
+      on="
         change:
           AMP.setState({
-            neighborhoods: dropdown.items[0].countries.filter(x => x.name == sc)[0].cities.filter(x=>x.name == event.value)[0]
+            scc: sc
           })"
       >
       {{^cities}}
@@ -120,25 +121,6 @@
       </select>
     </template>
 </amp-list>
-<amp-list height="40" layout="fixed-height" [src]="cities || 'data3.json'" src="data3.json">
-    <template type="amp-mustache">
-      <label for="neighborhood">Neighborhood</label>
-      <select [disabled]="!neighborhoods" disabled id="neighborhood">
-      {{^neighborhoods}}
-        <option value=""></option>
-      {{/neighborhoods}} 
-      {{#neighborhoods.0}}
-        <option value="">Choose a neighborhood</option>
-      {{/neighborhoods.0}} 
-      
-      {{#neighborhoods}}
-        <option value="{{name}}">{{name}}</option>
-      {{/neighborhoods}}
-      
-      </select>
-    </template>
-</amp-list>
-
 
 
 <amp-state id="dropdown" src="data3.json"></amp-state>

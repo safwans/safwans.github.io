@@ -1,0 +1,20 @@
+{
+	"items": [
+		{
+			"data": [
+				{
+					"id": 772,
+					"name": "BS - Accounting",
+					"product": 673,
+					"flexpath": 3350
+				},
+				{
+					"id": 2443,
+					"name": "BS - Accounting CPA Pathway",
+					"product": 3282,
+					"flexpath": null
+				}
+			]
+		}
+	]
+}

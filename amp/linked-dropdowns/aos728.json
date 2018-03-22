@@ -1,0 +1,20 @@
+{
+	"items": [
+		{
+			"data": [
+				{
+					"id": 3044,
+					"name": "Analytics",
+					"product": null,
+					"flexpath": null
+				},
+				{
+					"id": 735,
+					"name": "Business",
+					"product": null,
+					"flexpath": null
+				}
+			]
+		}
+	]
+}

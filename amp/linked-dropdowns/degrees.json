@@ -1,0 +1,20 @@
+{
+	"items": [
+		{
+			"data": [
+				{
+					"id": 728,
+					"name": "Bachelor's",
+					"product": null,
+					"flexpath": null
+				},
+				{
+					"id": 730,
+					"name": "Certificate",
+					"product": null,
+					"flexpath": null
+				}
+			]
+		}
+	]
+}

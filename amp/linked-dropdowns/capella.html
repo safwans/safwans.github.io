@@ -1,0 +1,111 @@
+
+<!doctype html>
+<html ⚡>
+<head>
+  <title>Linked Dropdowns</title>
+  <link rel="canonical" href="https://ampbyexample.com/advanced/linked_dropdowns/">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- #### Setup -->
+  <!-- First we include `amp-bind` to track the page state and update the ``<amp-list>` data source. -->
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <!-- Next we include `amp-list` to request and display the dropdowns and their options. -->
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <!-- Finally, we include `amp-mustache` to render the mustache templates inside the `<amp-list>`s. -->
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <style amp-custom>
+    label {
+      font-weight: bold;
+    }
+
+    [role="listitem"] {
+      display: flex;
+    }
+
+    [role="listitem"] > * {
+      flex: 1 0 0;
+    }
+
+    amp-list {
+      margin: 10px 20px;
+      min-width: 240px;
+    }
+    .hide {display:none;}
+    .show {display:block}
+  </style>
+</head>
+<body>
+  <amp-list width="auto" height="25" layout="fixed-height" src="https://capellaamp.herokuapp.com/testing.json">
+    <template type="amp-mustache">
+      <select on="
+            change:
+              AMP.setState({
+                degreeVal: event.value,
+                  visibility:event.value==''?'hide':''
+                  })">
+        <option value="">Choose degree</option>
+
+        {{#data}}
+        <option value="{{id}}">{{name}}</option>
+        {{/data}}
+      </select>
+    </template>
+  </amp-list>
+  <amp-list width="auto" height="25" layout="fixed-height" src="https://capellaamp.herokuapp.com/testing.json?empty=true" [src]="'https://capellaamp.herokuapp.com/testing.json?degree='+degreeVal">
+    <template type="amp-mustache">
+      <select on="
+            change:
+              AMP.setState({
+                  aosVal: event.value,
+                    visibility:event.value==''?'hide':''
+              })">
+        <option value="">Choose AOS</option>
+        {{#data}}
+        <option value="{{id}}">{{name}}</option>
+        {{/data}}
+      </select>
+    </template>
+  </amp-list>
+  <amp-list width="auto" height="25" layout="fixed-height" src="https://capellaamp.herokuapp.com/testing.json?empty=true" [src]="'https://capellaamp.herokuapp.com/testing.json?degree='+degreeVal+'&aos='+aosVal">
+    <template type="amp-mustache">
+      <select on="
+            change:
+              AMP.setState({
+                visibility:event.value !='' && event.value.split(',')[1] != ''?'show':'hide'
+              })">
+        <option value="">Choose Specialization</option>
+        {{#data}}
+        <option value="{{id}},{{flexpath}}">{{name}}</option>
+        {{/data}}
+      </select>
+    </template>
+  </amp-list>
+  <div class="hide" [class]="visibility||'hide'">
+    <div class="flexpath-field">
+      <label>We have 2 online learning formats. Which one are you most interested in?</label>
+      <div class="radio">
+        <span class="checked">
+          <input type="radio" name="flexpath" checked="" value="guidedpath">
+        </span>
+      </div>GuidedPath: Follow our schedule
+      <br>
+      <div class="radio">
+        <span>
+          <input type="radio" name="flexpath" value="flexpath">
+        </span>
+      </div>FlexPath: Set your own pace
+      <br>
+      <div class="radio">
+        <span>
+          <input type="radio" name="flexpath" value="both">
+        </span>
+      </div>I'd like information on both
+    </div>
+  </div>
+</body>
+</html>

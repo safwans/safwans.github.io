@@ -1,0 +1,20 @@
+{
+	"items": [
+		{
+			"data": [
+				{
+					"id": 2934,
+					"name": "BS - Criminal Justice",
+					"product": 3454,
+					"flexpath": null
+				},
+				{
+					"id": 779,
+					"name": "BS - Undecided",
+					"product": 1038,
+					"flexpath": 3276
+				}
+			]
+		}
+	]
+}

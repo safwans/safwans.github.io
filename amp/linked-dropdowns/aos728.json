@@ -6,13 +6,13 @@
 					"id": 3044,
 					"name": "Analytics",
 					"product": null,
-					"flexpath": null
+					"flexpath": "fx1"
 				},
 				{
 					"id": 735,
 					"name": "Business",
 					"product": null,
-					"flexpath": null
+					"flexpath": "fx2"
 				}
 			]
 		}

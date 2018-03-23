@@ -6,13 +6,13 @@
 					"id": 728,
 					"name": "Bachelor's",
 					"product": null,
-					"flexpath": null
+					"flexpath": "fx1"
 				},
 				{
 					"id": 730,
 					"name": "Certificate",
 					"product": null,
-					"flexpath": null
+					"flexpath": "fx2"
 				}
 			]
 		}

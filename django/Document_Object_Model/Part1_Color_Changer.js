@@ -34,4 +34,4 @@ function changeHeaderColor(){
 }
 
 // Now perform the action over intervals (milliseocnds):
-setInterval("changeHeaderColor()",500);
+setInterval("changeHeaderColor()",1000);

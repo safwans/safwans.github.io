@@ -1,5 +1,10 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js');
-
+workbox.core.setCacheNameDetails({
+  prefix: '',
+  suffix: '',
+  precache: 'nascar-cache',
+  runtime: 'nascar-cache'
+});
 workbox.precaching.precache([
   'https://m.nascar.com/wp-content/uploads/sites/7/2017/12/NASCAR_Barmark_Logo-1.svg',  
   'https://m.nascar.com/wp-content/themes/ndms-2016/images/loading-gif3.gif',
@@ -20,10 +25,11 @@ const navigationRoute = new workbox.routing.NavigationRoute(({event}) => {
 workbox.routing.registerRoute(navigationRoute);
 
 
-// Route for images
+// Route for static files
 workbox.routing.registerRoute(
     new RegExp('.*\/wp-content\/.*\.(?:css|js)'),
     workbox.strategies.staleWhileRevalidate({
+      cacheName: 'nascar-cache'
     })
 );
 
@@ -31,21 +37,21 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
     new RegExp('.*\/wp-content\/.*\.(?:jpg|jpeg|svg|gif|png)'),
     workbox.strategies.cacheFirst({
-      cacheName: 'images',
+      cacheName: 'nascar-cache',
       plugins: [
         new workbox.expiration.Plugin({
           maxEntries: 60,
           maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
         }),
       ],
-    }),
+    })
 );
 
 // Routing for fonts
 workbox.routing.registerRoute(
     new RegExp('.*\/wp-content\/.*\.woff2'),
     workbox.strategies.cacheFirst({
-      cacheName: 'static-resources',
+      cacheName: 'nascar-cache',
       plugins: [
         new workbox.cacheableResponse.Plugin({
           statuses: [0, 200],
@@ -55,7 +61,7 @@ workbox.routing.registerRoute(
           maxEntries: 30,
         }),
       ],
-    }),
+    })
   );
 
 const htmlHandler = workbox.strategies.networkOnly();

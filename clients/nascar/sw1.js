@@ -32,7 +32,7 @@ workbox.routing.registerRoute(navigationRoute);
 
 workbox.routing.registerRoute(
     new RegExp('.*\/wp-content\/.*\.(?:css|jpg|woff2)'),
-    workbox.strategies.staleWhileRevalidate({
+    workbox.strategies.cacheFirst({
       cacheName: 'nascar-cache'
     })
 );

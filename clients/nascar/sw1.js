@@ -28,5 +28,6 @@ const navigationRoute = new workbox.routing.NavigationRoute(({event}) => {
 workbox.routing.registerRoute(navigationRoute);
 
 
+
 workbox.skipWaiting();
 workbox.clientsClaim();

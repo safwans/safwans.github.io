@@ -1,5 +1,4 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js');
-
 workbox.core.setCacheNameDetails({
   prefix: '',
   suffix: '',
@@ -31,8 +30,8 @@ return htmlHandler.handle({event}).catch(() => caches.match('./offline.html'));
 workbox.routing.registerRoute(navigationRoute);
 
 workbox.routing.registerRoute(
-    new RegExp('.*\/wp-content\/.*\.(?:css|jpg|woff2)'),
-    workbox.strategies.cacheFirst({
+    new RegExp('.*\/wp-content\/.*\.(?:css|jpg|gif|svg|woff2)'),
+    workbox.strategies.staleWhileRevalidate({
       cacheName: 'nascar-cache'
     })
 );

@@ -1,5 +1,12 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js');
 
+workbox.core.setCacheNameDetails({
+  prefix: '',
+  suffix: '',
+  precache: 'nascar-cache',
+  runtime: 'nascar-cache'
+});
+
 workbox.precaching.precache([
   'https://m.nascar.com/wp-content/uploads/sites/7/2017/12/NASCAR_Barmark_Logo-1.svg',  
   'https://m.nascar.com/wp-content/themes/ndms-2016/images/loading-gif3.gif',
@@ -24,10 +31,10 @@ workbox.routing.registerRoute(navigationRoute);
 
 workbox.routing.registerRoute(
     new RegExp('.*\/wp-content\/.*\.(?:css|jpg|woff2)'),
-    workbox.strategies.staleWhileRevalidate()
+    workbox.strategies.staleWhileRevalidate({
+      cacheName: 'nascar-cache'
+    })
 );
-
-
 
 workbox.skipWaiting();
 workbox.clientsClaim();

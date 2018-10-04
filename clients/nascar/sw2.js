@@ -20,11 +20,11 @@ workbox.precaching.precache([
 
 const htmlHandler = workbox.strategies.networkOnly();
 
-
 //A NavigationRoute matches navigation requests in the browser, i.e. requests for HTML.
 const navigationRoute = new workbox.routing.NavigationRoute(({event}) => {
   return htmlHandler.handle({event}).catch(() => caches.match('./offline.html'));
 });
+
 workbox.routing.registerRoute(navigationRoute);
 
 
@@ -49,7 +49,6 @@ workbox.routing.registerRoute(
     new RegExp('.*\/wp-content\/.*\.woff2'),
     workbox.strategies.cacheFirst()
   );
-
 
 workbox.skipWaiting();
 workbox.clientsClaim();

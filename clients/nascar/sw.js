@@ -36,7 +36,9 @@ workbox.routing.registerRoute(
 // Routing for images
 workbox.routing.registerRoute(
     new RegExp('.*\/wp-content\/.*\.(?:jpg|jpeg|svg|gif|png)'),
-    workbox.strategies.cacheFirst()
+    workbox.strategies.cacheFirst({
+      cacheName: 'nascar-cache'
+    })
 );
 
 // Routing for fonts
@@ -46,7 +48,5 @@ workbox.routing.registerRoute(
   );
 
 const htmlHandler = workbox.strategies.networkOnly();
-
-
 workbox.skipWaiting();
 workbox.clientsClaim();

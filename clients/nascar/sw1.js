@@ -22,6 +22,7 @@ workbox.precaching.precache([
 
 const htmlHandler = workbox.strategies.networkOnly();
 
+
 //A NavigationRoute matches navigation requests in the browser, i.e. requests for HTML.
 const navigationRoute = new workbox.routing.NavigationRoute(({event}) => {
 return htmlHandler.handle({event}).catch(() => caches.match('./offline.html'));

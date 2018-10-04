@@ -48,7 +48,9 @@ workbox.routing.registerRoute(
 // Routing for fonts
 workbox.routing.registerRoute(
     new RegExp('.*\/wp-content\/.*\.woff2'),
-    workbox.strategies.cacheFirst()
+    workbox.strategies.cacheFirst({
+      cacheName: 'nascar-cache'
+    })
   );
 
 workbox.skipWaiting();

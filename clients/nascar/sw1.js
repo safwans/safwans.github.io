@@ -29,6 +29,5 @@ workbox.routing.registerRoute(
 
 
 
-
 workbox.skipWaiting();
 workbox.clientsClaim();

@@ -36,32 +36,13 @@ workbox.routing.registerRoute(
 // Routing for images
 workbox.routing.registerRoute(
     new RegExp('.*\/wp-content\/.*\.(?:jpg|jpeg|svg|gif|png)'),
-    workbox.strategies.cacheFirst({
-      cacheName: 'nascar-cache',
-      plugins: [
-        new workbox.expiration.Plugin({
-          maxEntries: 60,
-          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
-        }),
-      ],
-    })
+    workbox.strategies.cacheFirst()
 );
 
 // Routing for fonts
 workbox.routing.registerRoute(
     new RegExp('.*\/wp-content\/.*\.woff2'),
-    workbox.strategies.cacheFirst({
-      cacheName: 'nascar-cache',
-      plugins: [
-        new workbox.cacheableResponse.Plugin({
-          statuses: [0, 200],
-        }),
-        new workbox.expiration.Plugin({
-          maxAgeSeconds: 60 * 60 * 24 * 365,
-          maxEntries: 30,
-        }),
-      ],
-    })
+    workbox.strategies.cacheFirst()
   );
 
 const htmlHandler = workbox.strategies.networkOnly();

@@ -48,5 +48,6 @@ workbox.routing.registerRoute(
   );
 
 const htmlHandler = workbox.strategies.networkOnly();
+
 workbox.skipWaiting();
 workbox.clientsClaim();

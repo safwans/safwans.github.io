@@ -1,0 +1,738 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>amp-iframe</title>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!--  Import the amp-iframe component in the header. -->
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  <link rel="canonical" href="https://ampbyexample.com/components/amp-iframe/">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-custom>
+
+        @font-face {
+            font-family: 'Flama Bold';
+            src: url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-Bold.eot');
+            src: url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-Bold.eot#iefix') format('embedded-opentype'),
+                 url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-Bold.woff') format('woff'),
+                 url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-Bold.svg#Flama Bold') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Flama Bold Italic';
+            src: url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-BoldItalic.eot');
+            src: url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-BoldItalic.eot#iefix') format('embedded-opentype'),
+                 url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-BoldItalic.woff') format('woff'),
+                 url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-BoldItalic.svg#Flama Bold Italic') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Flama Medium';
+            src: url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-Medium.eot');
+            src: url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-Medium.eot#iefix') format('embedded-opentype'),
+                 url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-Medium.woff') format('woff'),
+                 url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-Medium.svg#Flama Medium') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Flama Medium Italic';
+            src: url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-MediumItalic.eot');
+            src: url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-MediumItalic.eot#iefix') format('embedded-opentype'),
+                 url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-MediumItalic.woff') format('woff'),
+                 url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webfonts/Flama-MediumItalic.svg#Flama Medium Italic') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'WebIcons';
+            src: url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webicons/webiconfont.eot');
+            src: url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webicons/webiconfont.eot#iefix') format('embedded-opentype'),
+                 url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webicons/webiconfont.woff') format('woff'),
+                 url('/etc.clientlibs/settings/wcm/design/bmnews/clientlibs/clientlib-amp-all/resources/webicons/webiconfont.svg#webIcons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        header{display:block;clear:none;float:left;width:100%;max-width:100%;margin:auto;padding:0;background-color:transparent}
+.header{display:block;clear:none;float:none;width:100%;max-width:100%;margin:auto;padding:0;background-color:#0366c3;height:70px}
+.header .fa.fa-bars,.header .logo{height:100%;float:left;color:white;vertical-align:middle;line-height:70px;margin-left:10px;text-decoration:none}
+.header .fa.fa-bars:hover,.header .logo:hover{cursor:pointer}
+.header .fa.fa-bars amp-img,.header .logo amp-img{display:inline-block;height:100%;max-height:45px;vertical-align:middle}
+.header .fa.fa-bars{height:70px;padding:0 20px;text-align:center}
+.header .fa.fa-bars:hover{cursor:pointer}
+footer{display:block;clear:none;float:left;width:100%;max-width:100%;margin:120px 0 0 0;padding:0;background-color:transparent}
+.footer.text{display:block;clear:none;float:none;width:100%;max-width:100%;margin:0;padding:40px 0;background-color:#414141;height:130px}
+.footer.text .text-wrapper{margin:0}
+.footer.text p,.footer.text p a{font-family:'Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:12px;line-height:20px;color:#fff}
+.footer.text p{display:block;clear:none;float:none;width:100%;max-width:100%;margin:0;padding:0;background-color:transparent}
+.footer.text p:first-of-type{margin-bottom:10px;line-height:15px}
+.footer.text p a{text-decoration:none;font-weight:bold;white-space:nowrap}
+.footer.text p amp-img{max-height:20px;margin:0 10px -1px 10px}
+.headline,.headline-nofont{display:block;clear:none;float:left;width:100%;max-width:100%;margin:25px 0 0 0;padding:0 10px;background-color:transparent}
+.headline>h1,.headline-nofont>h1{margin:0;text-align:left}
+.headline>h1{font-family:'Flama Medium','Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:26px;line-height:30px;color:#4a4a4a}
+.headline-nofont>h1{font-family:'Helvetica','Arial',sans-serif;font-weight:bold;font-style:normal;font-size:26px;line-height:30px;color:#4a4a4a}
+.headline>hr,.headline-nofont>hr{margin:15px 0 0 0;border:0;border-top:1px #e8e8e9 solid}
+.article-body-wrapper .headline,.article-body-wrapper .headline-nofont{order:-1}
+.article-body-wrapper{width:100%;float:left}
+.article-body-wrapper p{display:block;clear:none;float:left;width:100%;max-width:100%;margin:20px 0 0 0;padding:0 10px;background-color:transparent;font-family:'Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:18px;line-height:26px;color:#4a4a4a}
+.article-body-wrapper p:first-child{margin:0}
+.article-body-wrapper p+ol,.article-body-wrapper p+ul{margin:10px 0 0 0}
+.article-body-wrapper p+h1,.article-body-wrapper p+h2,.article-body-wrapper p+h3,.article-body-wrapper p+h4,.article-body-wrapper p+h5{margin-top:24px}
+.article-body-wrapper a{color:#0366c3;text-decoration:none}
+.article-body-wrapper a:hover{text-decoration:underline}
+.article-body-wrapper h1,.article-body-wrapper h2,.article-body-wrapper h3,.article-body-wrapper h4,.article-body-wrapper h5{float:left;width:100%}
+.article-body-wrapper h1+ol,.article-body-wrapper h2+ol,.article-body-wrapper h3+ol,.article-body-wrapper h4+ol,.article-body-wrapper h5+ol,.article-body-wrapper h1+ul,.article-body-wrapper h2+ul,.article-body-wrapper h3+ul,.article-body-wrapper h4+ul,.article-body-wrapper h5+ul{margin:8px 0 0 0}
+.article-body-wrapper h1+p,.article-body-wrapper h2+p,.article-body-wrapper h3+p,.article-body-wrapper h4+p,.article-body-wrapper h5+p{margin-top:4px}
+.article-body-wrapper h1{font-family:'Flama Medium','Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:26px;line-height:30px;color:#4a4a4a}
+.article-body-wrapper h2{font-family:'Flama Medium','Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:20px;line-height:24px;color:#4a4a4a}
+.article-body-wrapper h3{font-family:'Flama Medium','Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:18px;line-height:21px;color:#4a4a4a}
+.article-body-wrapper h4{font-family:'Flama Medium','Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:16px;line-height:19px;color:#4a4a4a}
+.article-body-wrapper h5{font-family:'Helvetica','Arial',sans-serif;font-weight:bold;font-style:normal;font-size:14px;line-height:17px;color:#4a4a4a}
+.article-body-wrapper ol,.article-body-wrapper ul{font-family:'Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:18px;line-height:26px;color:#4a4a4a;width:100%;float:left;margin:20px 0 0 0;padding:0 25px 0 10px}
+.article-body-wrapper ol,.article-body-wrapper ul{list-style:none}
+.article-body-wrapper ol{counter-reset:item}
+.article-body-wrapper ol>li,.article-body-wrapper ul>li{display:flex;margin-top:4px}
+.article-body-wrapper ol>li:first-child,.article-body-wrapper ul>li:first-child{margin-top:0}
+.article-body-wrapper ol>li{counter-increment:item}
+.article-body-wrapper ul>li:before{font-size:16px;margin-right:15px;display:inline-flex}
+.article-body-wrapper ol>li:before{content:counter(item) '.';margin-right:5px;display:inline-flex}
+.article-body-wrapper ul>li:before{content:"•"}
+.article-body-wrapper .root.responsivegrid{display:flex;flex-wrap:wrap}
+.article-body-wrapper p{order:1}
+.article-body-wrapper p:first-of-type,.article-body-wrapper p:nth-of-type(2){order:-1}
+.text-wrapper{width:100%;float:left;margin:20px 0 0 0;padding:0 10px}
+.text-wrapper p{display:block;clear:none;float:left;width:100%;max-width:100%;margin:20px 0 0 0;padding:0;background-color:transparent;font-family:'Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:18px;line-height:26px;color:#4a4a4a}
+.text-wrapper p:first-child{margin:0}
+.text-wrapper a{color:#0366c3;text-decoration:none}
+.text-wrapper a:focus{text-decoration:underline}
+.subject{display:block;clear:none;float:left;width:100%;max-width:100%;margin:10px 0 0 0;padding:0 10px;background-color:transparent;text-transform:uppercase;font-family:'Flama Medium','Helvetica','Arial',sans-serif;font-weight:bold;font-style:normal;font-size:14px;line-height:24px;color:#0366c3}
+.articleauthorline{display:block;clear:none;float:left;width:100%;max-width:100%;margin:auto;padding:0 10px;background-color:transparent;font-family:'Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:13px;line-height:17px;color:#828282;margin:15px 0 0 0}
+.articleauthorline div{display:inline-block}
+.articleauthorline .author-name{color:#4a4a4a;font-weight:bold}
+.credit-separator{color:#828282;font-weight:normal}
+.article-body-wrapper .articleauthorline{order:-1}
+.articlepublishupdatedate{display:block;clear:none;float:left;width:100%;max-width:100%;margin:auto;padding:0 10px;background-color:transparent;font-family:'Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:13px;line-height:17px;color:#828282;margin:15px 0 0 0}
+.articleauthorline+.articlepublishupdatedate{margin:0}
+.article-body-wrapper .articlepublishupdatedate{order:-1;margin-top:0}
+.cmp-image{display:block;clear:none;float:left;width:100%;max-width:100%;margin:20px 0 0 0;padding:0 10px;background-color:transparent}
+.cmp-image+*{margin-top:20px}
+.articlepublishupdatedate+.cmp-image{margin-top:15px}
+.cmp-image__image{width:100%;height:auto;float:left}
+.cmp-image__title{display:block;float:left;margin-top:10px;font-family:'Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:13px;line-height:17px;color:#828282}
+hr{width:100%;float:left;margin:10px 0 0 0;border:0;border-top:1px #e8e8e8 solid}
+.article-body-wrapper .cmp-image{order:-1}
+amp-iframe{width:100%;height:100%;float:left;margin:4px 0 0 0;position:relative}
+.articlepublishupdatedate+amp-iframe{margin:0}
+amp-iframe .iframe-overflow{position:absolute;bottom:0;left:0;width:100%;height:20px;line-height:20px;font-family:'Helvetica','Arial',sans-serif;text-align:center;color:#0366c3}
+.article-body-wrapper amp-iframe{order:-1}
+.story-highlights{display:block;clear:none;float:left;width:100%;max-width:100%;margin:27px 0 0 0;padding:0 10px;background-color:transparent}
+.story-highlights>div{display:block;clear:none;float:left;width:100%;max-width:100%;margin:auto;padding:10px;background-color:#fff;border-top:3px #0366c3 solid}
+.story-highlights h3{font-family:'Helvetica','Arial',sans-serif;font-weight:bold;font-style:normal;font-size:12px;line-height:22px;color:#4a4a4a;width:100%;float:left;margin:0;text-transform:uppercase}
+.story-highlights ul{width:100%;float:left;margin:10px 0 0 0;padding:0;list-style:none}
+.story-highlights ul>li{display:flex;margin-top:10px;font-family:'Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:14px;line-height:16px;color:#828282}
+.story-highlights ul>li::before{content:"•";font-size:16px;line-height:16px;color:#0366c3;margin-right:10px;display:block}
+.story-highlights ul>li:first-child{margin-top:0}
+.article-cmp-list{display:block;clear:none;float:none;width:100%;max-width:100%;margin:auto;padding:0 10px;background-color:#fafafa;list-style:none;margin-top:10px}
+.article-cmp-list__item{border-bottom:1px solid #e8e8e8;padding:15px 0;overflow:auto}
+.article-cmp-list__item:last-child{border-bottom:0}
+.cmp-list__item-link{text-decoration:none;color:inherit}
+.cmp-list__headline .cmp-list__headline-description{display:inline-block;vertical-align:top;margin-top:0}
+.cmp-list__headline .cmp-list__item-title{font-family:'Flama Medium','Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:22px;line-height:1.09;color:#4a4a4a;text-align:left}
+.cmp-list__headline .cmp-list__item-title-nofont{font-family:'Helvetica','Arial',sans-serif;font-weight:bold;font-style:normal;font-size:22px;line-height:1.09;color:#4a4a4a;text-align:left}
+.cmp-list__headline .cmp-list__item-desc{font-family:'Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:16px;line-height:1.18;color:#4a4a4a;line-height:1.18em;margin-top:10px}
+.cmp-list__headline-thumbnail{white-space:nowrap}
+.cmp-list__headline-thumbnail .cmp-list__item-title,.cmp-list__headline-thumbnail .cmp-list__item-title-nofont{text-align:left;font-size:22px}
+.cmp-list__headline-thumbnail .cmp-list__item-title{font-family:'Flama Medium','Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:22px;line-height:1.09;color:#4a4a4a}
+.cmp-list__headline-thumbnail .cmp-list__item-title-nofont{font-family:'Helvetica','Arial',sans-serif;font-weight:bold;font-style:normal;font-size:22px;line-height:1.09;color:#4a4a4a}
+.cmp-list__headline-thumbnail .cmp-list__headline-description{white-space:normal;vertical-align:top;margin-top:0}
+.cmp-list__headline-thumbnail .cmp-list__item-desc-mobile{font-family:'Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:16px;line-height:1.18;color:#4a4a4a;display:block;margin-top:0;white-space:normal}
+.cmp-list__headline-thumbnail .cmp-image{display:inline-block;white-space:normal;width:140px;padding:0 20px 0 0;margin:0}
+.cmp-list__time-stamp{font-family:'Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:12px;line-height:14px;color:#4a4a4a}
+.carousel_container_si{position:relative;padding-top:0;margin-top:0}
+.blueShade_si{background-color:#0366c3;margin:0;width:90%;height:60%;position:absolute;top:0;left:0}
+.textWhite_si{clear:both;font-family:'Flama Medium','Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:14px;line-height:1.29;color:#fff;margin-left:10px;margin-top:15px;width:90%;padding-bottom:5px;padding-right:20px;letter-spacing:normal;position:absolute;z-index:10}
+.img2box_si{clear:both;margin-left:10px;padding-top:70px;padding-right:10px}
+.ampDescText_si{font-family:'Flama Medium','Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:14px;line-height:1.29;color:#828282}
+.topline_right_si{float:right;padding-right:0}
+.topline_left_si{float:left;padding-left:5px}
+.advert{width:100%;text-align:center;padding-top:20px;clear:both}
+.advert .advert-label{display:block;height:13px;font-family:'Helvetica','Arial',sans-serif;font-size:11px;font-weight:normal;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:normal;color:#828282}
+.cmp-banner{display:block;clear:none;float:left;width:100%;max-width:100%;margin:0;padding:0;background-color:transparent}
+.cmp-banner+*{margin-top:0}
+.articlepublishupdatedate+.cmp-banner{margin-top:0}
+.cmp-banner__image{width:100%;height:auto;float:left}
+hr{width:100%;float:left;margin:10px 0 0 0;border:0;border-top:1px #e8e8e8 solid}
+.article-body-wrapper .cmp-banner{order:-1}
+.Read-the-original-ve{font-family:'Flama Medium','Helvetica','Arial',sans-serif;font-weight:normal;font-style:normal;font-size:16px;line-height:0;color:#0366c3;margin-left:10px;text-decoration:none}
+.arrow_wicon{font-family:webIcons;color:#0366c3;font-size:10px}
+.Rectangle-Copy-12{margin:0px 10px 20px 10px;background-color:#e8e8e8}
+*{box-sizing:border-box}
+body{background-color:#fafafa}
+header::after{clear:both}
+.root.responsivegrid,.container{display:block;clear:none;float:left;width:100%;max-width:100%;margin:0;padding:0;background-color:transparent}
+.rte-justify-left{text-align:left}
+.rte-justify-center{text-align:center}
+.rte-justify-right{text-align:right}
+
+        /*** WEB ICON USAGE EXAMPLE ***/
+        /*   <span class="wicon icon-social-twitter-fill"></span>  */
+
+        .wicon{ font-family: WebIcons; color:#112; font-size: 18px;}
+
+        .icon-checkmark:before {
+            content: "\e997";
+        }
+        .icon-checkbox-empty-lines:before {
+            content: "\e9aa";
+        }
+        .icon-eye-lines:before {
+            content: "\e900";
+        }
+        .icon-eye-fill:before {
+            content: "\e9a8";
+        }
+        .icon-list:before {
+            content: "\e9a7";
+        }
+        .icon-home-fill:before {
+            content: "\e9a9";
+        }
+        .icon-home-lines:before {
+            content: "\e901";
+        }
+        .icon-circle-ellipsis-fill:before {
+            content: "\e902";
+        }
+        .icon-circle-ellipsis-lines:before {
+            content: "\e903";
+        }
+        .icon-circle-big:before {
+            content: "\e904";
+        }
+        .icon-circle-small:before {
+            content: "\e905";
+        }
+        .icon-circle-play-lines:before {
+            content: "\e906";
+        }
+        .icon-circle-play-fill:before {
+            content: "\e907";
+        }
+        .icon-social-facebook:before {
+            content: "\e908";
+        }
+        .icon-social-google:before {
+            content: "\e909";
+        }
+        .icon-social-instagram-fill:before {
+            content: "\e90a";
+        }
+        .icon-social-linkedin:before {
+            content: "\e90b";
+        }
+        .icon-social-pinterest:before {
+            content: "\e90c";
+        }
+        .icon-social-snapchat:before {
+            content: "\e90d";
+        }
+        .icon-social-twitter:before {
+            content: "\e90e";
+        }
+        .icon-social-youtube:before {
+            content: "\e90f";
+        }
+        .icon-location-fill:before {
+            content: "\e910";
+        }
+        .icon-location-lines:before {
+            content: "\e911";
+        }
+        .icon-play-fill:before {
+            content: "\e912";
+        }
+        .icon-arrow-back-fill:before {
+            content: "\e913";
+        }
+        .icon-arrow-back-lines:before {
+            content: "\e914";
+        }
+        .icon-bookmark-fill:before {
+            content: "\e915";
+        }
+        .icon-bookmark-lines:before {
+            content: "\e916";
+        }
+        .icon-star-fill:before {
+            content: "\e917";
+        }
+        .icon-star-lines:before {
+            content: "\e918";
+        }
+        .icon-grid-four-lines:before {
+            content: "\e919";
+        }
+        .icon-movie-lines:before {
+            content: "\e91a";
+        }
+        .icon-movie-fill:before {
+            content: "\e91b";
+        }
+        .icon-english:before {
+            content: "\e91c";
+        }
+        .icon-french:before {
+            content: "\e91d";
+        }
+        .icon-bullet-small:before {
+            content: "\e91e";
+        }
+        .icon-heart-fill:before {
+            content: "\e91f";
+        }
+        .icon-heart-lines:before {
+            content: "\e920";
+        }
+        .icon-user-fill:before {
+            content: "\e921";
+        }
+        .icon-user-lines:before {
+            content: "\e922";
+        }
+        .icon-play-lines:before {
+            content: "\e923";
+        }
+        .icon-player-forward-lines:before {
+            content: "\e924";
+        }
+        .icon-player-forward-fill:before {
+            content: "\e925";
+        }
+        .icon-player-rewind-fill:before {
+            content: "\e926";
+        }
+        .icon-player-rewind-lines:before {
+            content: "\e927";
+        }
+        .icon-chevron-right:before {
+            content: "\e928";
+        }
+        .icon-chevron-left:before {
+            content: "\e929";
+        }
+        .icon-chevron-down:before {
+            content: "\e92a";
+        }
+        .icon-chevron-up:before {
+            content: "\e92b";
+        }
+        .icon-arrow-left:before {
+            content: "\e92c";
+        }
+        .icon-arrow-down:before {
+            content: "\e92d";
+        }
+        .icon-arrow-up:before {
+            content: "\e92e";
+        }
+        .icon-arrow-dia-right-up:before {
+            content: "\e92f";
+        }
+        .icon-arrow-dia-left-down:before {
+            content: "\e930";
+        }
+        .icon-double-chevron-hor:before {
+            content: "\e931";
+        }
+        .icon-double-chevron-ver:before {
+            content: "\e932";
+        }
+        .icon-flag-fill:before {
+            content: "\e933";
+        }
+        .icon-flag-lines:before {
+            content: "\e934";
+        }
+        .icon-med-corners:before {
+            content: "\e935";
+        }
+        .icon-plus-big:before {
+            content: "\e936";
+        }
+        .icon-x-big:before {
+            content: "\e937";
+        }
+        .icon-x-small:before {
+            content: "\e938";
+        }
+        .icon-plus-small:before {
+            content: "\e939";
+        }
+        .icon-menu-big:before {
+            content: "\e93a";
+        }
+        .icon-menu-small:before {
+            content: "\e93b";
+        }
+        .icon-magnifying-big:before {
+            content: "\e93c";
+        }
+        .icon-magnifying-small:before {
+            content: "\e93d";
+        }
+        .icon-arrow-right-small:before {
+            content: "\e93e";
+        }
+        .icon-arrow-left-small:before {
+            content: "\e93f";
+        }
+        .icon-chevron-right-small:before {
+            content: "\e940";
+        }
+        .icon-player-next-fill:before {
+            content: "\e941";
+        }
+        .icon-player-next-lines:before {
+            content: "\e942";
+        }
+        .icon-player-previous-lines:before {
+            content: "\e943";
+        }
+        .icon-player-previous-fill:before {
+            content: "\e944";
+        }
+        .icon-expand-3:before {
+            content: "\e945";
+        }
+        .icon-chevron-left-small:before {
+            content: "\e946";
+        }
+        .icon-users-fill:before {
+            content: "\e947";
+        }
+        .icon-users-lines:before {
+            content: "\e948";
+        }
+        .icon-circle-chevron-right-lines:before {
+            content: "\e949";
+        }
+        .icon-circle-chevron-left-lines:before {
+            content: "\e94a";
+        }
+        .icon-circle-chevron-up-lines:before {
+            content: "\e94b";
+        }
+        .icon-circle-chevron-down-lines:before {
+            content: "\e94c";
+        }
+        .icon-circle-chevron-up-fill:before {
+            content: "\e94d";
+        }
+        .icon-circle-chevron-down-fill:before {
+            content: "\e94e";
+        }
+        .icon-circle-chevron-right-fill:before {
+            content: "\e94f";
+        }
+        .icon-circle-magnify-lines:before {
+            content: "\e950";
+        }
+        .icon-circle-magnify-lines2:before {
+            content: "\e9ab";
+        }
+        .icon-circle-chevron-left-fill:before {
+            content: "\e951";
+        }
+        .icon-circle-magnify-fill:before {
+            content: "\e952";
+        }
+        .icon-circle-minus-fill:before {
+            content: "\e953";
+        }
+        .icon-circle-x-fill:before {
+            content: "\e954";
+        }
+        .icon-circle-plus-fill:before {
+            content: "\e955";
+        }
+        .icon-share-fill:before {
+            content: "\e956";
+        }
+        .icon-share-lines:before {
+            content: "\e957";
+        }
+        .icon-photo-fill2:before {
+            content: "\e958";
+        }
+        .icon-photo-inlines2:before {
+            content: "\e959";
+        }
+        .icon-arrows-expand:before {
+            content: "\e95a";
+        }
+        .icon-download:before {
+            content: "\e95b";
+        }
+        .icon-arrows-contract2:before {
+            content: "\e95c";
+        }
+        .icon-arrows-contract:before {
+            content: "\e95d";
+        }
+        .icon-arrows-expand2:before {
+            content: "\e95e";
+        }
+        .icon-mail-fill:before {
+            content: "\e95f";
+        }
+        .icon-arrow-forward-fill:before {
+            content: "\e960";
+        }
+        .icon-arrow-forward-lines:before {
+            content: "\e961";
+        }
+        .icon-settings-lines:before {
+            content: "\e962";
+        }
+        .icon-settings-fill:before {
+            content: "\e963";
+        }
+        .icon-switch-hor:before {
+            content: "\e964";
+        }
+        .icon-switch-ver:before {
+            content: "\e965";
+        }
+        .icon-asterisk-small:before {
+            content: "\e966";
+        }
+        .icon-asterisk:before {
+            content: "\e967";
+        }
+        .icon-lock-fill:before {
+            content: "\e968";
+        }
+        .icon-unlock-fill:before {
+            content: "\e969";
+        }
+        .icon-unlock-lines:before {
+            content: "\e96a";
+        }
+        .icon-lock-lines:before {
+            content: "\e96b";
+        }
+        .icon-circle-info-fill:before {
+            content: "\e96c";
+        }
+        .icon-circle-info-lines:before {
+            content: "\e96d";
+        }
+        .icon-circle-exclamation-lines:before {
+            content: "\e96e";
+        }
+        .icon-circle-exclamation-fill:before {
+            content: "\e96f";
+        }
+        .icon-phone-fill:before {
+            content: "\e970";
+        }
+        .icon-phone-lines:before {
+            content: "\e971";
+        }
+        .icon-tablet-fill:before {
+            content: "\e972";
+        }
+        .icon-tablet-lines:before {
+            content: "\e973";
+        }
+        .icon-bullet:before {
+            content: "\e974";
+        }
+        .icon-print:before {
+            content: "\e975";
+        }
+        .icon-circle-interr-lines:before {
+            content: "\e976";
+        }
+        .icon-circle-interr-fill:before {
+            content: "\e977";
+        }
+        .icon-get-in:before {
+            content: "\e978";
+        }
+        .icon-get-out:before {
+            content: "\e979";
+        }
+        .icon-iOS-upload:before {
+            content: "\e97a";
+        }
+        .icon-iOS-download:before {
+            content: "\e97b";
+        }
+        .icon-nav-foreign:before {
+            content: "\e97c";
+        }
+        .icon-paperclip:before {
+            content: "\e97d";
+        }
+        .icon-checkbox-checked:before {
+            content: "\e97e";
+        }
+        .icon-map-fill:before {
+            content: "\e97f";
+        }
+        .icon-map-lines:before {
+            content: "\e980";
+        }
+        .icon-photo:before {
+            content: "\e981";
+        }
+        .icon-photos:before {
+            content: "\e982";
+        }
+        .icon-screen-fill:before {
+            content: "\e983";
+        }
+        .icon-screen-lines:before {
+            content: "\e984";
+        }
+        .icon-lightning-lines:before {
+            content: "\e985";
+        }
+        .icon-lightning-fill:before {
+            content: "\e986";
+        }
+        .icon-social-instagram-lines:before {
+            content: "\e987";
+        }
+        .icon-mail-lines:before {
+            content: "\e988";
+        }
+        .icon-grid-four-fill:before {
+            content: "\e989";
+        }
+        .icon-grid-nine-fill:before {
+            content: "\e98a";
+        }
+        .icon-thumb-down-fill:before {
+            content: "\e98b";
+        }
+        .icon-thumb-down-lines:before {
+            content: "\e98c";
+        }
+        .icon-thumb-up-fill:before {
+            content: "\e98d";
+        }
+        .icon-thumb-up-lines:before {
+            content: "\e98e";
+        }
+        .icon-bell-fill:before {
+            content: "\e98f";
+        }
+        .icon-bell-lines:before {
+            content: "\e990";
+        }
+        .icon-tag-lines:before {
+            content: "\e991";
+        }
+        .icon-tag-fill:before {
+            content: "\e992";
+        }
+        .icon-send:before {
+            content: "\e993";
+        }
+        .icon-circle-checked-lines:before {
+            content: "\e994";
+        }
+        .icon-comments-fill:before {
+            content: "\e995";
+        }
+        .icon-comments-lines:before {
+            content: "\e996";
+        }
+        .icon-link:before {
+            content: "\e998";
+        }
+        .icon-lightbulb-fill:before {
+            content: "\e999";
+        }
+        .icon-lightbulb-lines:before {
+            content: "\e99a";
+        }
+        .icon-trash-fill:before {
+            content: "\e99b";
+        }
+        .icon-trash-lines:before {
+            content: "\e99c";
+        }
+        .icon-line:before {
+            content: "\e99d";
+        }
+        .icon-copy:before {
+            content: "\e99e";
+        }
+        .icon-ellipsis:before {
+            content: "\e99f";
+        }
+        .icon-volume-fill-3:before {
+            content: "\e9a0";
+        }
+        .icon-volume-lines-3:before {
+            content: "\e9a1";
+        }
+        .icon-volume-lines-2:before {
+            content: "\e9a2";
+        }
+        .icon-volume-lines-1:before {
+            content: "\e9a3";
+        }
+        .icon-volume-fill-2:before {
+            content: "\e9a4";
+        }
+        .icon-volume-fill-1:before {
+            content: "\e9a5";
+        }
+        .icon-line-small:before {
+            content: "\e9a6";
+        }
+    
+</style>
+</head>
+<body>
+  <div class="article-body-wrapper">
+    <div class="container">
+      <div class="root responsivegrid">
+        <amp-iframe resizable="" width="16" height="9"
+          layout="responsive"
+          sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"
+          allowfullscreen="" frameborder="0"
+          src="https://ampvideo.ctvnews.ca/videoplayer.html?axisIDs=1484258%2C1484021%2C1483947"
+          scrolling="no"> <amp-img placeholder=""
+          src="/content/dam/ctvnews/videos/axis/2018/9/9/1484258/_jcr_content/renditions/videothumbnail.1536547544811.jpg"
+          layout="fill"></amp-img>
+        <div overflow="" tabindex="0" role="button"
+          class="iframe-overflow" aria-label="Expand">Click to
+          Expand</div>
+        </amp-iframe>
+      </div>
+    </div>
+  </div>
+  <div>
+    <hr class="Rectangle-Copy-12">
+    <a class="Read-the-original-ve"
+      href="https://www.ctvnews.ca/canada/man-killed-while-trying-to-stop-toronto-flea-market-robbery-witnesses-1.4086065">
+      Read the original version 
+      <span class="arrow_wicon icon-arrow-right-small"></span>
+    </a>
+  </div>
+</body>
+</html>

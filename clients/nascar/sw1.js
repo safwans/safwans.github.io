@@ -13,19 +13,20 @@ workbox.precaching.precache([
   'https://m.nascar.com/monster-energy-nascar-cup-series/2018/schedule/'
 ]);
 
+const htmlHandler = workbox.strategies.networkOnly();
+
+//A NavigationRoute matches navigation requests in the browser, i.e. requests for HTML.
+const navigationRoute = new workbox.routing.NavigationRoute(({event}) => {
+return htmlHandler.handle({event}).catch(() => caches.match('./offline.html'));
+});
+
+workbox.routing.registerRoute(navigationRoute);
+
 workbox.routing.registerRoute(
     new RegExp('.*\/wp-content\/.*\.(?:css|jpg|woff2)'),
     workbox.strategies.staleWhileRevalidate()
 );
 
-const htmlHandler = workbox.strategies.networkOnly();
-
-// A NavigationRoute matches navigation requests in the browser, i.e. requests for HTML.
-const navigationRoute = new workbox.routing.NavigationRoute(({event}) => {
-  return htmlHandler.handle({event}).catch(() => caches.match('./offline.html'));
-});
-
-workbox.routing.registerRoute(navigationRoute);
 
 
 

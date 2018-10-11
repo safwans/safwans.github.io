@@ -19,7 +19,7 @@ workbox.precaching.precache([
   'https://m.nascar.com/monster-energy-nascar-cup-series/2018/schedule/'
 ]);
 
-const htmlHandler = workbox.strategies.networkFirst();
+const htmlHandler = workbox.strategies.networkOnly();
 
 
 //A NavigationRoute matches navigation requests in the browser, i.e. requests for HTML.

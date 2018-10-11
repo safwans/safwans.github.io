@@ -5,7 +5,11 @@ workbox.setConfig({
 });
 
 
-workbox.googleAnalytics.initialize();
+workbox.googleAnalytics.initialize({
+  parameterOverrides: {
+    cd1: 'offline',
+  },
+})
 
 workbox.skipWaiting();
 workbox.clientsClaim();

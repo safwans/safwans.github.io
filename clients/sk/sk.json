@@ -1,0 +1,556 @@
+{
+	"header": {
+		"page": "SK-II Official Site | High End Skin Care & Beauty Products",
+		"homepageurl": "http://www.sk-ii.com",
+		"menu": [
+			{
+				"displayname": "Facial Treatment Essence",
+				"link": "https://www.sk-ii.com/women/super-premium-skin-care/facial-treatment-essence/sk-ii-facial-treatment-essence/SK2-HR-FT-ESS.html",
+				"submenu": []
+			},
+			{
+				"displayname": "Bestsellers",
+				"link": "https://www.sk-ii.com/best-sellers-1",
+				"submenu": [
+					{
+						"displayname": "Shop All Best Sellers",
+						"link": "https://www.sk-ii.com/best-sellers-1",
+						"submenu": [
+							{
+								"displayname": "Facial Treatment Essence",
+								"link": "https://www.sk-ii.com/women/super-premium-skin-care/facial-treatment-essence/sk-ii-facial-treatment-essence/SK2-HR-FT-ESS.html",
+								"submenu": []
+							},
+							{
+								"displayname": "SK-II PITERA™ Welcome Kit",
+								"link": "https://www.sk-ii.com/women/super-premium-skin-care/radiant-skin-/sk-ii-pitera-welcome-kit/00730870307922.html",
+								"submenu": []
+							},
+							{
+								"displayname": "SK-II PITERA™ Essence Set",
+								"link": "https://www.sk-ii.com/00730870307786.html",
+								"submenu": []
+							},
+							{
+								"displayname": "Facial Treatment Mask",
+								"link": "https://www.sk-ii.com/women/super-premium-skin-care/mask/sk-ii-facial-treatment-mask/SK2-HR-FT-MASK.html",
+								"submenu": []
+							},
+							{
+								"displayname": "R.N.A.POWER Cream",
+								"link": "https://www.sk-ii.com/00730870157763.html",
+								"submenu": []
+							},
+							{
+								"displayname": "GenOptics Aura Essence",
+								"link": "https://www.sk-ii.com/women/super-premium-skin-care/beauty-essence-/sk-ii-genoptics-aura-essence-serum/00730870307809.html",
+								"submenu": []
+							}
+						]
+					}
+				]
+			},
+			{
+				"displayname": "Shop Skin Care",
+				"link": "https://www.sk-ii.com/our-products",
+				"submenu": [
+					{
+						"displayname": "TYPE",
+						"link": "https://www.sk-ii.com/product-forms",
+						"submenu": [
+							{
+								"displayname": "Essence",
+								"link": "https://www.sk-ii.com/product-forms-essences",
+								"submenu": []
+							},
+							{
+								"displayname": "Masks",
+								"link": "https://www.sk-ii.com/product-forms/facial-mask",
+								"submenu": []
+							},
+							{
+								"displayname": "Moisturizers",
+								"link": "https://www.sk-ii.com/product-forms/face-moisturizer",
+								"submenu": []
+							},
+							{
+								"displayname": "Serums",
+								"link": "https://www.sk-ii.com/product-forms/beauty-essences",
+								"submenu": []
+							},
+							{
+								"displayname": "Toner",
+								"link": "https://www.sk-ii.com/product-forms/facial-toner",
+								"submenu": []
+							},
+							{
+								"displayname": "Cleanser",
+								"link": "https://www.sk-ii.com/product-forms/facial-cleanser",
+								"submenu": []
+							},
+							{
+								"displayname": "Eye Care",
+								"link": "https://www.sk-ii.com/product-forms/eye-care",
+								"submenu": []
+							},
+							{
+								"displayname": "Gift Sets & Travel",
+								"link": "https://www.sk-ii.com/gift-sets",
+								"submenu": []
+							}
+						]
+					},
+					{
+						"displayname": "LINE",
+						"link": "https://www.sk-ii.com/product-lines.html",
+						"submenu": [
+							{
+								"displayname": "PITERA™ Essentials",
+								"link": "https://www.sk-ii.com/product-lines-pitera-essentials",
+								"submenu": []
+							},
+							{
+								"displayname": "R.N.A.POWER | Anti-Aging",
+								"link": "https://www.sk-ii.com/product-lines-anti-aging",
+								"submenu": []
+							},
+							{
+								"displayname": "GenOptics | Brightening",
+								"link": "https://www.sk-ii.com/product-lines-brightening",
+								"submenu": []
+							},
+							{
+								"displayname": "LXP Ultimate",
+								"link": "https://www.sk-ii.com/product-lines-luxury-pitera",
+								"submenu": []
+							}
+						]
+					},
+					{
+						"displayname": "CONCERN",
+						"link": "https://www.sk-ii.com/skin-concerns",
+						"submenu": [
+							{
+								"displayname": "Radiant Skin",
+								"link": "https://www.sk-ii.com/skin-concerns/radiant-skin",
+								"submenu": []
+							},
+							{
+								"displayname": "Hydrating",
+								"link": "https://www.sk-ii.com/skin-concerns-hydrating",
+								"submenu": []
+							},
+							{
+								"displayname": "Anti-Aging",
+								"link": "https://www.sk-ii.com/skin-concerns-anti-aging",
+								"submenu": []
+							},
+							{
+								"displayname": "Brightening",
+								"link": "https://www.sk-ii.com/skin-concerns-brightening",
+								"submenu": []
+							}
+						]
+					},
+					{
+						"displayname": "ALL PRODUCTS",
+						"link": "https://www.sk-ii.com/our-products",
+						"submenu": []
+					}
+				]
+			},
+			{
+				"displayname": "Gift Sets & Travel",
+				"link": "https://www.sk-ii.com/gift-sets"
+			},
+			{
+				"displayname": "About SK-II",
+				"link": "https://www.sk-ii.com/about-us-miracle.html",
+				"submenu": [
+					{
+						"displayname": "The Miracle of PITERA™",
+						"link": "https://www.sk-ii.com/about-us-miracle.html",
+						"submenu": [
+							{
+								"displayname": "Our Secret Ingredient",
+								"link": "https://www.sk-ii.com/about-us-miracle.html#the-secret-ingredient",
+								"submenu": []
+							},
+							{
+								"displayname": "The Science of SK-II",
+								"link": "https://www.sk-ii.com/about-us-science.html",
+								"submenu": []
+							}
+						]
+					},
+					{
+						"displayname": "Awards and Press",
+						"link": "https://www.sk-ii.com/awards-page.html",
+						"submenu": [
+							{
+								"displayname": "Awards",
+								"link": "https://www.sk-ii.com/awards-page.html",
+								"submenu": []
+							},
+							{
+								"displayname": "Press",
+								"link": "https://www.sk-ii.com/press-page.html",
+								"submenu": []
+							}
+						]
+					},
+					{
+						"displayname": "Special Features",
+						"link": "https://www.sk-ii.com/bareskin.html",
+						"submenu": [
+							{
+								"displayname": "#OneBottleAwayFrom",
+								"link": "https://www.sk-ii.com/one-bottle-away-from.html",
+								"submenu": []
+							},
+							{
+								"displayname": "#INeverExpire",
+								"link": "https://www.sk-ii.com/i-never-expire.html",
+								"submenu": []
+							},
+							{
+								"displayname": "#BareSkinProject",
+								"link": "https://www.sk-ii.com/bareskin.html",
+								"submenu": []
+							}
+						]
+					},
+					{
+						"displayname": "Shop Skin Care 101",
+						"link": "https://www.sk-ii.com/luxury-skin-care-tips.html",
+						"submenu": []
+					}
+				]
+			}
+		]
+	},
+	"product": {
+		"productOCAPI": {
+			"_type": "product",
+			"brand": "SK-II",
+			"currency": "USD",
+			"ean": "00730870157763",
+			"id": "00730870157763",
+			"inventory": {
+				"_type": "inventory",
+				"ats": 99,
+				"backorderable": true,
+				"id": "ZSUM",
+				"orderable": true,
+				"preorderable": false,
+				"stock_level": 99
+			},
+			"long_description": "<p style=\"text-align: left;\"><span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Supercharge your skin's youthful radiance with our best-selling moisturizing cream. Packed with nourishing ingredients, this velvety moisturizer restores skin suppleness and elasticity<font size=\"3\"><sup>1</sup></font> with intense hydration.<br /></font><p style=\"margin-bottom: 10px; text-align: left;\"> </p><p style=\"text-align: left;\"><span style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">Benefits</span></span></p><ul style=\"list-style: disc outside none; margin left: 0; padding-left: 1em;\"><li><span style=\"font-family: 'Camphor W01 Medium',sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Suppler Skin</span><span style=\"font-size: 18px; color: #272727; line-height: 24px; font-family: 'Camphor W01 Thin',sans-serif;\"> - Improves firmness from within by helping lock in moisture</span></li><li><span style=\"font-family: 'Camphor W01 Medium',sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Less Visible Wrinkles </span><span style=\"font-size: 18px; color: #272727; line-height: 24px; font-family: 'Camphor W01 Thin',sans-serif;\"> - Helps reduce the appearance of fine lines and wrinkles by plumping up the skin with moisture.</span></li><li><span style=\"font-family: 'Camphor W01 Medium',sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Smoother Texture</span><span style=\"font-size: 18px; color: #272727; line-height: 24px; font-family: 'Camphor W01 Thin',sans-serif;\"> - Improves texture by smoothing the appearance of pores and surface roughness.</span></li></ul><p style=\"margin-bottom: 10px; text-align: left;\"> </p><p style=\"text-align: left;\"><span style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">Texture</span><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\"><br /></span></span></p><p><span style=\"font-size: 18px; color: #272727; line-height: 24px; font-family: 'Camphor W01 Thin',sans-serif;\">A soft and light cream that is easily absorbed by your skin.</span></p><p><span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px; color: #272727; line-height: 24px;\"><br />Recommended for all skin types</span></p><p><span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px;\"><br /><sup><font size=\"1\">1</font></sup>Up to stratum corneum</span></p> ",
+			"manufacturer_sku": "82473832",
+			"min_order_quantity": 1,
+			"name": "SK-II R.N.A.POWER Radical New Age Cream",
+			"page_keywords": "anti-aging moisturizer, skin elasticity, wrinkle treatment, anti-aging treatment, RNA, RNA Power Cream, R.N.A. Power Cream, anti aging, anti-aging cream, sk2, sk-2, sk ii",
+			"price": 230,
+			"primary_category_id": "product-forms-moisturizers",
+			"product_promotions": [
+				{
+					"_type": "product_promotion",
+					"link": "https://development-pgna-pfsweb.demandware.net/s/SKII/dw/shop/v18_8/promotions/GIK_2018-07%20Sampling%20Program?client_id=5003458a-2365-4abe-8ade-25f46b582cf6",
+					"promotion_id": "GIK_2018-07 Sampling Program"
+				},
+				{
+					"_type": "product_promotion",
+					"link": "https://development-pgna-pfsweb.demandware.net/s/SKII/dw/shop/v18_8/promotions/2600006915?client_id=5003458a-2365-4abe-8ade-25f46b582cf6",
+					"promotion_id": "2600006915"
+				}
+			],
+			"short_description": "Our best-selling moisturizer that supercharges skin’s firmness glow",
+			"step_quantity": 1,
+			"type": {
+				"_type": "product_type",
+				"item": true
+			},
+			"valid_from": {
+				"default": "2018-03-28T04:00:00.000Z",
+				"default@SKII": "2018-03-28T04:00:00.000Z"
+			},
+			"valid_to": {
+				"default": "9999-12-31T04:59:59.000Z",
+				"default@SKII": "9999-12-31T04:59:59.000Z"
+			},
+			"c_HowitWorksAlpha": "<p style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">HOW TO APPLY</span></p><p style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">Step 1<br /></span><span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Take a pea-sized amount of face cream with dry fingertips and dot onto your forehead, cheeks and chin.<br /></span> <span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">Step 2</span><strong><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\"><br /></span></strong> <span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Massage evenly over face and neck in outward and upward strokes.<br /></span> <span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">Step 3</span><strong><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\"><br /></span></strong> <span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Gently press and pat with your palms until completely absorbed.</span></p><p style=\"margin-bottom: 10px; text-align: left;\"><br></p><p style=\"text-align: left;\"><span style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">WHEN TO APPLY</span><strong><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\"><br /></span></strong></span></p><p><span style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Use twice daily, after a serum, and before eye care.</span></span></p>",
+			"c_ItDivision": "01",
+			"c_LongDescriptionAlpha": "<p style=\"text-align: left;\"><span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Supercharge your skin's youthful radiance with our best-selling moisturizing cream. Packed with nourishing ingredients, this velvety moisturizer restores skin suppleness and elasticity<font size=\"3\"><sup><span style=\"font-size: xx-small;\">1</span></sup></font> with intense hydration.<br /><font size=\"3\"><sup><span style=\"font-size: xx-small;\">1</span></sup></font><p style=\"margin-bottom: 10px; text-align: left;\"><br></p><p style=\"text-align: left;\"><span style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">Benefits</span></span></p><ul style=\"list-style: disc outside none; margin left: 0; padding-left: 1em;\"><li><span style=\"font-family: 'Camphor W01 Medium',sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Suppler Skin</span><span style=\"font-size: 18px; color: #272727; line-height: 24px; font-family: 'Camphor W01 Thin',sans-serif;\"> - Improves firmness from within by helping lock in moisture</span></li><li><span style=\"font-family: 'Camphor W01 Medium',sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Less Visible Wrinkles </span><span style=\"font-size: 18px; color: #272727; line-height: 24px; font-family: 'Camphor W01 Thin',sans-serif;\"> - Helps reduce the appearance of fine lines and wrinkles by plumping up the skin with moisture.</span></li><li><span style=\"font-family: 'Camphor W01 Medium',sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Smoother Texture</span><span style=\"font-size: 18px; color: #272727; line-height: 24px; font-family: 'Camphor W01 Thin',sans-serif;\"> - Improves texture by smoothing the appearance of pores and surface roughness.</span></li></ul><p style=\"margin-bottom: 10px; text-align: left;\"><br></p><p style=\"text-align: left;\"><span style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">Texture</span><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\"><br /></span></span></p><p><span style=\"font-size: 18px; color: #272727; line-height: 24px; font-family: 'Camphor W01 Thin',sans-serif;\">A soft and light cream that is easily absorbed by your skin.</span></p><p><span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px; color: #272727; line-height: 24px;\"><br />Recommended for all skin types</span></p><p><span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px;\"><br /><sup><font size=\"1\">1</font></sup>Up to stratum corneum</span></p>",
+			"c_MaterialDescriptionEN": "SK2 AA RNA PWR RDCL N AGE 80ML WW LG",
+			"c_MaterialNumber": "000000000082473832",
+			"c_ProdCategory": "TA18",
+			"c_ProdGlobalForm": "BV0380",
+			"c_ProdSeg": "PREMFACE",
+			"c_ProdSubBrand": "LM110",
+			"c_UoM": "IT",
+			"c_benefit": [
+				"Firmness",
+				"Wrinkles"
+			],
+			"c_brushStandType": "0",
+			"c_collection": "Anti-Aging",
+			"c_contentTab2Description": "<table style=\"width:100%\">\r\n<tbody>\r\n<tr align=\"center\">\r\n<td style=\"width: 33%;text-align:center;vertical-align: top;padding-top: 65px;\">\r\n<div style=\"font-family: CapitoliumW01-2Regular;font-weight:300;font-size: 25px;line-height: 23px;max-width: 220px;margin: 0 auto;text-align: center;min-height: 148px;\">\r\nSkincare Solutions\r\n<span style=\"font-size: 19px;line-height: 19px;display: block;max-width: 175px;margin: 30px auto 0 auto;\">2017 GQ Grooming Award</span>\r\n</div>\r\n<div style=\"border-top: 1px solid #CCC;max-width: 240px;margin: 0 auto 19px auto;\"></div>\r\n<span style=\"display: inline-block;max-width: 90%;\">GQ</span>\r\n</td>\r\n<td style=\"width: 33%;text-align:center;vertical-align: top;padding-top: 65px;\">\r\n<div style=\"font-family: CapitoliumW01-2Regular;font-weight:300;font-size: 25px;line-height: 23px;max-width: 220px;margin: 0 auto;text-align: center;min-height: 148px;\">\r\nFace\r\n<span style=\"font-size: 19px;line-height: 19px;display: block;max-width: 175px;margin: 30px auto 0 auto;\">2017 Men's Health Grooming Awards</span>\r\n</div>\r\n<div style=\"border-top: 1px solid #CCC;max-width: 240px;margin: 0 auto 19px auto;\"></div>\r\n<span style=\"display: inline-block;max-width: 90%;\">Men's Health</span>\r\n</td>\r\n<td style=\"width: 33%;text-align:center;vertical-align: top;padding-top: 65px;\">\r\n<div style=\"font-family: CapitoliumW01-2Regular;font-weight:300;font-size: 25px;line-height: 23px;max-width: 220px;margin: 0 auto;text-align: center;min-height: 148px;\">\r\nBest A.M. Eye Treatment\r\n<span style=\"font-size: 19px;line-height: 19px;display: block;max-width: 175px;margin: 30px auto 0 auto;\">2017 Cosmopolitan Beauty Awards</span>\r\n</div>\r\n<div style=\"border-top: 1px solid #CCC;max-width: 240px;margin: 0 auto 19px auto;\"></div>\r\n<span style=\"display: inline-block;max-width: 90%;\">Cosmopolitan</span>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+			"c_contentTab2Name": "AWARDS",
+			"c_contentTab3Description": "<!--with image and bullet points-->\r\n<div class=\"block-collections\">\r\n\t<div class=\"image-block\">\r\n\t\t<img src=\"https://development-pgna-pfsweb.demandware.net/on/demandware.static/-/Sites-NA_MASTER/default/dw7c11c5c5/images/collections-product-sets/anti-aging-set.jpg\" alt=\"Anti-Aging Set\" />\r\n\t</div>\r\n\t<div class=\"content-block\">\r\n\t\t<p style=\"font-family: 'Camphor W01 Regular';margin-top: 5px;line-height: 20px;margin-bottom: 4px;\">\r\n\t\t\tR.N.A. POWER Cream is part of the SK-II Anti-Aging Skin Care Collection. The products in this skin care line are essential in boosting your skin’s elasticity and retaining its firmness. Use R.N.A. POWER Cream as a skin repair cream in tandem with SK-II’s Facial Treatment Essence, R.N.A. POWER Essence and R.N.A. POWER Eye Cream to get the full effect of PITERA™ and the R.N.A. Complex for beautiful skin.\r\n\t\t</p>\r\n\t\t<ul data-editor-type=\"5\" style=\"padding-left: 23px;font-family: 'Camphor W01 Regular';list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAOCAMAAAAVBLyFAAAAM1BMVEUAAAD///9uLCxvLSxuLCxuLSxuLCxuLCxuLCxvLSxuLCxuLCxuLCxvLSxuLCxuLSxvLSxf39+CAAAADnRSTlMAACIiRERVZnd3qt3u7hyAIzMAAAA9SURBVHgBY2DEADQQYmDj4mJjQBFi5wMCDhQhHpAQD4oQHxigCHHz8/EJcKMIsQJ18rKg2sjEwcnMQIpTASawAoP1mnCHAAAAAElFTkSuQmCC);margin-bottom: 17px\">Trial Sets\r\n\t\t\t<li style=\"padding-left: 0px;line-height: 20px;font-weight:300;font-family: 'Camphor W01 Bold';\">SK-II Anti-Aging Value Set</li></li>\r\n\r\n\r\n\t\t\t</ul>\r\n\t</div>\r\n\t<div class=\"clear\"></div>\r\n</div>\r\n\r\n<style>\r\n.block-collections * {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}\r\n.block-collections div\r\n{vertical-align: top;}\r\n.block-collections .image-block\r\n{display: inline-block; max-width: 300px; width: 300px; margin-right: 50px;}\r\n.block-collections .content-block\r\n{display: inline-block; width: 75%; /* fallback if needed */ width: calc(100% - 354px);}\r\n.block-collections .content-block p\r\n{margin-top: 0px;}\r\n@media only screen and (max-width: 768px) {\r\n.block-collections .image-block\r\n{display: block; width: 100%; max-width: 100%; margin-right: 0px; text-align: center;}\r\n.block-collections .image-block img\r\n{max-width: 100%; height: auto; margin: auto;}\r\n.block-collections .content-block\r\n{display: block; width: 100%;}\r\n}\r\n</style>",
+			"c_count": "80 ml (2.7 oz)",
+			"c_discontinueSubscription": false,
+			"c_dvProductType": "Valuated PRODUCT/VARIANT",
+			"c_form": [
+				"Face Mosturizers"
+			],
+			"c_giftWrappable": false,
+			"c_google_product_category": "2592",
+			"c_handleColor": "0",
+			"c_includeIniGoBVFeed": true,
+			"c_includesBrush": false,
+			"c_isGiftable": false,
+			"c_longDescription2": "<p> <p style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">HOW TO APPLY</span></p><p style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">Step 1<br /></span><span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Take a pea-sized amount of face cream with dry fingertips and dot onto your forehead, cheeks and chin.<br /></span> <span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">Step 2</span><strong><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\"><br /></span></strong> <span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Massage evenly over face and neck in outward and upward strokes.<br /></span> <span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">Step 3</span><strong><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\"><br /></span></strong> <span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Gently press and pat with your palms until completely absorbed.</span></p><p style=\"margin-bottom: 10px; text-align: left;\"> </p><p style=\"text-align: left;\"><span style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\">WHEN TO APPLY</span><strong><span style=\"font-family: 'Camphor W01 Medium',sans-serif;\"><br /></span></strong></span></p><p><span style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Thin', sans-serif; font-size: 18px; color: #272727; line-height: 24px;\">Use twice daily, after a serum, and before eye care.</span></span></p> </p>",
+			"c_longDescription3": "<p style=\"text-align: left;\"><span style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Medium',sans-serif; color: #272727; line-height: 24px;\">Key Ingredients</span><strong><span style=\"font-family: 'Camphor W01 Medium',sans-serif; color: #272727; line-height: 24px;\"><br /></span></strong><span style=\"font-family: 'Camphor W01 Thin',sans-serif;\">RNArchitext Complex - A nourishing anti-aging complex of PITERA™ with hydrolyzed soy and yeast extracts to lock in moisture, making skin firm and radiant from within.<br><br>PITERA™ - A bio-ingredient derived from yeast fermentation that resembles your skin's Natural Moisturizing Factors. PITERA™ contains over 50 micro-nutrients like vitamins, minerals, amino acids and organic acids to condition skin's natural functions.<br><br>Niacinamide  - Also known as a vitamin B3 complex, Niacinamide works on fundamental skin functions to help improve barrier function and the appearance of firmness, as well as brighten skin tone.<br><br>Chlorella Extract - A skin-conditioning agent extracted from freshwater algae that reduces the appearance of fine lines and wrinkles caused by dryness.<br /><br /></span></span><span style=\"font-size: 18px; color: #272727; line-height: 24px;\"><span style=\"font-family: 'Camphor W01 Medium',sans-serif; color: #272727; line-height: 24px;\">Full Ingredients<br /></span><span style=\"font-family: 'Camphor W01 Thin',sans-serif; color: #272727; line-height: 24px;\">Water, Glycerin, Galactomyces Ferment Filtrate*, Isohexadecane, Niacinamide, Isopropyl Isostearate, Butylene Glycol, Butyrospermum Parkii (Shea) Butter, Caprylic/Capric Triglyceride, Pentylene Glycol, Dimethicone, Phytosteryl/Behenyl/Octyldodecyl Lauroyl Glutamate, Vinyl Dimethicone/Methicone Silsesquioxane Crosspolymer, Stearyl Alcohol, Sodium Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Cetyl Alcohol, Behenyl Alcohol, Panthenol, Tocopheryl Acetate, Benzyl Alcohol, Dimethiconol, Cetearyl Alcohol, Cetearyl Glucoside, Methylparaben, PEG-100 Stearate, Polymethylsilsesquioxane, Polysorbate 80, Stearic Acid, Disodium EDTA, Propylparaben, Sodium PEG-7 Olive Oil Carboxylate, Ethylparaben, Sorbitan Oleate, Chlorella Vulgaris Extract, PEG-100 Stearate, PEG-7 Glyceryl Cocoate, Sodium Hydroxide, Fragrance, Acanthopanax Senticosus (Eleuthero) Root Extract, Hydrolyzed Soy Protein, Cynara Scolymus (Artichoke) Leaf Extract, Polyquaternium-7, Hydrolyzed Yeast Protein, Palmitoyl Pentapeptide-4, Methylsilanol Tri-PEG-8 Glyceryl Cocoate, Methicone, CI 77891, CI 77492. *PITERA™</span></span></p>",
+			"c_orderGrooveSubscriptionEnabled": false,
+			"c_packCountLoc": 0,
+			"c_packCountUnitOfMeasureLoc": "N/A",
+			"c_personalizable": false,
+			"c_productDetailImage": "1~<img alt=\"SK-II Radical New Age POWER Cream\" src=\"https://development-pgna-pfsweb.demandware.net/on/demandware.static/-/Sites-NA_MASTER/default/dwea7d700f/images/pdp-images/lifestyle_radical_new_age_power_cream _radical_new_age_power_essence.jpg\">|2~<img alt=\"SK-II Radical New Age POWER Cream\" src=\"https://development-pgna-pfsweb.demandware.net/on/demandware.static/-/Sites-NA_MASTER/default/dwea7d700f/images/pdp-images/lifestyle_radical_new_age_power_cream _radical_new_age_power_essence.jpg\">|3~<img alt=\"SK-II Radical New Age POWER Cream\" src=\"https://development-pgna-pfsweb.demandware.net/on/demandware.static/-/Sites-NA_MASTER/default/dwea7d700f/images/pdp-images/lifestyle_radical_new_age_power_cream _radical_new_age_power_essence.jpg\">|5~<img alt=\"SK-II Radical New Age POWER Cream\" src=\"https://development-pgna-pfsweb.demandware.net/on/demandware.static/-/Sites-NA_MASTER/default/dwea7d700f/images/pdp-images/lifestyle_radical_new_age_power_cream _radical_new_age_power_essence.jpg\">",
+			"c_promotionalProduct": false,
+			"c_shavingBrushGrade": "0",
+			"c_shippingClass": "STANDARD",
+			"c_skinTypeFragrance": "Anti-Aging",
+			"c_tileShortDescription": "SK-II’s bestselling face moisturizer, designed to supercharge your skin's radiance and firmness. This velvety anti-aging cream is formulated with a potent combination of RNArchitect Complex, the Niacinamide vitamin B3 complex, and PITERA™ –  SK-II’s signature ingredient rich in vitamins, amino acids, minerals and organic acids. R.N.A.POWER Cream is engineered to strengthen your skin and increase resilience to the signs of aging. With daily use, skin becomes firmer, smoother, more radiant, and fine lines and wrinkles appear less defined. Embrace a future of youthful, radiant skin with this SK-II anti-aging moisturizer. Recommended for all skin types, including dry skin, combination skin, normal skin, oily skin, sensitive skin.",
+			"c_videoIDEnhancedContent": "jGkNHNgETE0",
+			"c_videoIDProduct": "jGkNHNgETE0"
+		}
+	},
+	"footer": {
+		"page": "SK-II Official Site | High End Skin Care & Beauty Products",
+		"footer-social": [
+			{
+				"link": "https://www.facebook.com/SKIIUS",
+				"image": "https://www.sk-ii.com/on/demandware.static/-/Sites-SKII-Library/default/dwb2b9ba6f/images/footer/facebook_footer_image.png"
+			},
+			{
+				"link": "https://www.youtube.com/skiiofficial",
+				"image": "https://www.sk-ii.com/on/demandware.static/-/Sites-SKII-Library/default/dw387c520f/images/footer/youtube_footer_image.png"
+			},
+			{
+				"link": "https://twitter.com/SKII_US",
+				"image": "https://www.sk-ii.com/on/demandware.static/-/Sites-SKII-Library/default/dw2fe10e09/images/footer/twitter_footer_image.png"
+			},
+			{
+				"link": "https://instagram.com/skii",
+				"image": "https://www.sk-ii.com/on/demandware.static/-/Sites-SKII-Library/default/dw19da2035/images/footer/instagram_footer_image.png"
+			},
+			{
+				"link": "https://www.pinterest.com/skiiusa/",
+				"image": "https://www.sk-ii.com/on/demandware.static/-/Sites-SKII-Library/default/dw9c0ab2bf/images/footer/pinterest_footer_image.png"
+			}
+		],
+		"homepageurl": "http://www.sk-ii.com",
+		"menu": [
+			{
+				"displayname": "Products",
+				"link": "https://www.sk-ii.com/our-products",
+				"submenu": [
+					{
+						"displayname": "All Products",
+						"link": "https://www.sk-ii.com/our-products"
+					},
+					{
+						"displayname": "Even Skin Tone",
+						"link": "https://www.sk-ii.com/skin-concerns/even-skin-tone",
+						"submenu": []
+					},
+					{
+						"displayname": "Firmness",
+						"link": "https://www.sk-ii.com/skin-concerns/skin-tightening",
+						"submenu": []
+					},
+					{
+						"displayname": "Smooth Skin",
+						"link": "https://www.sk-ii.com/skin-concerns/smooth-skin",
+						"submenu": []
+					},
+					{
+						"displayname": "Fine Lines and Wrinkles",
+						"link": "https://www.sk-ii.com/skin-concerns/wrinkles",
+						"submenu": []
+					}
+				]
+			},
+			{
+				"displayname": "Featured Articles",
+				"link": "https://www.sk-ii.com/luxury-skin-care-tips.html",
+				"submenu": [
+					{
+						"displayname": "THE PERFECT SKIN CARE ROUTINE",
+						"link": "https://www.sk-ii.com/luxury-skin-care-tips/perfect-skin-care-routine.html",
+						"submenu": []
+					},
+					{
+						"displayname": "GET THE 4-1-1 ON ASIAN BEAUTY PRODUCTS",
+						"link": "https://www.sk-ii.com/luxury-skin-care-tips/asian-beauty-products.html",
+						"submenu": []
+					},
+					{
+						"displayname": "WHAT'S THE DEAL WITH DOUBLE CLEANSING?",
+						"link": "https://www.sk-ii.com/luxury-skin-care-tips/double-cleansing-routine.html",
+						"submenu": []
+					},
+					{
+						"displayname": "THE ART OF SKIN CARE APPLICATION",
+						"link": "https://www.sk-ii.com/luxury-skin-care-tips/product-application-guide.html",
+						"submenu": []
+					}
+				]
+			},
+			{
+				"displayname": "About Us",
+				"link": "https://www.sk-ii.com/about-us-miracle.html",
+				"submenu": [
+					{
+						"displayname": "THE MIRACLE OF PITERA™",
+						"link": "https://www.sk-ii.com/about-us-miracle.html",
+						"submenu": []
+					},
+					{
+						"displayname": "SCIENCE BEHIND THE MIRACLE",
+						"link": "https://www.sk-ii.com/about-us-science.html",
+						"submenu": []
+					},
+					{
+						"displayname": "AWARDS & PRESS",
+						"link": "https://www.sk-ii.com/awards-page.html",
+						"submenu": []
+					},
+					{
+						"displayname": "STORE LOCATOR",
+						"link": "https://www.sk-ii.com/Store-Locator",
+						"submenu": []
+					}
+				]
+			},
+			{
+				"displayname": "Customer Service",
+				"link": "https://www.sk-ii.com/on/demandware.store/Sites-SKII-Site/default/CustomerService-Show",
+				"submenu": [
+					{
+						"displayname": "FAQS",
+						"link": "https://www.sk-ii.com/skii-faqs.html",
+						"submenu": []
+					},
+					{
+						"displayname": "ORDERING",
+						"link": "https://www.sk-ii.com/skii-ordering.html",
+						"submenu": []
+					},
+					{
+						"displayname": "RETURNS & EXCHANGES",
+						"link": "https://www.sk-ii.com/skii-returnandexchange.html",
+						"submenu": []
+					},
+					{
+						"displayname": "SHIPPING",
+						"link": "https://www.sk-ii.com/skii-shipping.html",
+						"submenu": []
+					},
+					{
+						"displayname": "FORGOT PASSWORD",
+						"link": "https://www.sk-ii.com/Forgot-Password",
+						"submenu": []
+					},
+					{
+						"displayname": "SIGN IN",
+						"link": "https://www.sk-ii.com/My-Account",
+						"submenu": []
+					},
+					{
+						"displayname": "CREATE AN ACCOUNT",
+						"link": "https://www.sk-ii.com/register",
+						"submenu": []
+					}
+				]
+			}
+		],
+		"footer-static": [
+			{
+				"displayname": "PRIVACY",
+				"link": "https://www.pg.com/privacy/english/privacy_notice.shtml",
+				"submenu": []
+			},
+			{
+				"displayname": "STORE POLICY",
+				"link": "https://www.sk-ii.com/skii-policy.html",
+				"submenu": []
+			},
+			{
+				"displayname": "P&G TERMS & CONDITIONS",
+				"link": "https://www.pg.com/en_US/terms_conditions/index.shtml",
+				"submenu": []
+			},
+			{
+				"displayname": "ADCHOICES",
+				"link": "https://www.sk-ii.com/#",
+				"submenu": []
+			}
+		],
+		"country-selector": [
+			{
+				"displayname": "Australia",
+				"link": "https://www.sk-ii.com.au/home.php",
+				"selected": false
+			},
+			{
+				"displayname": "China",
+				"link": "https://www.skii.com.cn/home.ph",
+				"selected": false
+			},
+			{
+				"displayname": "Hong Kong",
+				"link": "www.sk-ii.com.hk/home.php",
+				"selected": false
+			},
+			{
+				"displayname": "Japan",
+				"link": "https://www.sk-ii.jp",
+				"selected": false
+			},
+			{
+				"displayname": "Korea",
+				"link": "https://www.sk2.co.kr/",
+				"selected": false
+			},
+			{
+				"displayname": "Malaysia",
+				"link": "https://www.sk-ii.com.my/home.php",
+				"selected": false
+			},
+			{
+				"displayname": "Singapore",
+				"link": "https://www.sk-ii.com.sg/home.php",
+				"selected": false
+			},
+			{
+				"displayname": "Taiwan",
+				"link": "https://www.sk-ii.com.tw/tc/index.aspx",
+				"selected": false
+			},
+			{
+				"displayname": "Thailand",
+				"link": "https://www.sk-ii.co.th/home.php",
+				"selected": false
+			},
+			{
+				"displayname": "United States",
+				"link": "www.sk-ii.com",
+				"selected": true
+			}
+		],
+		"footer-copyright": {
+			"label": "© 2018 Procter & Gamble. All Rights Reserved. This site is intended for and directed solely to residents of United States and all advertising claims contained in this site are valid only in United States."
+		}
+	}
+}

@@ -1,0 +1,407 @@
+$(document).ready(function() {
+	//for menu when VW units are not understood
+	if (vw == false) {
+		// 2.8vw unit
+		var x = .28 * winW;
+		//2 is border
+		x = x + 2;
+		$('div.notFixed').css('top',x);
+		$('div.fixed').css('height',x);
+	}
+	
+	var obj = new Object();
+	obj.url= "/headerTabAll";
+	obj.successFunction="successHeader";
+	createAjaxCall(obj);		
+});
+
+function successHeader(data) {
+	if ($("#menuOpenTypeOnLoad").val() == 'tab') {
+		$('#categories').addClass('loaded');
+		$('#cat-link-name').text("#PC_" + $("#menuUrlOnLoad").val());
+		$('#activeTitle span.title').text($("#menuTxtOnLoad").val());
+		shopCategoriesOver();
+	} else if ($("#menuOpenTypeOnLoad").val() == 'category') {
+		$('#cat-title-name').text($("#menuTxtOnLoad").val());
+		$('#activeTitle-sub span.title').text($("#menuTxtOnLoad").val());
+		displayLevel2Categories($("#menuUrlOnLoad").val() + "?ref=menu");
+	}
+}
+
+function orientationchange() {
+	//alert(vw);
+	if (vw == false) {
+		if (window.orientation == 90 || window.orientation == -90) {
+			// 2.8vw unit
+			var x = .28 * $(window).width();
+			//2 is border
+			x = x + 2;
+			$('div.notFixed').css('top',x);
+			$('div.fixed').css('height',x);
+	  
+		}
+		else {
+			// 2.8vw unit
+			var x = .28 * $(window).width();
+			//2 is border
+			x = x + 2;
+			$('div.notFixed').css('top',x);
+			$('div.fixed').css('height',x);
+		}
+	}
+}
+
+
+function shopCategoriesOver(show){
+	var obj = new Object();
+	obj.url= "/headerTabAll";
+	if (show) {
+		obj.successFunction= "shopCategoriesOverSuccessWithDisplay";
+	} else {
+		obj.successFunction= "shopCategoriesOverSuccess";
+	}
+
+	createAjaxCall(obj);
+}
+
+function shopCategoriesOverSuccess(data) {
+	$('#categories').html(data);
+	var $tab = $('#cat-link-name').text();
+	displayLevel1Categories($tab);
+}
+
+
+function shopCategoriesOverSuccessWithDisplay(data) {
+	$('#categories').html(data);
+	openMenu();
+}
+
+function openMenu () {
+	var headerOffsetLeft = getHeaderOffset();
+	$('header').attr('left-value',headerOffsetLeft);
+	var $siteContainerLeft = 80;
+	
+	if (headerOffsetLeft != 0) {
+		var $headerLeft = 83
+	}
+	
+	else {
+		var $headerLeft = 80
+	}
+	
+	if (vw == true) {
+		$unit = "vw"
+	}
+	
+	else {
+		$unit = "%"
+	}
+
+	$("body").append('<div id="mask-menu"></div>');
+	$("#mask-menu").show(5, function() {
+		$("#panel").addClass('showIt');
+		$("#siteContainer").addClass("masked-menu");
+		$("#siteContainer").animate(
+			{left:$siteContainerLeft + $unit},300,"swing");
+		$("header").animate(
+			{left:$headerLeft + $unit},300,"swing");
+		$("#mask-menu").animate(
+			{left:$siteContainerLeft + $unit},300,"swing");
+	});
+}
+
+
+$(document).on("click", "#shopCatMenu", function(event) {
+	event.preventDefault();
+	var $shopCat = $(window).scrollTop();
+	$("#scrollTo").text($shopCat);
+	displayPrimeCategories();
+});
+
+function displayPrimeCategories() {
+	if ( !($('#categories').hasClass('loaded')) ) {
+		shopCategoriesOver(true);
+		$('#categories').addClass('loaded');
+	} 
+		else {
+			openMenu();
+		}
+	
+	var $shopCat = $("#scrollTo").text();
+	$shopCat = $shopCat * -1;
+	$('#siteContainer').css('top',$shopCat);
+	$(window).scrollTop(0)
+}
+
+
+function getHeaderOffset() {
+	var headerOffset = $('#siteSubContainer header').offset();
+	var headerOffsetLeft = headerOffset.left;
+	return headerOffset.left
+}
+
+$(document).on("click", "#mask-menu", function() {
+	var $headerLeft = $('header').attr('left-value');
+	var $top =  $("#scrollTo").text();
+	
+	if ($headerLeft !=0) {
+		if (vw == true) {
+			$("header").animate(
+				{left:'3vw'},200,"swing");
+		}
+		
+		if (vw == false) {
+			$("header").animate(
+				{left:'3%'},200,"swing");
+		}
+	}
+	
+	else {
+		$("header").animate(
+			{left:'0'},200,"swing");
+	}
+	
+	$("#siteContainer").animate(
+		{left:'0'},200,"swing",function () { 
+			$("#panel").removeClass('showIt').removeAttr('style');
+			$('header').removeAttr('left-value').removeAttr('style');
+			$("#siteContainer").removeClass("masked-menu");
+			$(window).scrollTop($top)
+		});
+		
+		$("#mask-menu").animate(
+			{left:'0'},200,"swing", function() {
+				$("#mask-menu").remove();
+		});
+});
+
+
+$(document).on("click", "#mainMenu li", function(e) {
+	e.preventDefault();
+	//alert('yes');
+	$('#shopTitle').hide();
+	var $page = $(this).attr("tab");
+	var $tab = "#" + $page;
+	var $activeTitle = $($tab).children('p.title-for-active').text();
+	$('#activeTitle span.title').text($activeTitle);
+	displayLevel1Categories($tab);
+});
+
+
+function displayLevel1Categories($tab) {
+	if ($("#panel").is(":visible") == false) {
+		$('#shopTitle').hide();
+		$('#activeTitle').show();
+		
+		if (vw == true) {
+			$("#shopCat").animate({marginLeft:"-80vw"},300,"swing")
+		}
+		
+		if (vw == false) {
+			$("#shopCat").animate({marginLeft:"-80%"},300,"swing")
+		}
+		
+		
+		$($tab).show();
+		openMenu();
+
+		var $top = $("#scrollTo").text();
+		$top = $top * -1;
+		$('#siteContainer').css('top',$top);
+	}
+	
+	else {
+		$($tab).show();
+		$('#activeTitle').show();
+	}
+	
+	$('#panel').scrollTop(0);
+	
+	$('#subCategories').removeAttr("style");
+	$('#subCategories').html('');
+	//$($tab).show();
+	
+	//$('#activeTitle').show();
+	$('#categories').removeAttr("style");
+	$('#categories').css({"display":"block"});
+	$('#categories').animate({marginLeft:0},300,"swing");
+	
+	if (vw == true) {
+		$("#shopCat").animate({marginLeft:"-80vw"},300,"swing")
+	}
+	
+	if (vw == false) {
+		$("#shopCat").animate({marginLeft:"-80%"},300,"swing")
+	}
+}
+
+$(document).on("click", ".catMenu ul.panel li", function(e) {
+	e.preventDefault();
+	$('#activeTitle').hide();
+	var $link = $(this).attr("link");
+	var $activeTitleSub = $(this).children('span.title-for-active-sub').text();
+	$('#activeTitle-sub span.title').text($activeTitleSub);
+	$('#activeTitle-sub').show();
+	displayLevel2Categories($link);
+	
+});
+
+function displayLevel2Categories($link) {
+	var obj = new Object();
+	obj.url= $link;
+	//obj.data= "i=" + item_id;
+	obj.successFunction= "updateSubCategoriesDataSuccess";
+	obj.errorFunction = "updateSubCategoriesDataError";
+	createAjaxCall(obj);
+}
+
+function updateSubCategoriesDataSuccess(data){
+
+	eval("var jsonStr = " + data);
+	if (jsonStr.responseType == "success-landing" || jsonStr.responseType == "success-landing-icons") {
+		
+		if($("#panel").is(":visible") == false){
+			$('#shopTitle').hide();
+			$('#activeTitle-sub').show();
+			
+			if (vw == true) {
+				$("#shopCat").animate({marginLeft:"-80vw"},300,"swing")
+			}
+			
+			if (vw == false) {
+				$("#shopCat").animate({marginLeft:"-80%"},300,"swing")
+			}
+			
+			openMenu();
+		}
+
+		$('#subCategories').html(jsonStr.navBody);
+		$('#subCategories').show();
+		$('#subCategories').animate({marginLeft:0},300,"swing");
+		
+		if (vw == true) {
+			$("#categories").animate({marginLeft:"-80vw"},300,"swing")
+		}
+		
+		if (vw == false) {
+			$("#categories").animate({marginLeft:"-80%"},300,"swing")
+		}
+		
+		$('#panel').scrollTop(0);
+		
+	} else if ("redirect" == jsonStr.responseType || "redirectMobile" == jsonStr.responseType) {
+		window.location.href = jsonStr.url;
+	}
+
+}
+
+function updateSubCategoriesDataError(data) {
+	alert("error");
+}
+
+
+function displayGrid($link) {
+	var obj = new Object();
+	obj.url= $link;
+	//obj.data= "i=" + item_id;
+	obj.successFunction= "updateSubCategoriesDataSuccess";
+	obj.errorFunction = "updateSubCategoriesDataError";
+	createAjaxCall(obj);
+}
+
+
+$(document).on("click", "#activeTitle", function() {
+	if (vw == true) {
+		$("#categories").animate({marginLeft:"80vw"},300,"swing")
+	}
+	
+	if (vw == false) {
+		$("#categories").animate({marginLeft:"80%"},300,"swing")
+	}
+	
+	$('#shopTitle').show();
+	$('#activeTitle').hide();
+	$("#shopCat").animate({marginLeft:"0"},300,"swing");
+	$('#categories').removeAttr('style');
+	$('div.catMenu').css('display','none');
+});
+
+$(document).on("click", "#activeTitle-sub", function() {
+	$('#activeTitle-sub').hide();
+	
+	if ($('#cat-title-name').text() != 'NONE') {
+		var $activeTitle = $('#cat-title-name').text();
+		$('#activeTitle span.title').text($activeTitle);
+	}
+	
+	
+	$('#activeTitle').show();
+	
+	if (vw == true) {
+		$("#subCategories").animate({marginLeft:"80vw"},300,"swing")
+	}
+	
+	if (vw == false) {
+		$("#subCategories").animate({marginLeft:"80%"},300,"swing")
+	}
+	
+	$('#categories').css({"display":"block"});
+	$("#categories").animate({marginLeft:"0"},300,"swing");
+	$('#subCategories').removeAttr('style');
+	$('div.subCatMenu').css('display','none');
+	
+	if ( !($('#categories').hasClass('loaded')) ) {
+		shopCategoriesOver();
+		$('#categories').addClass('loaded');
+	}
+});
+
+
+$(document).on("click", "#breadcrumb span.clickUrl,#breadcrumb span.picGroup", function() {
+	var $link = $(this).attr("link");
+	
+	if ($link.indexOf("?") > -1) {
+		$link = $link.substr(0, $link.indexOf("?"));
+	}
+	
+	window.location.href = $link;
+});
+
+$(document).on("click", "#breadcrumb span.subCatMenu", function(e) {
+	e.preventDefault();
+	$('#activeTitle').hide();
+	var $link = $(this).attr("link");
+	var $activeTitleSub = $(this).text();
+	$activeTitleSub = $activeTitleSub.trim();
+	var $activeTitleSubLength = ($activeTitleSub.length) - 2;
+	$activeTitleSub = $activeTitleSub.substr(0,$activeTitleSubLength);
+	$('#activeTitle-sub span.title').text($activeTitleSub);
+	
+	var $linkCat = $('#breadcrumb span.catMenu').attr("key");
+	$linkCat = "#PC_" + $linkCat;
+	$('#cat-link-name').text($linkCat);
+	
+	var $activeTitle = $('#breadcrumb span.catMenu').text();
+	$activeTitle = $activeTitle.trim();
+	var $activeTitleLength = ($activeTitle.length) - 2;
+	$activeTitle = $activeTitle.substr(0,$activeTitleLength);
+	$('#cat-title-name').text($activeTitle);
+	
+	displayLevel2Categories($link);
+});
+
+$(document).on("click", "#breadcrumb span.catMenu", function(e) {
+	e.preventDefault();
+	$('#activeTitle-sub').hide();
+	var $link = $(this).attr("key");
+	$link = "#PC_" + $link;
+	var $activeTitle = $(this).text();
+	$activeTitle = $activeTitle.trim();
+	var $activeTitleLength = ($activeTitle.length) - 2;
+	$activeTitle = $activeTitle.substr(0,$activeTitleLength);
+	$('#activeTitle span.title').text($activeTitle);
+	$('#cat-link-name').text($link);
+	$('#categories').addClass('loaded');
+	shopCategoriesOver()
+	
+});

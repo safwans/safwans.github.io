@@ -1,0 +1,286 @@
+if ($('#search_body').length) {
+	var searchInProgress = false;
+	if ($('div.searchFail').length < 1) {
+		//get bottom
+		var $searchResultsHt = $(".results ul").height();
+		var $searchResultsOffset = $(".results ul").offset();
+		var $searchResultsBottom = $searchResultsHt + $searchResultsOffset.top;
+		$searchResultsBottom = $searchResultsBottom - $(window).height();
+	}
+}
+
+//infiniteScroll is defined in header.jsp and made to true in searchResultsDetail.jsp
+$(window).scroll(function() {
+	//if($(window).scrollTop() == $(document).height() - $(window).height()) {
+	if($(document).scrollTop() > $searchResultsBottom) {
+		if(searchInProgress == false && infiniteScroll == true) {
+			//$(".results ul li:last-child").focus();
+			if ($("#nextPageUrl").val() != ""){
+				$("#loadmoreajaxloader").show();
+				var offset = $("#offset").val();
+				var href = $("#nextPageUrl").val();
+				var splitData = href.split("?");
+				var obj = new Object();
+				obj.url= $("#moreUrl").val();
+				obj.data = splitData[1];
+				obj.successFunction= "searchMoreSuccess";
+				obj.errorFunction= "searchMoreFailure";
+				createAjaxCall(obj);
+				searchInProgress = true;
+
+			} else {
+				$('div#loadmoreajaxloader').html('<center>No more results.</center>');
+			}
+		} else {
+			//alert("search in progress !!!");
+		}
+    }
+});
+
+function searchMoreSuccess(data) {
+	//$(".results ul li:last-child").focus();
+	searchInProgress = false;
+	eval("var jsonStr = " + data);
+	var showmore = jsonStr.showmore;
+	if (showmore.indexOf('<ul class=\"prod\">') > 0) {
+		var checkUl = jsonStr.showmore;
+		var idx = checkUl.lastIndexOf('</ul>');
+		var tmp = checkUl.substring(0,idx) + checkUl.substring(idx+5);
+		showmore = tmp.replace('<ul class=\"prod\">','');
+	}
+	$(".results ul").append(showmore);
+	
+	// get new bottom
+	$searchResultsHt = $(".results ul").height();
+	$searchResultsOffset = $(".results ul").offset();
+	$searchResultsBottom = $searchResultsHt + $searchResultsOffset.top;
+	$searchResultsBottom = $searchResultsBottom - $(window).height();
+	
+	if (jsonStr.showAvailable == "false" || jsonStr.showAvailable == "") {
+		$("#nextPageUrl").val("");
+	} else {
+		$("#nextPageUrl").val(jsonStr.href)
+	}
+	$("#offset").val(jsonStr.offset);
+	$("#loadmoreajaxloader").hide();
+
+}
+
+function searchMoreFailure(data) {
+	searchInProgress = false;
+	$(".results").append(data);
+}
+
+$('#selectPopRefine').find('li').on('click', function() {
+	var $selectedItem = $(this).attr('id')
+	$('#refine_body  #refine_1 span.result').html($selectedItem);
+	$('.refine').show()
+	$('#mask,#selectPop').css('display','none');
+	$('.selectPop').remove();
+	$('html').removeAttr('style')
+});
+
+function refreshPage(data) {
+	eval("var jsonStr = " + data);
+	$(".refineBtns").html(jsonStr.refinePageBtns);
+	$("#selected").html(jsonStr.selectedFacets);
+	$(".results").html(jsonStr.total);
+	$('.refine').show()
+	$('#mask,#selectPop').css('display','none');
+	$('.selectPop').remove();
+	$('html').removeAttr('style');
+	$('#includeRefinements').find('input[type=checkbox]:checked').removeAttr('checked');
+	$("#overlay").removeClass('transparent').hide();
+}
+
+function executeRefinement($selectedUrl, name){
+	var splitData = $selectedUrl.split("?");
+	if ($('#clearance_body').length) {
+		removeSelectedCategoryUrl = true;
+		isShowMoreExecutedClearance = true;
+		$('.clearance-products.results').empty();
+		$('.showfilters').empty();
+		var params="removeCategoryKey="+splitData[1];
+		var obj = new Object();
+		obj.url= "/removeSelectedCategory";
+		obj.data= params;
+		obj.successFunction= "inventoryClearanceShowMoreSuccessFn";
+		obj.errorFunction = "inventoryClearanceShowMoreErrorFn";
+		$( '#loadmoreajaxloader, #mask').show();
+		createAjaxCall(obj);
+	} 
+	else{
+		var url = "/" + $('#refineType').val() +"ExecuteSelectedRefinement" + "?" + splitData[1];
+		var obj = new Object();
+		obj.successFunction= "refreshPage";
+		obj.errorFunction= "dummy";
+		obj.url = url;
+		createAjaxCall(obj);
+		$selectedName = name
+		$("#overlay").show();
+	}
+}
+
+function refreshTabletPage(data) {
+	if ($('#filterType').val() == "refine-filter") {
+		$(".filterCont").removeClass('noRefineBtns').removeClass('noRefinements');
+		eval("var jsonStr = " + data);
+		var jsonStrRefinePageBtnsTrim = jsonStr.refinePageBtns.trim()
+		if (jsonStrRefinePageBtnsTrim == "") {
+			$(".refineBtns").empty();
+			$(".filterCont").addClass('noRefineBtns');
+		}
+		else {
+			$(".refineBtns").html(jsonStr.refinePageBtns);
+		}
+		
+		$("#selected").html(jsonStr.selectedFacets);
+		$(".grid-note").replaceWith(jsonStr.total);
+		$('.refine').show();
+		try {
+			if ((jsonStr.refinements).indexOf('sort-title') > -1 || jsonStr.refinements == "") {
+				$(".refinements").empty();
+				$(".filterCont").addClass('noRefinements');
+			}
+			else {
+				$(".refinements").html(jsonStr.refinements);
+				if ($(".refinements div label").length == 0) {
+					$(".filterCont").addClass('noRefineBtns');
+				}
+			}
+		}
+			catch(err){
+		}		
+	}
+	
+	if ($('#filterType').val() == "sortby") {
+		console.log('sort');
+		var the_url = $('#filterType').attr('href');
+		console.log('sort - ' + the_url);
+		$('#mask').hide(300).removeAttr('class');
+		$('#siteContainer').animate({left:'0'},300,"swing", function() {
+			$('#siteContainer').removeAttr('style');
+			location.href = "/" + the_url;
+		});
+	}
+}
+
+function executeTabletRefinement($selectedUrl, name, facet){
+	var splitData = $selectedUrl.split("?");
+	var url;
+	if($('#refineType').val() === undefined) {
+		url = $selectedUrl;
+	} else {
+		if(facet === undefined || facet === null || facet == 0) {
+			url = "/" + $('#refineType').val() +"ExecuteSelectedRefinement" + "?" + splitData[1];
+		} else {
+			url = "/" + $('#refineType').val() +"ExecuteSelectedRefinement" + "?" + splitData[1] + "&facet="+facet;
+		}
+	}
+	
+	var obj = new Object();
+	obj.successFunction= "refreshTabletPage";		
+	obj.errorFunction= "dummy";
+	obj.url = url;
+	createAjaxCall(obj);
+	$selectedName = name
+}
+
+//For "searchInput" input box
+function validateSearchKeywords() {
+	if (document.getElementById('searchInput').value == '') {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function submittSearch() {
+	$("#searchForm").submit();
+}
+
+//category breakdown page (viewmore/less categories)
+$(".searchResults-wrap .btn").click(function(){
+	if( $(this).parent('div').siblings('ul').children('li.hide').hasClass('inView')) {	
+		$(this).parent('div').siblings('ul').children('li.hide').removeClass('inView').removeAttr('style')
+	}
+	else {	
+		$(this).parent('div').siblings('ul').children('li.hide').fadeIn('slow').addClass('inView')
+	}
+	
+	$(this).siblings('a').removeClass('hide');
+	$(this).addClass('hide');
+});
+
+function pgListRefineSortSearchFunctionSuccess(data) {
+	$(".ajax-data").html(data);	
+	$('.selectSlide .refineBtns p:first').trigger('click');
+}
+
+function pgListRefineSortSearchFunctionError(data) {
+	$(".ajax-data").html("Result : "+data);
+}
+
+$(document).on('click', '.selectSlide .refineBtns p', function(event) {
+	event.preventDefault();
+	if ($("p.selected").parent('div').hasClass('wrapped')) {
+	  $("p.selected").unwrap();
+	}
+	$(this).addClass('selected').siblings('p').removeClass('selected');
+	$(this).wrap('<div class="wrapped"></div>');
+	var the_url = $(this).attr('href');
+	$('#facetTitle').val($(this).text().replace('>','').trim());
+  	var obj = new Object();
+  	obj.url = "/" + the_url;
+  	obj.successFunction = "refineBtnsSuccess";
+  	obj.errorFunction = "refineBtnsError";
+  	createAjaxCall(obj);
+})
+
+function refineBtnsSuccess(data) {
+	if(data == ""){
+	  $(".filterCont").addClass('noRefineBtns');
+	  $("#includeRefinements").html(data);
+	  $(".refinements").append('<p class="title"></p>');
+	  $("#includeRefinements p.title").text($('#facetTitle').val());
+	}
+	else {
+	  $(".filterCont").removeClass('noRefineBtns');		
+	  $("#includeRefinements").html(data);
+	  $("#includeRefinements p.title").text($('#facetTitle').val());
+	  $("#includeRefinements").fadeIn(500);
+	}
+}
+
+function refineBtnsError(data) {
+  $("#includeRefinements").html("Result : "+data);
+}
+
+//tablet
+$(document).on('click','.right input' ,function() {
+	$('.swiper-container').show();
+	var swiper = new Swiper('.swiper-container', {
+		slidesPerView: 'auto',
+		spaceBetween: 15,
+		nextButton: '.next',
+		prevButton: '.prev'
+	});
+})
+
+function executeVariant(selectObject) {
+	window.location.href = "/product?itemKey="+selectObject.value;
+//	var obj = new Object();
+//	obj.url= "/executeVariant?itemKey="+selectObject.value;
+//	obj.data= $(selectObject).parent().serialize();
+//	obj.successFunction= "executeVariantSuccess";
+//	createAjaxCall(obj);
+}
+
+function executeVariantSuccess(data) {  
+	try{
+		eval("var jsonResult = " + data);
+		$('#index_'+jsonResult.index).html($($(jsonResult.searchResultsVariant).html()).html());
+	}catch(err){
+		
+	}
+}

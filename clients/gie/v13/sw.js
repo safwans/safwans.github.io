@@ -24,5 +24,7 @@ return htmlHandler.handle({event}).catch(() => caches.match('./offline.html'));
 });
 
 
+workbox.routing.registerRoute(navigationRoute);
+
 workbox.skipWaiting();
 workbox.clientsClaim();

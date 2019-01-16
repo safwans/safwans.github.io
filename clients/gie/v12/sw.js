@@ -5,16 +5,17 @@ workbox.precaching.precache([
   'offline.html'
 ]);
 
-workbox.routing.registerRoute(
-    new RegExp('.*\.(?:jpg|gif|svg|png|woff2).*'),
-    workbox.strategies.staleWhileRevalidate()
-);
-
 const htmlHandler = workbox.strategies.networkOnly();
 
 const navigationRoute = new workbox.routing.NavigationRoute(({event}) => {
   return htmlHandler.handle({event}).catch(() => caches.match('./offline.html'));
 });
+
+workbox.routing.registerRoute(
+    new RegExp('.*\.(?:jpg|gif|svg|png|woff2).*'),
+    workbox.strategies.staleWhileRevalidate()
+);
+
 
 workbox.skipWaiting();
 workbox.clientsClaim();

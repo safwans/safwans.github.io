@@ -1,7 +1,7 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js');
 
 workbox.precaching.precache([
-  'https://d21gpk1vhmjuf5.cloudfront.net/globalIndustrial-autosuggest.css.gz',
+  'globalIndustrial-autosuggest.css.gz',
   'offline.html'
 ]);
 
@@ -11,13 +11,14 @@ workbox.routing.registerRoute(
 );
 
 
+
 const htmlHandler = workbox.strategies.networkOnly();
 
 const navigationRoute = new workbox.routing.NavigationRoute(({event}) => {
   return htmlHandler.handle({event}).catch(() => caches.match('./offline.html'));
 });
 
-
+workbox.routing.registerRoute(navigationRoute);
 
 workbox.skipWaiting();
 workbox.clientsClaim();

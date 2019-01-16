@@ -7,13 +7,22 @@ if (workbox) {
 }
 
 workbox.precaching.precache([
-  'globalIndustrial-autosuggest.css.gz'
+  'globalIndustrial-autosuggest.css.gz',
+  'offline.html'
 ]);
 
 workbox.routing.registerRoute(
     new RegExp('.*\.(?:jpg|gif|svg|png|woff2).*'),
     workbox.strategies.staleWhileRevalidate()
 );
+
+const htmlHandler = workbox.strategies.networkOnly();
+
+//requests for HTML.
+const navigationRoute = new workbox.routing.NavigationRoute(({event}) => {
+return htmlHandler.handle({event}).catch(() => caches.match('./offline.html'));
+});
+
 
 workbox.skipWaiting();
 workbox.clientsClaim();

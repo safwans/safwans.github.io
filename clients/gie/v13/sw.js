@@ -6,5 +6,14 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
+workbox.precaching.precache([
+  'globalIndustrial-autosuggest.css.gz'
+]);
+
+workbox.routing.registerRoute(
+    new RegExp('.*\.(?:jpg|gif|svg|png|woff2).*'),
+    workbox.strategies.staleWhileRevalidate()
+);
+
 workbox.skipWaiting();
 workbox.clientsClaim();

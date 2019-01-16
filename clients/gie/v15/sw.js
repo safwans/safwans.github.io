@@ -7,7 +7,8 @@ if (workbox) {
 }
 
 workbox.precaching.precache([
-  'globalIndustrial-autosuggest.css.gz'
+  'globalIndustrial-autosuggest.css.gz',
+  'offline.html'
 ]);
 
 workbox.routing.registerRoute(

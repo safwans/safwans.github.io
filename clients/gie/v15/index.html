@@ -16,6 +16,7 @@
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<link rel="manifest" href="manifest.json">
 <title>Global Industrial | Industrial Equipment &amp; Solutions</title>
 
 	
@@ -833,6 +834,15 @@ var currencySymbol = '$';
 </header>
 
 <form id="searchForm" action="https://www.globalindustrial.com/searchResult" method="get" onsubmit="return validateSearchKeywords();">
+<div>
+<button id="pushbutton" style="width: 100%; border: solid black 2px; font-size: 30px; margin: 4px 2px;">
+Enable Push Messaging
+</button>
+<section class="subscription-details js-subscription-details">
+<textarea rows="6" cols="60" class="js-subscription-json"></textarea>
+</section>      
+</div>
+
 <div class="search">
     <input type="search" id="searchInput" autocomplete="off" name="q" value="" />
     <div class="magnifyGlass" id="searchBox" onclick="submittSearch()"><div id="magnifying-glass"></div></div>

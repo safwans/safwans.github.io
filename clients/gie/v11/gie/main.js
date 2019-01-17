@@ -15,7 +15,7 @@ if ('serviceWorker' in navigator) {
 }
 
 const pushButton = document.querySelector('#pushbutton');
-const applicationServerPublicKey = 'BMB0RqMQM5IV1qOV43SoBnK03P_XWmZbNmUTh3m8T6uECKga-GFVPGFZC4ZZRyG1HWIa6M4T-4aUNwzpLLW3Sz4';
+const applicationServerPublicKey = 'BOTsMUZA_khXRHBzWhGEbuU_GWxCy7G3aIhAigezTjXaP5U7xNr2EzI5489ASQ9yiro6LEqMk5uKKjiciC2JKwg';
 let isSubscribed = false;
 
 

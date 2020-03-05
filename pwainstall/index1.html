@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" class="enhanced">
+<!--<![endif]-->
+<head>
+<meta id="metaViewport" name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register("serviceworker.js", {
+      'scope' : '/pwainstall/'
+    });
+  }
+</script>
+<body>
+  Test site to study PWA install behavior. 
+  There is no code to catch the beforeinstallprompt event
+</body>
+</html>

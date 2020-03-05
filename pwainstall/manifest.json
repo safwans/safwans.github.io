@@ -1,0 +1,22 @@
+{
+  "name": "GlobalNews.ca",
+  "short_name": "GlobalNews.ca",
+  "theme_color": "#123C69",
+  "background_color": "#123C69",
+  "display": "standalone",
+  "start_url": "/pwainstall/index.html",
+  "gcm_sender_id": "482941778795",
+  "icons": [
+    {
+      "src": "news_square.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+        "src":"news_splash.png",
+        "type":"image/png",
+        "sizes":"512x512"
+     }
+    
+  ]
+}

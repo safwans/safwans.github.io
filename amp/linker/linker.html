@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html amp lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="canonical" href="index.html">
+<meta name="viewport"
+  content="width=device-width,minimum-scale=1,initial-scale=1">
+<title>Linker Example</title>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+<style amp-custom>
+.page {
+  width: 100%;
+  font-weight: 600;
+  will-change: transform;
+  padding: 10px 0px;
+}
+
+@media ( min-width : 600px) {
+  .page {
+    width: 60%;
+  }
+}
+
+.navbar {
+  background-color: rgb(153, 0, 0);
+  color: rgb(255, 255, 255);
+  min-height: 3rem;
+}
+
+.button {
+  background: maroon;
+  width: 100%;
+  color: white;
+  height: 40px;
+}
+
+button:disabled, button[disabled] {
+  background-color: #cccccc;
+  color: #666666;
+  width: 100%;
+  height: 40px;
+}
+</style>
+
+
+</head>
+
+<body>
+  <amp-analytics type="googleanalytics">
+    <script type="application/json">
+        {
+"linkers": {
+  "enabled": true, // This enables all child linkers contained in this object.
+  "proxyOnly" : false,
+  "linker1" : {
+    "ids" : {
+      "cid": "CLIENT_ID(_ga)",
+    }
+  },
+  "linker2" : {
+    "proxyOnly": true
+    "ids" : {
+      "gid": "CLIENT_ID(foo)",
+    }
+}        }
+      </script>
+  </amp-analytics>
+  <div class="page">
+    <div class="navbar">
+    </div>
+
+    <li> <a href='test.html'> Test </a> </li>
+    <li> <a href='/'> Home </a> </li>
+    <li> <a href='https://www.google.com'>Google.com </a> </li>
+    <li> <a href='https://www.cnn.com'> CNN.com </a> </li>
+    
+  </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" class="enhanced">
+<!--<![endif]-->
+<head>
+<meta id="metaViewport" name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register("serviceworker.js", {
+      'scope' : '/pwainstall/'
+    });
+  }
+</script>
+<body>
+  Test site to study PWA install behavior. 
+  Code present to catch the beforeinstallprompt event
+
+  <script type='text/javascript'>
+    let deferredPrompt;
+  
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+      //showInstallPromotion();
+      e.prompt();
+    });
+  </script>
+
+</body>
+</html>

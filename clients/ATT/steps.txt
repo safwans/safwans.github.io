@@ -1,0 +1,4 @@
+1. copy html
+2. change absolute links
+3. add viewport
+3. replace redirect link on 4136
